@@ -65,7 +65,7 @@
         }
         
         .tree-item {
-            margin: 5px 0;
+            margin: 2px 0;
         }
         
         .tree-item.folder {
@@ -73,26 +73,29 @@
             user-select: none;
         }
         
-        .tree-item.folder:hover {
-            color: #667eea;
-        }
-        
         .tree-item .item-content {
             display: flex;
             align-items: center;
-            padding: 5px 10px;
-            border-radius: 4px;
-            transition: background 0.2s ease;
+            padding: 8px 12px;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            margin: 2px 0;
         }
         
         .tree-item .item-content:hover {
-            background: #f0f0f0;
+            background: #f0f4ff;
+            transform: translateX(2px);
+        }
+        
+        .tree-item.folder:hover .item-content {
+            background: #e8ecff;
         }
         
         .tree-item .toggle {
-            margin-right: 8px;
-            font-size: 12px;
-            transition: transform 0.2s ease;
+            margin-right: 10px;
+            font-size: 14px;
+            transition: transform 0.3s ease;
+            color: #667eea;
         }
         
         .tree-item .toggle.open {
@@ -100,14 +103,16 @@
         }
         
         .tree-item .icon {
-            margin-right: 8px;
-            font-size: 14px;
+            margin-right: 10px;
+            font-size: 16px;
         }
         
         .tree-item .file-link {
             color: #333;
             text-decoration: none;
             flex: 1;
+            font-size: 14px;
+            transition: color 0.2s ease;
         }
         
         .tree-item .file-link:hover {
@@ -118,17 +123,62 @@
         .tree-item .file-size {
             font-size: 12px;
             color: #999;
-            margin-left: 10px;
+            margin-left: 15px;
         }
         
         .tree-children {
             list-style: none;
-            margin-left: 20px;
+            margin-left: 25px;
             display: none;
+            animation: slideDown 0.3s ease-out;
         }
         
         .tree-children.open {
             display: block;
+        }
+        
+        /* 动画效果 */
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* 文件夹和文件的不同样式 */
+        .tree-item.directory .item-content {
+            border-left: 3px solid #667eea;
+        }
+        
+        .tree-item.file .item-content {
+            border-left: 3px solid #48bb78;
+        }
+        
+        /* 文件类型图标颜色 */
+        .tree-item.file[data-type="pdf"] .icon {
+            color: #e53e3e;
+        }
+        
+        .tree-item.file[data-type="docx"] .icon {
+            color: #3182ce;
+        }
+        
+        .tree-item.file[data-type="mp4"] .icon {
+            color: #dd6b20;
+        }
+        
+        .tree-item.file[data-type="jpg"] .icon,
+        .tree-item.file[data-type="jpeg"] .icon,
+        .tree-item.file[data-type="png"] .icon {
+            color: #805ad5;
+        }
+        
+        .tree-item.file[data-type="xlsx"] .icon {
+            color: #38a169;
         }
         
         /* 响应式设计 */
@@ -299,14 +349,35 @@
                 
                 const convertedData = convertData(data);
                 
-                // 按名称排序，目录在前
-                convertedData.sort((a, b) => {
-                    if (a.type === 'directory' && b.type === 'file') return -1;
-                    if (a.type === 'file' && b.type === 'directory') return 1;
-                    return a.name.localeCompare(b.name);
+                // 过滤掉DS_Store文件
+                const filteredData = convertedData.filter(item => {
+                    if (item.type === 'file' && item.name === '.DS_Store') {
+                        return false;
+                    }
+                    return true;
                 });
                 
-                return convertedData;
+                // 按名称排序，目录在前，并且按照数字顺序排序（如第1天、第2天）
+                filteredData.sort((a, b) => {
+                    if (a.type === 'directory' && b.type === 'file') return -1;
+                    if (a.type === 'file' && b.type === 'directory') return 1;
+                    
+                    // 处理"第X天"这样的命名格式，按数字排序
+                    const aMatch = a.name.match(/^第(\d+)天/);
+                    const bMatch = b.name.match(/^第(\d+)天/);
+                    
+                    if (aMatch && bMatch) {
+                        return parseInt(aMatch[1]) - parseInt(bMatch[1]);
+                    } else if (aMatch) {
+                        return -1;
+                    } else if (bMatch) {
+                        return 1;
+                    } else {
+                        return a.name.localeCompare(b.name);
+                    }
+                });
+                
+                return filteredData;
             } catch (error) {
                 console.error('读取文件列表失败:', error);
                 return [];
@@ -372,6 +443,9 @@
                     link.target = '_blank';
                     link.textContent = item.name;
                     itemContent.appendChild(link);
+                    
+                    // 添加文件类型数据属性，用于样式应用
+                    li.setAttribute('data-type', item.extension);
                     
                     li.appendChild(itemContent);
                 }
