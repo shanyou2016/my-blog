@@ -1,0 +1,34 @@
+//
+//  AppDelegate+IQKeyboardManager.m
+//  ZYProject
+//
+//  Created by Mac on 2018/9/19.
+//  Copyright © 2018年 Mac. All rights reserved.
+//
+
+#import "AppDelegate+IQKeyboardManager.h"
+#import "IQKeyboardManager.h"
+@implementation AppDelegate (IQKeyboardManager)
+- (void)setIQKeyboardManager {
+    /**
+     *  用来开启键盘工具
+     */
+    
+    IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
+    manager.toolbarDoneBarButtonItemText=@"完成";
+    //控制整个功能是否启用。
+    manager.enable = YES;
+    //控制点击背景是否收起键盘
+    manager.shouldResignOnTouchOutside = YES;
+    //控制键盘上的工具条文字颜色是否用户自定义。  注意这个颜色是指textfile的tintcolor
+    manager.shouldToolbarUsesTextFieldTintColor = YES;
+    //设置占位文字的字体
+    manager.placeholderFont = [UIFont boldSystemFontOfSize:17];
+    //控制是否显示键盘上的工具条。
+    manager.enableAutoToolbar = YES;
+    //某个类中禁止使用工具条
+    //    [[IQKeyboardManager sharedManager]disableToolbarInViewControllerClass:[UIViewController class]];
+    //    4. 设置键盘textField的距离。不能小于零。默认是10.0。<触发条件是textField需要改变y时 >
+    
+}
+@end

@@ -1,0 +1,307 @@
+//
+//  ZYMyViewController.m
+//  ZYProject
+//
+//  Created by Mac on 2018/9/19.
+//  Copyright © 2018年 Mac. All rights reserved.
+//
+
+#import "ZYMyViewController.h"
+#import "ZYMySectionView.h"
+#define NAVBAR_COLORCHANGE_POINT (IMAGE_HEIGHT - NAV_HEIGHT*2)
+#define IMAGE_HEIGHT 220
+#define NAV_HEIGHT 64
+
+
+@interface ZYMyViewController () <UITableViewDelegate, UITableViewDataSource>
+{
+    
+}
+@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) UIImageView *topView;
+@property (nonatomic, strong) UIImageView *iconView;
+@property (nonatomic, strong) UILabel *nameLabel;
+@property (nonatomic, strong) UILabel *telLabel;
+@property (nonatomic, strong)ZYMySectionView *mZYMySectionView ;
+
+@end
+
+@implementation ZYMyViewController
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+//    self.title = @"我的";
+
+    UIBarButtonItem *rightButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"navRight"] style:UIBarButtonItemStylePlain target:self action:@selector(onClickRight)];
+    self.navigationItem.rightBarButtonItem = rightButtonItem;
+    
+    [self setupUI];
+    
+//    // 设置导航栏颜色
+    [self wr_setNavBarBarTintColor:[UIColor colorWithRed:247/255.0 green:247/255.0 blue:247/255.0 alpha:1.0]];
+
+    // 设置初始导航栏透明度
+    [self wr_setNavBarBackgroundAlpha:0];
+
+    // 设置导航栏按钮和标题颜色
+    [self wr_setNavBarTintColor:[UIColor whiteColor]];
+
+}
+
+-(void)setupUI{
+    
+    [self.view addSubview:self.tableView];
+    [self.topView addSubview:self.iconView];
+    [self.topView addSubview:self.nameLabel];
+    [self.topView addSubview:self.telLabel];
+   
+    self.tableView.tableHeaderView = self.topView;
+    
+    [_iconView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.topView.mas_left).offset(20.0);
+        make.top.equalTo(self.topView.mas_top).offset(80.0);
+        make.width.height.mas_offset(76);
+    }];
+    [_nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.iconView.mas_right).mas_offset(15.0);
+        make.top.equalTo(self.topView.mas_top).mas_offset(85.0);;
+        make.width.mas_offset(150);
+        make.height.mas_offset(30);
+    }];
+    [_telLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.iconView.mas_right).mas_offset(15.0);
+        make.top.equalTo(self.nameLabel.mas_bottom).mas_offset(0.0);;
+        make.width.mas_offset(150);
+        make.height.mas_offset(30);
+    }];
+}
+
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    CGFloat offsetY = scrollView.contentOffset.y;
+    if (offsetY > NAVBAR_COLORCHANGE_POINT)
+    {
+        CGFloat alpha = (offsetY - NAVBAR_COLORCHANGE_POINT) / NAV_HEIGHT;
+        [self wr_setNavBarBackgroundAlpha:alpha];
+        [self wr_setNavBarTintColor:[[UIColor blackColor] colorWithAlphaComponent:alpha]];
+        [self wr_setNavBarTitleColor:[[UIColor blackColor] colorWithAlphaComponent:alpha]];
+        [self wr_setStatusBarStyle:UIStatusBarStyleDefault];
+        self.title = @"我的";
+    }
+    else
+    {
+        [self wr_setNavBarBackgroundAlpha:0];
+        [self wr_setNavBarTintColor:[UIColor whiteColor]];
+        [self wr_setNavBarTitleColor:[UIColor whiteColor]];
+        [self wr_setStatusBarStyle:UIStatusBarStyleLightContent];
+        self.title = @"";
+    }
+}
+
+
+#pragma mark - tableview delegate / dataSource
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 5;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                                   reuseIdentifier:nil];
+   
+    NSString *str = nil;
+    switch (indexPath.row) {
+        case 0:
+            str = @"我的关注";
+            break;
+        case 1:
+            str = @"我的结佣";
+            break;
+        case 2:
+            str = @"我的房源";
+            break;
+        case 3:
+            str = @"我的租房";
+            break;
+        case 4:
+            str = @"实名认证";
+            break;
+            
+        default:
+            break;
+    }
+    cell.textLabel.text = str;
+    cell.imageView.image = [UIImageMake(@"tabBar_wode") qmui_imageWithTintColor:QMUICMI.blueColor];
+    
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 58;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    UIViewController *vc = [UIViewController new];
+    vc.view.backgroundColor = BG_Color;
+    NSString *str = nil;
+    switch (indexPath.row) {
+        case 0:
+            str = @"我的关注";
+            break;
+        case 1:
+            str = @"我的结佣";
+            break;
+        case 2:
+            str = @"我的房源";
+            break;
+        case 3:
+            str = @"我的租房";
+            break;
+        case 4:
+            str = @"实名认证";
+            break;
+            
+        default:
+            break;
+    }
+    vc.title = str;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    if (section == 0) {
+        return 70;
+    } else if(section == 1) {
+        return 2;
+    }
+    else{
+        return 0;
+    }
+    
+}
+
+//自定义section的头部
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    if (section == 0) {
+        if (_mZYMySectionView == nil) {
+            _mZYMySectionView = [[ZYMySectionView alloc] initView];
+            [_mZYMySectionView setFrame:CGRectMake(0, 0, self.view.bounds.size.width, 83)];
+        }
+        self.mZYMySectionView.num1Lbl.text = @"100";
+        return self.mZYMySectionView;
+    }else if(section == 1) {
+        UIView * sectionView= [[UIView alloc] initWithFrame:CGRectMake(0, 0, SC_WIDTH, 2)];
+        sectionView.backgroundColor = BG_Color;
+        
+        return sectionView;
+    }
+    else{
+        return [[UIView alloc] init];
+    }
+    
+   
+}
+
+#pragma mark - getter / setter
+- (UITableView *)tableView
+{
+    if (_tableView == nil) {
+        CGRect frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-IPHONE_STATUSBAR_HEIGHT);
+        _tableView = [[UITableView alloc] initWithFrame:frame
+                                                  style:UITableViewStyleGrouped];
+        
+        int offest_y = [self navBarBottom] - IPHONE_TABBARHEIGHT-IPHONE_STATUSBAR_HEIGHT-IPHONE_SAFEBOTTOMAREA_HEIGHT;
+        _tableView.contentInset = UIEdgeInsetsMake(-offest_y, 0, 0, 0);
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
+        [_tableView setBackgroundColor:BG_Color];
+    }
+    return _tableView;
+}
+
+- (UIImageView *)topView
+{
+    if (_topView == nil) {
+        _topView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"wbBG"]];
+        _topView.frame = CGRectMake(0, 0, self.view.frame.size.width, IMAGE_HEIGHT);
+    }
+    return _topView;
+}
+
+- (UIImageView *)iconView
+{
+    if (_iconView == nil) {
+        _iconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"image5"]];
+        _iconView.bounds = CGRectMake(0, 0, 76, 76);
+        _iconView.layer.cornerRadius = 33;
+        _iconView.layer.masksToBounds = YES;
+    }
+    return _iconView;
+}
+
+- (UILabel *)nameLabel
+{
+    if (_nameLabel == nil) {
+        _nameLabel = [UILabel new];
+        _nameLabel.backgroundColor = [UIColor clearColor];
+        _nameLabel.textColor = [UIColor whiteColor];
+        _nameLabel.text = @"张大大";
+        _nameLabel.textAlignment = NSTextAlignmentLeft;
+        _nameLabel.font = [UIFont systemFontOfSize:17];
+    }
+    return _nameLabel;
+}
+
+- (UILabel *)telLabel
+{
+    if (_telLabel == nil) {
+        _telLabel = [UILabel new];
+        _telLabel.backgroundColor = [UIColor clearColor];
+        _telLabel.textColor = [UIColor whiteColor];
+        _telLabel.text = @"135****9815";
+        _telLabel.textAlignment = NSTextAlignmentLeft;
+        _telLabel.font = [UIFont systemFontOfSize:14];
+    }
+    return _telLabel;
+}
+
+-(ZYMySectionView *)ZYMySectionView{
+    
+    if (_mZYMySectionView == nil) {
+        _mZYMySectionView = [[ZYMySectionView alloc] initView];
+        [_mZYMySectionView setFrame:CGRectMake(0, 0, self.view.bounds.size.width, 70)];
+    }
+    return _mZYMySectionView;
+    
+}
+
+- (int)navBarBottom
+{
+    if ([WRNavigationBar isIphoneX]) {
+        return 88;
+    } else {
+        return 64;
+    }
+}
+#pragma mark - action
+- (void)onClickRight
+{}
+@end

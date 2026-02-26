@@ -1,0 +1,97 @@
+//
+//  Global.m
+//  ZYProject
+//
+//  Created by Mac on 2018/9/19.
+//  Copyright © 2018年 Mac. All rights reserved.
+//  全局的字段方法
+
+#import "Global.h"
+
+@implementation Global
+
++ (Global *)shareInstance {
+    static Global *instance = nil;
+    static dispatch_once_t predicate;
+    dispatch_once(&predicate, ^{
+        instance = [[[self class] alloc] init];
+    });
+    return instance;
+}
+
+// *判断是不是空字符串，如果返回yes，代表该字符串为空
+- (BOOL)isBlankString:(NSString *)aStr {
+    if (!aStr) {
+        return YES;
+    }
+    if ([aStr isKindOfClass:[NSNull class]]) {
+        return YES;
+    }
+    NSCharacterSet *set = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+    NSString *trimmedStr = [aStr stringByTrimmingCharactersInSet:set];
+    if (!trimmedStr.length) {
+        return YES;
+    }
+    return NO;
+}
+//*判断是不是空数组，如果返回yes，代表该该数组为空
+- (BOOL)isBlankArry:(NSArray *)array{
+    if (array != nil && ![array isKindOfClass:[NSNull class]] && array.count != 0){
+        //执行array不为空时的操作
+        return NO;
+    }else{
+        return YES;
+    }
+}
+
+/**
+ * 验证按钮读秒
+ */
+-(void)verificationStartTime:(UIButton *)btn{
+    
+    __block int timeout= 60; //倒计时时间
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_source_t _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0,queue);
+    dispatch_source_set_timer(_timer,dispatch_walltime(NULL, 0),1.0*NSEC_PER_SEC, 0); //每秒执行
+    dispatch_source_set_event_handler(_timer, ^{
+        if(timeout<=0){ //倒计时结束，关闭
+            dispatch_source_cancel(_timer);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [btn setTitle:@"重新发送" forState:UIControlStateNormal];
+                btn.enabled = YES;
+            });
+        }else{
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                [UIView beginAnimations:nil context:nil];
+                [UIView setAnimationDuration:1];
+                [btn setTitle:[NSString stringWithFormat:@"重新发送(%d)",timeout] forState:UIControlStateNormal];
+                [UIView commitAnimations];
+                btn.enabled = NO;
+            });
+            timeout--;
+        }
+    });
+    dispatch_resume(_timer);
+    
+}
+
+/**
+ 指定图片的最小压缩大小
+ 
+ @param image 图片
+ @param maxFileSize 最大尺寸
+ */
+- (UIImage *)compressImage:(UIImage *)image toMaxFileSize:(NSInteger)maxFileSize {
+    CGFloat compression = 0.9f;
+    CGFloat maxCompression = 0.1f;
+    NSData *imageData = UIImageJPEGRepresentation(image, compression);
+    while ([imageData length] > maxFileSize && compression > maxCompression) {
+        compression -= 0.1;
+        imageData = UIImageJPEGRepresentation(image, compression);
+    }
+    
+    UIImage *compressedImage = [UIImage imageWithData:imageData];
+    return compressedImage;
+}
+@end

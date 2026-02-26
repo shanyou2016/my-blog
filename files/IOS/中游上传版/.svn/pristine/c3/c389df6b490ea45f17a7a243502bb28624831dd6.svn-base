@@ -1,0 +1,54 @@
+//
+//  ZYConfigHeader.h
+//  ZYProject
+//
+//  Created by Mac on 2018/9/19.
+//  Copyright © 2018年 Mac. All rights reserved.
+//
+/**
+ *  描述：
+ *  全局配置
+ *
+ */
+#ifndef ZYConfigHeader_h
+#define ZYConfigHeader_h
+
+//输出  发布不用修改
+
+#ifdef DEBUG
+
+#define NSLog(...) NSLog(@"%s %@", __PRETTY_FUNCTION__, [NSString stringWithFormat:__VA_ARGS__])
+
+#else
+
+#define NSLog(...) do { } while (0)
+
+#endif
+
+//---------------------------------------------------------------------------
+#define SC_HEIGHT [[UIScreen mainScreen] bounds].size.height
+#define SC_WIDTH [[UIScreen mainScreen] bounds].size.width
+/*
+ *判断设备是不是苹果X
+ */
+#define IS_IPHONE_X     (SC_HEIGHT == 375.f && SC_WIDTH == 812.f)
+#define IPHONE_NAVIGATIONBAR_HEIGHT  (IS_IPHONE_X ? 88 : 64)//导航栏
+#define IPHONE_STATUSBAR_HEIGHT      (IS_IPHONE_X ? 44 : 20)//状态栏
+#define IPHONE_SAFEBOTTOMAREA_HEIGHT (IS_IPHONE_X ? 34 : 0)//安全的底部区域
+#define IPHONE_TOPSENSOR_HEIGHT      (IS_IPHONE_X ? 32 : 0)//高级传感器
+#define IPHONE_TABBARHEIGHT  (IS_IPHONE_X ? 84 : 49)//标签栏的高度
+
+#define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
+
+#define kUserDefaults [NSUserDefaults standardUserDefaults]//保存网络数据做本地缓存
+
+#define appInstance (AppDelegate *)[UIApplication sharedApplication].delegate
+
+//版本号
+#define APP_VERSION [[[NSBundle mainBundle] infoDictionary]objectForKey:@"CFBundleShortVersionString"]
+
+// 使用文件名(不带后缀名)创建一个UIImage对象，会被系统缓存，适用于大量复用的小资源图
+// 使用这个 API 而不是 imageNamed: 是因为后者在 iOS 8 下反而存在性能问题（by molice 不确定 iOS 9 及以后的版本是否还有这个问题）
+#define UIImageMake(img) [UIImage imageNamed:img inBundle:nil compatibleWithTraitCollection:nil]
+
+#endif /* ZYConfigHeader_h */

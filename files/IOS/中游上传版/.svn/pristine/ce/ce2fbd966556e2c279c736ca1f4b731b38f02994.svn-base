@@ -1,0 +1,19 @@
+//
+//  ZYSDKKeyHeather.h
+//  ZYProject
+//
+//  Created by Mac on 2018/9/19.
+//  Copyright © 2018年 Mac. All rights reserved.
+//
+/*******/
+/*
+ app 第3方key
+ */
+/*******/
+#ifndef ZYSDKKeyHeather_h
+#define ZYSDKKeyHeather_h
+
+/***百度地图****/
+#define kBaiduMapAppkey @"5ITNY8GqKCEUOypscUFYG0e6" //百度地图
+
+#endif /* ZYSDKKeyHeather_h */

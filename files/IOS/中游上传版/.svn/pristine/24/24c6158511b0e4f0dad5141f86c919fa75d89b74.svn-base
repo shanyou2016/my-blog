@@ -1,0 +1,201 @@
+//
+//  ZYMain6View.m
+//  ZYProject
+//
+//  Created by Mac on 2018/9/21.
+//  Copyright © 2018年 Mac. All rights reserved.
+//
+
+#import "ZYMain6View.h"
+#import "SYIconView.h"
+@implementation ZYMain6View
+@synthesize m_Line;
+@synthesize m_Line1,m_blueLine,titleLbl;
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    // Initialization code
+}
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+    
+    // Configure the view for the selected state
+}
+
+- (instancetype) initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifiers
+{
+    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifiers])
+    {
+        [self setBackgroundColor:[UIColor whiteColor] ];
+        [self createUI];
+    }
+    return self;
+}
+
+- (void)createUI
+{
+//    UIImageView *imageView = [[UIImageView alloc]init];
+//    imageView.frame = CGRectMake(0, 0, SC_WIDTH, 234);
+//
+//    imageView.image = [UIImage imageNamed:@"easyBG"];
+//
+//    [self.contentView addSubview:imageView];
+    
+    CGFloat spacing = 0 ;
+    
+    m_Line1 = [[UIView alloc] init];
+    m_Line1.backgroundColor = RGB(240, 240, 240, 1.0);
+    //    m_Line.backgroundColor = [UIColor redColor];
+    [self.contentView addSubview:m_Line1];
+    [m_Line1 mas_makeConstraints:^(MASConstraintMaker *make)
+     {
+         make.left.equalTo(self.contentView.mas_left).with.offset(spacing);
+         make.right.equalTo(self.contentView.mas_right).with.offset(-spacing);
+         make.top.equalTo(self.contentView.mas_top);
+         make.height.equalTo(@(4));
+     }];
+    
+    
+//    m_blueLine = [[UILabel alloc] init];
+//    m_blueLine.backgroundColor = QMUICMI.blueColor;
+//    [self.contentView addSubview:m_blueLine];
+//    [m_blueLine mas_makeConstraints:^(MASConstraintMaker *make)
+//     {
+//
+//         make.left.equalTo(self.contentView).with.offset(spacing);
+//         make.top.equalTo(m_Line1.mas_bottom).with.offset(10);
+//         make.width.equalTo(@5);
+//         make.height.equalTo(@20);
+//     }];
+//
+//    titleLbl = [[UILabel alloc] init];
+//    titleLbl.textColor = RGB(0, 0, 0, 1.0);
+//    titleLbl.font = [UIFont boldSystemFontOfSize:17];
+//    titleLbl.textAlignment = NSTextAlignmentLeft;
+//    titleLbl.text = @"生活无忧";
+//    [self.contentView addSubview:titleLbl];
+//    [titleLbl mas_makeConstraints:^(MASConstraintMaker *make)
+//     {
+//         make.left.equalTo(m_blueLine.mas_right).with.offset(10);
+//         make.top.equalTo(m_Line1.mas_bottom).with.offset(10);
+//         make.width.equalTo(@200);
+//     }];
+    
+    NSMutableArray *titleArray = [[NSMutableArray alloc] initWithObjects:@"二手房",@"租房",@"新房",nil];
+    NSMutableArray *titleImgArray = [[NSMutableArray alloc] initWithObjects:@"alright1",@"alright2",@"alright3",nil];
+    NSMutableArray *array2 = [NSMutableArray new];
+    for (int i = 0; i < titleArray.count; i ++) {
+        SYIconView *mbtn = [[SYIconView alloc] initView];
+        NSString *mbtnImg = [titleImgArray objectAtIndex:i];
+        UIImage *pic = [ UIImage imageNamed:mbtnImg];
+        [mbtn.mImgV setImage:pic];
+        mbtn.mNameLB.text = [titleArray objectAtIndex:i];
+        mbtn.mBtnV.tag = i;
+        [mbtn.mBtnV addTarget:self action:@selector(mbtnAction:) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:mbtn];
+        [array2 addObject:mbtn]; //保存添加的控件
+    }
+    // 等间隔排列 - 多个固定大小固定，间隔空隙变化
+    [array2 mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedItemLength:60 leadSpacing:10 tailSpacing:10];
+    [array2 mas_makeConstraints:^(MASConstraintMaker *make) { //数组额你不必须都是view
+        make.top.equalTo(@14);
+        make.height.equalTo(@70);
+    }];
+    
+    //==================================================================================================
+    NSMutableArray *titleArray2 = [[NSMutableArray alloc] initWithObjects:@"线上报盘",@"交易进度",@"历史成交",nil];
+    NSMutableArray *title2ImgArray = [[NSMutableArray alloc] initWithObjects:@"alright21",@"alright22",@"alright23",nil];
+    NSMutableArray *array2_2 = [NSMutableArray new];
+    for (int i = 0; i < titleArray2.count; i ++) {
+        SYIconView *mbtn = [[SYIconView alloc] initView];
+        NSString *mbtnImg =  [title2ImgArray objectAtIndex:i];
+        UIImage *pic = [ UIImage imageNamed:mbtnImg];
+        [mbtn.mImgV setImage:pic];
+        mbtn.mNameLB.text = [titleArray2 objectAtIndex:i];
+        mbtn.mBtnV.tag = 10+i;
+        [mbtn.mBtnV  addTarget:self action:@selector(mbtnAction:) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:mbtn];
+        [array2_2 addObject:mbtn]; //保存添加的控件
+    }
+    // 等间隔排列 - 多个固定大小固定，间隔空隙变化
+    [array2_2 mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedItemLength:60 leadSpacing:10 tailSpacing:10];
+    [array2_2 mas_makeConstraints:^(MASConstraintMaker *make) { //数组额你不必须都是view
+        make.top.equalTo(@104);
+        make.height.equalTo(@70);
+    }];
+    
+    
+    
+    //==================================================================================================
+    //    CGFloat spacing = 0 ;
+    m_Line = [[UIView alloc] init];
+    m_Line.backgroundColor = RGB(240, 240, 240, 1.0);
+    //    m_Line.backgroundColor = [UIColor redColor];
+    [self.contentView addSubview:m_Line];
+    SYIconView* tiltleLab = [array2_2 objectAtIndex:0];
+    [m_Line mas_makeConstraints:^(MASConstraintMaker *make)
+     {
+         make.left.equalTo(self.contentView.mas_left).with.offset(spacing);
+         make.right.equalTo(self.contentView.mas_right).with.offset(-spacing);
+         make.top.equalTo(tiltleLab.mas_bottom).with.offset(15);
+         make.height.equalTo(@(4));
+     }];
+    
+}
+
+-(void)mbtnAction:(UIButton *)sender{
+    NSLog(@"tag = %ld",(long)sender.tag);
+    NSUInteger tag = sender.tag;
+    
+    
+    switch (tag) {
+        case 0://2手房
+        {
+            UIViewController *vc = [UIViewController new];
+            vc.view.backgroundColor = BG_Color;
+            NSString *str = [NSString stringWithFormat:@"2手房 "];
+            vc.title = str;
+            [_tabVC.navigationController pushViewController:vc animated:YES];
+            break;
+            
+            
+        }
+        case 1://租房
+        {
+
+            break;
+        }
+        case 2://新房
+        {
+
+            
+            break;
+        }
+
+            
+        case 10://线上
+        {
+            
+
+            break;
+        }
+        case 11://交易
+        {
+
+            break;
+            
+            
+        }
+        case 12://历史
+        {
+ 
+            break;
+        }
+       
+            
+        default:
+            break;
+    }
+}
+
+@end

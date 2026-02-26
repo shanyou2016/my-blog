@@ -1,0 +1,39 @@
+//
+//  SYIconView.m
+//  PowerValleyPark
+//
+//  Created by Mac on 2018/5/16.
+//  Copyright © 2018年 RicardoM Lu. All rights reserved.
+//
+
+#import "SYIconView.h"
+
+@implementation SYIconView
+
+
+// Only override drawRect: if you perform custom drawing.
+// An empty implementation adversely affects performance during animation.
+- (void)drawRect:(CGRect)rect {
+    // Drawing code
+}
+
+-(instancetype) SYIconView{
+    
+    
+    NSBundle *bundle=[NSBundle mainBundle];
+    NSArray *objs=[bundle loadNibNamed:@"SYIconView" owner:nil options:nil];
+    return [objs lastObject];
+    
+}
+
+-(instancetype)initView{
+    
+    if (self = [super init]) {
+        self = [self SYIconView];
+    }
+    
+    return self;
+    
+    
+}
+@end

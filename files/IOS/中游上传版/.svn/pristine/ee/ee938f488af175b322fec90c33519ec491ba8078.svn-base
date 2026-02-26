@@ -1,0 +1,31 @@
+//
+//  ZYColorHeather.h
+//  ZYProject
+//
+//  Created by Mac on 2018/9/19.
+//  Copyright © 2018年 Mac. All rights reserved.
+//
+/**
+ *  描述：
+ *  全局定义颜色
+ *
+ */
+#ifndef ZYColorHeather_h
+#define ZYColorHeather_h
+
+#define RGB(r,g,b,a) [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a]
+//全局cell节的背景色
+#define CellBG_Color  RGB(239,239,244,1.0)
+
+#define BG_Color     RGB(231, 230, 235, 1.0)
+//统一边框线的颜色
+#define BorderColorForView     [UIColor colorWithRed:0.75 green:0.75 blue:0.76 alpha:1.00]
+
+//功能名称字体
+#define LabelFont 14.0
+
+//详情文字字体
+#define DetailLabelFont 12.0
+
+
+#endif /* ZYColorHeather_h */

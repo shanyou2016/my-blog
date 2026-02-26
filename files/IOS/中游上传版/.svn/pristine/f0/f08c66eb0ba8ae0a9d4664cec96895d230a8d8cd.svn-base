@@ -1,0 +1,22 @@
+platform :ios, '9.0'
+target "ZYProject" do
+    #use_frameworks!
+    #消除第三方库警告
+inhibit_all_warnings!
+
+pod "AFNetworking"
+pod "SDWebImage"
+pod "MJRefresh"
+pod "SVProgressHUD"
+pod "IQKeyboardManager"
+pod "Masonry"
+pod "YYModel"
+pod 'RongCloudIM/IMLib'
+pod 'RongCloudIM/IMKit'
+pod 'BANetManager' 
+pod 'SDCycleScrollView'
+pod 'MyLayout'
+pod 'BaiduMapKit' #百度地图SDK
+pod 'WRNavigationBar'
+pod 'QMUIKit'
+end

@@ -1,0 +1,35 @@
+//
+//  HgTableViewBaseCell.h
+//  PersonalFinanceRoom
+//
+//  Created by RicardoM Lu on 2017/6/12.
+//  Copyright © 2017年 火炬信息. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@class HgTableViewRowModel;
+
+
+@protocol MycellDelegate <NSObject>
+
+@optional
+-(void)TextFiledControlEventEditingChanged:(UITextField *)mytextField;
+-(void)TextFiledControlEventEndEditor:(UITextField *)mytextField;
+
+@end
+
+
+@interface HgTableViewBaseCell : UITableViewCell
+
+
+
+@property(nonatomic,weak) id<MycellDelegate> delegate;
+
+
+
+@property (nonatomic,strong) HgTableViewRowModel  *item; /**< item data*/
+
+
+
+@end

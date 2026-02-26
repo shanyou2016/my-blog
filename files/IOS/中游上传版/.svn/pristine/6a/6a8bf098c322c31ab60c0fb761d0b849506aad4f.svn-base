@@ -1,0 +1,396 @@
+
+//
+//  HgTableViewBaseCell.m
+//  HgDemo
+//
+//  Created by RicardoM Lu on 2017/3/3.
+//  Copyright © 2017年 RicardoM Lu. All rights reserved.
+//
+
+#import "HgTableViewBaseCell.h"
+#import "HgTableViewRowModel.h"
+#import "UIView+Extension.h"
+#import "DCSpeedy.h"
+#import "HgBesselCurveRedDotView.h"
+
+//详情到指示箭头或开关的距离
+#define HgDetailViewToIndicatorGap 13.0
+//指示箭头或开关到右边界的距离
+#define HgIndicatorToRightGap 15.0
+//功能名称到功能图片的距离,当功能图片funcImg不存在时,等于到左边界的距离
+#define HgFuncLabelToFuncImgGap 15.0
+//功能图片到左边界的距离
+#define HgFuncImgToLeftGap 15.0
+//cell的高度除以2，用于约束所有子控件的y轴
+#define HgContentViewCenterY 27.8
+
+@interface HgTableViewBaseCell()
+@property (strong, nonatomic) UILabel *funcNameLabel;
+@property (nonatomic,strong) UIImageView *imgView;
+
+@property (nonatomic,strong) UIImageView *indicator;
+
+@property (nonatomic,strong) UISwitch *aswitch;
+
+@property (nonatomic,strong) UILabel *detailLabel;
+
+@property (nonatomic,strong) UILabel *detailLabel2;
+
+@property (nonatomic,strong) UIImageView *detailImageView;
+@property (nonatomic,strong) UITextField *detailTextField;
+
+
+@property (nonatomic,strong) UIView *redDotView; /**< */
+
+
+@end
+@implementation HgTableViewBaseCell
+
+
+- (void)setItem:(HgTableViewRowModel *)item
+{
+    _item = item;
+    
+    [self updateUI];
+    
+}
+
+-(void)setupRedDotView{
+    HgBesselCurveRedDotView* redDotView =[[HgBesselCurveRedDotView alloc] init];
+    redDotView.backgroundColor= [UIColor clearColor];
+    redDotView.size = CGSizeMake(6, 6);
+    redDotView.centerY = HgContentViewCenterY;
+    redDotView.x =SC_WIDTH-30;
+    [self.contentView addSubview:redDotView];
+    
+}
+- (void)updateUI
+{
+    [self.contentView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    if ([self.item.redDotStr isEqualToString:@"yes"]) {
+        [self setupRedDotView];
+    }
+    //如果有图片
+    if (self.item.img) {
+        [self setupImgView];
+    }
+    //功能名称
+    if (self.item.funcName) {
+        [self setupFuncLabel];
+    }
+    //accessoryType
+    if (self.item.accessoryType) {
+        [self setupAccessoryType];
+    }
+    //输入框
+    if (self.item.detailTextField) {
+        [self setupDetailTextField];
+    }
+    
+    //detailView
+    if (self.item.detailText) {
+        [self setupDetailText];
+    }
+    if (self.item.detailImage) {
+        [self setupDetailImage];
+    }
+    //syy
+    if (self.item.detailLabel) {
+        [self setupDetailText2];
+    }
+    //bottomLine
+    //    UIView *line = [[UIView alloc]initWithFrame:CGRectMake(0, self.height - 1, SC_WIDTH, 1)];
+    //    line.backgroundColor = RGB(234, 234, 234, 1);
+    //    [self.contentView addSubview:line];
+    
+}
+
+-(void)setupDetailImage
+{
+    self.detailImageView = [[UIImageView alloc]initWithImage:self.item.detailImage];
+    self.detailImageView.centerY = HgContentViewCenterY;
+    switch (self.item.accessoryType) {
+        case HgSettingAccessoryTypeNone:
+            self.detailImageView.x = SC_WIDTH - self.detailImageView.width - HgDetailViewToIndicatorGap - 2;
+            break;
+        case HgSettingAccessoryTypeDisclosureIndicator:
+            self.detailImageView.x = self.indicator.x - self.detailImageView.width - HgDetailViewToIndicatorGap;
+            break;
+        case HgSettingAccessoryTypeSwitch:
+            //            self.detailImageView.x = self.aswitch.x - self.detailImageView.width - HgDetailViewToIndicatorGap;
+            break;
+        default:
+            break;
+    }
+    [self.contentView addSubview:self.detailImageView];
+}
+
+- (void)setupDetailText
+{
+    self.detailLabel = [[UILabel alloc]init];
+    self.detailLabel.text = self.item.detailText;
+    //设置文本颜色
+    if (self.item.detailTextColor) {
+        self.detailLabel.textColor = self.item.detailTextColor;
+    } else {
+        self.detailLabel.textColor = RGB(142, 142, 142, 1);
+    }
+    //设置文本对齐方式
+    if (self.item.detailTextAlignment) {
+        self.detailLabel.textAlignment = self.item.detailTextAlignment;
+    } else {
+        self.detailLabel.textAlignment = NSTextAlignmentRight;
+    }
+    self.detailLabel.font = [UIFont systemFontOfSize:DetailLabelFont];
+    //    self.detailLabel.size = [self sizeForTitle:self.item.detailText withFont:self.detailLabel.font];
+    self.detailLabel.size = CGSizeMake(SC_WIDTH/2+70.0, 21);
+    self.detailLabel.centerY = HgContentViewCenterY;
+    
+    switch (self.item.accessoryType) {
+        case HgSettingAccessoryTypeNone:
+            self.detailLabel.x = SC_WIDTH - self.detailLabel.width - HgDetailViewToIndicatorGap -2-self.item.detailImage.size.width;
+            break;
+        case HgSettingAccessoryTypeDisclosureIndicator:
+            self.detailLabel.x = self.indicator.x - self.detailLabel.width - HgDetailViewToIndicatorGap-self.item.detailImage.size.width;
+            break;
+        case HgSettingAccessoryTypeSwitch:
+            //            self.detailLabel.x = self.aswitch.x - self.detailLabel.width - HgDetailViewToIndicatorGap-self.item.detailImage.size.width;
+            break;
+        default:
+            break;
+    }
+    
+    [self.contentView addSubview:self.detailLabel];
+}
+
+- (void)setupDetailText2
+{
+    self.detailLabel2 = self.item.detailLabel;
+    self.detailLabel2.textColor = RGB(142, 142, 142, 1);
+    self.detailLabel2.font = [UIFont systemFontOfSize:DetailLabelFont];
+    
+    
+    self.detailLabel2.size = CGSizeMake(SC_WIDTH/2, 50);
+    //    self.detailLabel2.backgroundColor = [UIColor redColor];
+    self.detailLabel2.textAlignment = NSTextAlignmentRight;
+    self.detailLabel2.centerY = HgContentViewCenterY;
+    self.detailLabel2.numberOfLines = 2;
+    
+    
+    
+    switch (self.item.accessoryType) {
+        case HgSettingAccessoryTypeNone:
+        {
+            self.detailLabel2.x = SC_WIDTH - self.detailLabel2.width - HgDetailViewToIndicatorGap -2-self.item.detailImage.size.width-10.0;
+            
+            
+            
+        }
+            break;
+        case HgSettingAccessoryTypeDisclosureIndicator:
+        {
+            self.detailLabel2.x = SC_WIDTH - self.detailLabel2.width - HgDetailViewToIndicatorGap -2-self.item.detailImage.size.width;
+            
+            
+            
+        }
+            break;
+        case HgSettingAccessoryTypeSwitch:
+        {
+            self.detailLabel2.x = SC_WIDTH - self.detailLabel2.width - HgDetailViewToIndicatorGap -2-self.item.detailImage.size.width;
+            
+            
+            
+        }
+            break;
+        default:
+            break;
+    }
+    
+    [self.contentView addSubview:self.detailLabel2];
+}
+
+-(void)setupDetailTextField{
+    self.detailTextField =self.item.detailTextField;
+    [self.detailTextField addTarget:self action:@selector(TextFiledControlEventEditingChanged:) forControlEvents:(UIControlEventEditingChanged)];
+    [self.detailTextField addTarget:self action:@selector(TextFiledControlEventEndEditor:) forControlEvents:(UIControlEventEditingDidEnd)];
+    
+    
+    self.detailTextField.text = self.item.detailTextField.text;
+    self.detailTextField.tag = self.item.detailTextField.tag;
+    
+    self.detailTextField.placeholder = self.item.detailTextField.placeholder;
+    
+    self.detailTextField.font = [UIFont systemFontOfSize:DetailLabelFont];
+    //设置文本对齐方式
+    self.detailTextField.textAlignment = NSTextAlignmentRight;
+    
+    self.detailTextField.size =CGSizeMake(SC_WIDTH/2, 25);
+    //    self.detailTextField.size = [self sizeForTitle:self.item.detailTextField withFont:self.detailTextField.font];
+    self.detailTextField.centerY = HgContentViewCenterY;
+    
+    switch (self.item.accessoryType) {
+        case HgSettingAccessoryTypeNone:
+            self.detailTextField.x = SC_WIDTH - self.detailTextField.width-15-[self calculateRowWidth:self.item.detailText];
+            break;
+        case HgSettingAccessoryTypeDisclosureIndicator:
+            self.detailTextField.x = SC_WIDTH - self.detailTextField.width-15-[self calculateRowWidth:self.item.detailText];
+            break;
+        case HgSettingAccessoryTypeSwitch:
+            self.detailTextField.x = SC_WIDTH - self.detailTextField.width-15-[self calculateRowWidth:self.item.detailText];;
+            break;
+        default:
+            break;
+    }
+    
+    [self.contentView addSubview:self.detailTextField];
+    
+}
+//计算宽度
+- (CGFloat)calculateRowWidth:(NSString *)string {
+    NSDictionary *dic = @{NSFontAttributeName:[UIFont systemFontOfSize:DetailLabelFont]};  //指定字号
+    CGRect rect = [string boundingRectWithSize:CGSizeMake(0, 21)/*计算宽度时要确定高度*/ options:NSStringDrawingUsesLineFragmentOrigin |
+                   NSStringDrawingUsesFontLeading attributes:dic context:nil];
+    return rect.size.width+5;
+}
+
+#pragma mark - 按钮点击事件，通过代理模式响应
+-(void)TextFiledControlEventEditingChanged:(UITextField *)textField
+{
+    [self.delegate TextFiledControlEventEditingChanged:textField];
+}
+-(void)TextFiledControlEventEndEditor:(UITextField *)textField
+{
+    [self.delegate TextFiledControlEventEndEditor:textField];
+}
+- (void)setupAccessoryType
+{
+    switch (self.item.accessoryType) {
+        case HgSettingAccessoryTypeNone:
+            break;
+        case HgSettingAccessoryTypeDisclosureIndicator:
+            [self setupIndicator];
+            break;
+        case HgSettingAccessoryTypeSwitch:
+            [self setupSwitch];
+            break;
+        default:
+            break;
+    }
+}
+
+- (void)setupSwitch
+{
+    [self.aswitch setOn:self.item.isOn];
+    [self.contentView addSubview:self.aswitch];
+}
+
+- (void)setupIndicator
+{
+    if (self.item.detailTextField) {
+    }else{
+        [self.contentView addSubview:self.indicator];
+        
+    }
+    
+    
+}
+
+- (void)setupImgView
+{
+    //压缩图片大小
+//    UIImage *sureImage = [self imageWithImage:self.item.img scaledToSize:CGSizeMake(24, 24)];
+//
+//    self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 24, 24)];
+    self.imgView = [[UIImageView alloc]initWithImage:self.item.img];
+    self.imgView.x = HgFuncImgToLeftGap;
+    self.imgView.centerY = HgContentViewCenterY;
+    //    self.imgView.centerY = HgContentViewCenterY;
+    [self.contentView addSubview:self.imgView];
+}
+
+- (void)setupFuncLabel
+{
+    self.funcNameLabel = [[UILabel alloc]init];
+    self.funcNameLabel.text = self.item.funcName;
+    self.funcNameLabel.textColor = RGB(51, 51, 51, 1);
+    self.funcNameLabel.font = [UIFont systemFontOfSize:LabelFont];
+    self.funcNameLabel.size = [self sizeForTitle:self.item.funcName withFont:self.funcNameLabel.font];
+    self.funcNameLabel.centerY = HgContentViewCenterY;
+    
+    if (self.item.img) {
+        self.funcNameLabel.x = CGRectGetMaxX(self.imgView.frame) + HgFuncLabelToFuncImgGap;
+    }
+    else{
+        self.funcNameLabel.x =  HgFuncLabelToFuncImgGap;
+    }
+    
+    [self.contentView addSubview:self.funcNameLabel];
+}
+
+- (CGSize)sizeForTitle:(NSString *)title withFont:(UIFont *)font
+{
+    CGRect titleRect = [title boundingRectWithSize:CGSizeMake(FLT_MAX, FLT_MAX)
+                                           options:NSStringDrawingUsesLineFragmentOrigin
+                                        attributes:@{NSFontAttributeName : font}
+                                           context:nil];
+    
+    return CGSizeMake(titleRect.size.width,
+                      titleRect.size.height);
+}
+
+- (UIImageView *)indicator
+{
+    if (!_indicator) {
+        _indicator = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"icon-arrow1"]];
+        _indicator.centerY = HgContentViewCenterY;
+        _indicator.x = SC_WIDTH - _indicator.width - HgIndicatorToRightGap;
+    }
+    return _indicator;
+}
+
+- (UISwitch *)aswitch
+{
+    if (!_aswitch) {
+        _aswitch = [[UISwitch alloc]init];
+        _aswitch.centerY = HgContentViewCenterY;
+        _aswitch.x = SC_WIDTH - _aswitch.width - HgIndicatorToRightGap;
+        [_aswitch addTarget:self action:@selector(switchTouched:) forControlEvents:UIControlEventValueChanged];
+    }
+    return _aswitch;
+}
+
+- (void)switchTouched:(UISwitch *)sw
+{
+    __weak typeof(self) weakSelf = self;
+    self.item.isOn = sw.isOn;
+    self.item.switchValueChanged(weakSelf.aswitch.isOn);
+}
+
+
+//----------------------------hg
+//压缩图片
+-(UIImage*)imageWithImage:(UIImage*)image scaledToSize:(CGSize)newSize
+{
+    // 创建一个bitmap的context
+    // 并把它设置成为当前正在使用的context
+    //Determine whether the screen is retina
+    if([[UIScreen mainScreen] scale] == 2.0){
+        UIGraphicsBeginImageContextWithOptions(newSize, NO, 2.0);
+    }else{
+        UIGraphicsBeginImageContext(newSize);
+    }
+    // 绘制改变大小的图片
+    [image drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+    // 从当前context中创建一个改变大小后的图片
+    UIImage* scaledImage = UIGraphicsGetImageFromCurrentImageContext();
+    // 使当前的context出堆栈
+    
+    UIGraphicsEndImageContext();
+    // 返回新的改变大小后的图片
+    return scaledImage;
+}
+
+@end
+
+

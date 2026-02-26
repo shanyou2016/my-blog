@@ -1,0 +1,129 @@
+//
+//  ZYNetworkRequest.m
+//  ZYProject
+//
+//  Created by Mac on 2018/9/19.
+//  Copyright © 2018年 Mac. All rights reserved.
+// //https://github.com/BAHome/BANetManager
+
+#import "ZYNetworkRequest.h"
+#import "ZYNetWorkModel.h"
+
+@implementation ZYNetworkRequest
+
++(NSString *)isNetWorking:(NSError *)error{
+    NSString * string = @"出现未知错误!";
+    switch (error.code) {
+        case -998:
+            string = @"出现未知错误!";
+            break;
+        case -999:
+            string = @"连接被取消了!";
+            break;
+        case -1000:
+            string = @"由于URL格式不正确，连接失败!";
+            break;
+        case -1001:
+            string = @"连接超时!";
+            break;
+        case -1002:
+            string = @"由于不支持的URL方案，连接失败!";
+            break;
+        case -1003:
+            string = @"连接失败，因为主机找不到!";
+            break;
+        case -1004:
+            string = @"连接失败，因为无法连接到主机!";
+            break;
+        case -1005:
+            string = @"连接失败，因为网络连接丢失!";
+            break;
+        case -1006:
+            string = @"连接失败，因为DNS查找失败!";
+            break;
+        case -1007:
+            string = @"由于重定向太多，HTTP连接失败!";
+            break;
+        case -1008:
+            string = @"连接的资源不可用!";
+            break;
+        case -1009:
+            string = @"连接失败，因为设备没有连接到互联网!";
+            break;
+        case -1010:
+            string = @"连接被重定向到一个不存在的位置!";
+            break;
+        case -1011:
+            string = @"连接收到无效的服务器响应!";
+            break;
+        case -1012:
+            string = @"连接失败，因为用户取消了所需的身份验证!";
+            break;
+        case -1013:
+            string = @"连接失败，因为需要身份验证!";
+            break;
+        case -1014:
+            string = @"由连接检索的资源是零字节!";
+            break;
+        case -1015:
+            string = @"连接无法解码使用已知内容编码编码的数据!";
+            break;
+        case -1016:
+            string = @"连接无法解码使用未知内容编码编码的数据!";
+            break;
+        case -1017:
+            string = @"连接无法解析服务器的响应!";
+            break;
+        case -1018:
+            string = @"连接失败，因为设备上禁止国际漫游!";
+            break;
+        case -1019:
+            string = @"由于通话处于活动状态，连接失败!";
+            break;
+        case -1020:
+            string = @"连接失败，因为设备上目前不允许使用数据!";
+            break;
+        case -1021:
+            string = @"连接失败，因为请求的正文流已经耗尽!";
+            break;
+        default:
+            string = @"出现未知错误!";
+            
+            break;
+    }
+    return string;
+}
+
+
++(void)post:(BADataEntity *)baDataEntity success:(void (^)(id))success failure:(void (^)(NSError *))failure progresss:(void (^)(float))progresss{
+    [SVProgressHUD show];
+    // 如果打印数据不完整，是因为 Xcode 8 版本问题，请下断点打印数据
+    [BANetManager ba_request_POSTWithEntity:baDataEntity successBlock:^(id response) {
+        [SVProgressHUD dismiss];
+        
+        ZYNetWorkModel *model = [ZYNetWorkModel yy_modelWithJSON:response];
+        if ([model.status isEqualToString:@"1"]) {
+            NSLog(@"%@返回的数据：%@",baDataEntity.urlString, model.data);
+            success(model.data);
+            
+        }else if([model.status isEqualToString:@"2"]){
+            //出错了，提示错误信息
+            NSLog(@"%@",model.message);
+        }else if([model.status isEqualToString:@"3"]){
+            //登录失效
+       
+        }
+    } failureBlock:^(NSError *error) {
+        [SVProgressHUD dismiss];
+        failure(error);
+        NSLog(@"%@",[self  isNetWorking:error]);
+   
+        
+        
+    } progressBlock:^(int64_t bytesProgress, int64_t totalBytesProgress) {
+        /*! 封装方法里已经回到主线程，所有这里不用再调主线程了 */
+        
+    }];
+}
+
+@end

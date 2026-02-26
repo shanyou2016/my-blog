@@ -1,0 +1,17 @@
+//
+//  SYIconView.h
+//  PowerValleyPark
+//
+//  Created by Mac on 2018/5/16.
+//  Copyright © 2018年 RicardoM Lu. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface SYIconView : UIView
+@property (weak, nonatomic) IBOutlet UIImageView *mImgV;//商户封面图
+@property (weak, nonatomic) IBOutlet UILabel *mNameLB;//商户名称
+@property (weak, nonatomic) IBOutlet UIButton *mBtnV;
+
+-(instancetype)initView;
+@end

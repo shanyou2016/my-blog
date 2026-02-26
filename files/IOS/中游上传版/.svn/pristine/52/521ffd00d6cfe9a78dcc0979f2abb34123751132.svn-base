@@ -1,0 +1,26 @@
+//
+//  ZYNetworkRequest.h
+//  ZYProject
+//
+//  Created by Mac on 2018/9/19.
+//  Copyright © 2018年 Mac. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import "BANetManager_OC.h"
+/**定义请求成功的block*/
+typedef void(^requestSuccess)( NSDictionary * object);
+
+/**定义请求失败的block*/
+typedef void(^requestFailure)( NSError *error);
+
+/**定义上传进度block*/
+typedef void(^uploadProgress)(float progress);
+
+@interface ZYNetworkRequest : NSObject
+
++(void)post:(BADataEntity *)baDataEntity success:(void (^)(id))success failure:(void (^)(NSError *))failure progresss:(void (^)(float))progresss;
++ (void)get:(BADataEntity *)baDataEntity success:(void (^)(id json))success failure:(void (^)(NSError *error))failure progresss:(void (^)(float progress))progresss;
++(NSString *)isNetWorking:(NSError *)error;
+
+@end

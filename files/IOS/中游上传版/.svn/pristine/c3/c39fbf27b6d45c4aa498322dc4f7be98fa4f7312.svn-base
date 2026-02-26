@@ -1,0 +1,116 @@
+//
+//  MainTabBarController.m
+//  MiAiApp
+//
+//  Created by 徐阳 on 2017/5/18.
+//  Copyright © 2017年 徐阳. All rights reserved.
+//
+
+#import "MainTabBarController.h"
+
+
+#import "ZYMyViewController.h"
+#import "ZYMessageViewController.h"
+#import "ZYMainViewController.h"
+#import "ZYActivityViewController.h"
+#import "UITabBar+CustomBadge.h"
+#import "XYTabBar.h"
+
+@interface MainTabBarController ()<UITabBarControllerDelegate>
+
+@property (nonatomic,strong) NSMutableArray * VCS;//tabbar root VC
+
+@end
+
+@implementation MainTabBarController
+
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.delegate = self;
+//    //初始化tabbar
+    [self setUpTabBar];
+    //添加子控制器
+    [self setUpAllChildViewController];
+//    [self addChildViewController];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+}
+
+
+#pragma mark ————— 初始化TabBar —————
+-(void)setUpTabBar{
+    //设置背景色 去掉分割线
+    [self setValue:[XYTabBar new] forKey:@"tabBar"];
+    [self.tabBar setBackgroundColor:[UIColor whiteColor]];
+    [self.tabBar setBackgroundImage:[UIImage new]];
+    //通过这两个参数来调整badge位置
+    //    [self.tabBar setTabIconWidth:29];
+    //    [self.tabBar setBadgeTop:9];
+}
+
+#pragma mark - ——————— 初始化VC ————————
+-(void)setUpAllChildViewController{
+
+
+    // 首页
+    ZYMainViewController *mainViewController = [[ZYMainViewController alloc] init];
+    mainViewController.hidesBottomBarWhenPushed = NO;
+    ZYNavgationViewController *navMain = [[ZYNavgationViewController alloc]initWithRootViewController:mainViewController];
+    navMain.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"首页" image:[[UIImageMake(@"tabBar_fangzi") qmui_imageWithTintColor:QMUICMI.grayColor] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[UIImageMake(@"tabBar_fangzi") qmui_imageWithTintColor:QMUICMI.blueColor] tag:0];
+    // 订单
+    ZYMessageViewController *messageViewController = [[ZYMessageViewController alloc] init];
+    messageViewController.hidesBottomBarWhenPushed = NO;
+    ZYNavgationViewController *navMessage = [[ZYNavgationViewController alloc]initWithRootViewController:messageViewController];
+    navMessage.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"订单" image:[[UIImageMake(@"tabBar_dindan") qmui_imageWithTintColor:QMUICMI.grayColor] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[UIImageMake(@"tabBar_dindan") qmui_imageWithTintColor:QMUICMI.blueColor] tag:1];
+
+    // 活动
+    ZYActivityViewController*activityViewController = [[ZYActivityViewController alloc] init];
+    activityViewController.hidesBottomBarWhenPushed = NO;
+    ZYNavgationViewController *navActive = [[ZYNavgationViewController alloc]initWithRootViewController:activityViewController];
+    navActive.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"活动" image:[[UIImageMake(@"tabBar_dindan") qmui_imageWithTintColor:QMUICMI.grayColor] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[UIImageMake(@"tabBar_dindan") qmui_imageWithTintColor:QMUICMI.blueColor] tag:2];
+    
+    // 个人中心
+    ZYMyViewController *myViewController = [[ZYMyViewController alloc] init];
+    myViewController.hidesBottomBarWhenPushed = NO;
+    ZYNavgationViewController *navMy = [[ZYNavgationViewController alloc]initWithRootViewController:myViewController];
+    navMy.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"我的" image:[[UIImageMake(@"tabBar_wode") qmui_imageWithTintColor:QMUICMI.grayColor] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[UIImageMake(@"tabBar_wode") qmui_imageWithTintColor:QMUICMI.blueColor] tag:3];
+    
+    
+    
+     self.viewControllers = @[navMain,navMessage,navActive, navMy];
+    
+    [self setRedDotWithIndex:1 isShow:YES];
+}
+
+
+-(void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
+    //    NSLog(@"选中 %ld",tabBarController.selectedIndex);
+    
+}
+
+-(void)setRedDotWithIndex:(NSInteger)index isShow:(BOOL)isShow{
+    if (isShow) {
+        [self.tabBar setBadgeStyle:kCustomBadgeStyleRedDot value:0 atIndex:index];
+    }else{
+        [self.tabBar setBadgeStyle:kCustomBadgeStyleNone value:0 atIndex:index];
+    }
+    
+}
+
+- (BOOL)shouldAutorotate {
+    return [self.selectedViewController shouldAutorotate];
+}
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
+    return [self.selectedViewController supportedInterfaceOrientations];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+
+@end

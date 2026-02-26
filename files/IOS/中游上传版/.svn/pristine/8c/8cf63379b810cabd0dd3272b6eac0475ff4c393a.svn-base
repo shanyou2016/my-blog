@@ -1,0 +1,43 @@
+//
+//  ZYProjectHeader.h
+//  ZYProject
+//
+//  Created by Mac on 2018/9/19.
+//  Copyright © 2018年 Mac. All rights reserved.
+//  https://github.com/youngsoft/MyLinearLayout/blob/master/README.zh.md
+/**
+ *  描述：
+ *  导入类
+ *
+ */
+#ifndef ZYProjectHeader_h
+#define ZYProjectHeader_h
+
+#import "ZYNavgationViewController.h"
+#import "MainTabBarController.h"
+#import "IQKeyboardManager.h"
+#import "SVProgressHUD.h"
+#import "YYModel.h"
+#import "WHC_ModelSqlite.h"
+#import "MJRefresh.h"
+#import "SDImageCache.h"
+#import "Masonry.h"
+#import "ZYNetworkRequest.h"
+
+#import <QMUIKit/QMUIKit.h>
+#import "QDCommonUI.h"
+#import "QDUIHelper.h"
+#import "QDThemeManager.h"
+#import "WRNavigationBar.h"  //---设置状态栏、导航栏按钮、标题、颜色、透明度，移动
+//*************************************************************************//
+#import "Inline.h" //--- GetCell() 创建cell，lable等的简化方法
+#import "DCSpeedy.h" //---按钮的圆角，下划线，变色
+#import "UITextView+Extension.h"  //---加PlaceholderWithText
+#import "NSDate+Extension.h"   //---判断某个时间是否为今年昨天今天
+#import "NSString+Extension.h"   //---日期转（xxxx-xx）字符串等
+#import "UIButton+touch.h"       //---设置按钮不连续点击
+#import "NSDate+Exts.h" //--- 根据字符串返回date
+
+
+
+#endif /* ZYProjectHeader_h */

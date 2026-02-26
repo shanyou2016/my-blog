@@ -1,0 +1,119 @@
+//
+//  ZYMainSearchBar.m
+//  ZYProject
+//
+//  Created by Mac on 2018/9/21.
+//  Copyright © 2018年 Mac. All rights reserved.
+//
+
+#import "ZYMainSearchBar.h"
+
+@implementation ZYMainSearchBar
+
+/*
+// Only override drawRect: if you perform custom drawing.
+// An empty implementation adversely affects performance during animation.
+- (void)drawRect:(CGRect)rect {
+    // Drawing code
+}
+*/
+
+- (instancetype)initWithFrame:(CGRect)frame {
+    if (self = [super initWithFrame:frame]) {
+        [self setupUI :frame];
+    }
+      return self;
+}
+
+-(void)setupUI:(CGRect)frame {
+    [self addSubview:self.topView];
+    [self.topView addSubview:self.adressBtn];
+    [self.topView addSubview:self.searchBtn];
+    [self.topView addSubview:self.searchImgV];
+    [self.topView addSubview:self.lineView];
+    
+    [_adressBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.topView.mas_left).offset(0);
+        make.top.equalTo(self.topView.mas_top).offset(2.0);
+        make.width.mas_offset(60);
+        make.height.mas_offset(24);
+    }];
+    
+    [_lineView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.topView.mas_left).offset(59);
+        make.top.equalTo(self.topView.mas_top).offset(2.0);
+        make.width.mas_offset(1);
+        make.height.mas_offset(25);
+    }];
+    
+    [_searchImgV mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.topView.mas_left).offset(67);
+        make.top.equalTo(self.topView.mas_top).offset(2.0);
+        make.width.mas_offset(25);
+        make.height.mas_offset(25);
+    }];
+    
+    [_searchBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.topView.mas_left).offset(95);
+        make.top.equalTo(self.topView.mas_top).offset(2.0);
+        make.width.mas_offset(130);
+        make.height.mas_offset(24);
+    }];
+}
+#pragma mark - getter / setter
+
+- (UIView *)topView
+{
+    if (_topView == nil) {
+        _topView = [[UIView alloc] initWithFrame:self.frame];
+        //设置view的背景颜色
+        _topView.backgroundColor = [UIColor whiteColor];
+    }
+    return _topView;
+}
+
+- (UIButton *)adressBtn
+{
+    if (_adressBtn == nil) {
+        _adressBtn=[UIButton buttonWithType:UIButtonTypeCustom];
+        //设置常规标题
+        [_adressBtn setTitle:@"登录" forState:UIControlStateNormal];
+        [_adressBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        //设置button上的字体大小
+        _adressBtn.titleLabel.font=[UIFont systemFontOfSize:18];
+    }
+    return _adressBtn;
+}
+
+- (UIButton *)searchBtn
+{
+    if (_searchBtn == nil) {
+        _searchBtn=[UIButton buttonWithType:UIButtonTypeCustom];
+        //设置常规标题
+        [_searchBtn setTitle:@"你想住哪？" forState:UIControlStateNormal];
+        [_searchBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+        //设置button上的字体大小
+        _searchBtn.titleLabel.font=[UIFont systemFontOfSize:18];
+    }
+    return _searchBtn;
+}
+
+- (UIImageView *)searchImgV
+{
+    if (_searchImgV == nil) {
+        UIImage *oneImage = [UIImage imageNamed:@"tab-buddy-press"]; // 通过name找到图片
+        _searchImgV = [[UIImageView alloc] initWithImage:oneImage]; //Image添加到oneImageView上
+    }
+    return _searchImgV;
+}
+
+- (UIView *)lineView
+{
+    if (_lineView == nil) {
+        _lineView = [[UIView alloc] initWithFrame:CGRectMake(50, 50, 100, 100)];
+        //设置view的背景颜色
+        _lineView.backgroundColor = [UIColor blackColor];
+    }
+    return _lineView;
+}
+@end

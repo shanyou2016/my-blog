@@ -1,0 +1,23 @@
+//
+//  ZYMainSerachView.h
+//  ZYProject
+//
+//  Created by Mac on 2018/9/21.
+//  Copyright © 2018年 Mac. All rights reserved.
+//  搜索
+
+#import <UIKit/UIKit.h>
+
+@protocol ZYMainSerachViewDelegate <NSObject>
+@required
+- (void)adressBtnClick:(UIButton *)btn;
+- (void)searchBtnClick;
+@end
+
+@interface ZYMainSerachView : UIView
+@property (weak, nonatomic) IBOutlet UIButton *adressBtn;
+@property (weak, nonatomic) IBOutlet UILabel *searchlb;
+@property (weak, nonatomic) IBOutlet UIButton *searchBtn;
+@property(nonatomic,weak)id<ZYMainSerachViewDelegate>delegate;
+-(instancetype)initView;
+@end

@@ -1,0 +1,13 @@
+//
+//  ZYMainViewController.h
+//  ZYProject
+//
+//  Created by Mac on 2018/9/19.
+//  Copyright © 2018年 Mac. All rights reserved.
+//
+#import <UIKit/UIKit.h>
+#import "ZYBaseViewController.h"
+
+@interface ZYMainViewController : ZYBaseViewController
+
+@end
