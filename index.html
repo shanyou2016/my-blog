@@ -237,7 +237,7 @@
             }
             
             // 初始化扫描
-            scanDirectory('files')
+            scanDirectory()
                 .then(directoryTree => {
                     if (directoryTree.length === 0) {
                         fileListElement.innerHTML = `
@@ -257,78 +257,60 @@
                     fileListElement.innerHTML = `
                         <div class="error">
                             <h3>错误：${error.message}</h3>
-                            <p>请确保files目录存在且可访问。</p>
+                            <p>请确保files.json文件存在且可访问。</p>
                             <p>如果是本地运行，请启动HTTP服务器：<code>python3 -m http.server 8000</code></p>
                         </div>
                     `;
-                    console.error('扫描目录失败:', error);
+                    console.error('读取文件列表失败:', error);
                 });
         });
         
-        // 扫描目录
-        async function scanDirectory(path) {
+        // 从files.json读取目录结构
+        async function scanDirectory() {
             try {
-                const response = await fetch(path);
+                const response = await fetch('./files.json');
                 
                 if (!response.ok) {
-                    throw new Error(`无法访问目录: ${path}`);
+                    throw new Error('无法加载文件列表');
                 }
                 
-                const html = await response.text();
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(html, 'text/html');
+                const data = await response.json();
                 
-                const items = [];
-                const links = doc.querySelectorAll('a');
+                // 转换数据格式以匹配原有结构
+                const convertData = (items) => {
+                    return items.map(item => {
+                        if (item.type === 'folder') {
+                            return {
+                                name: item.name,
+                                path: `files/${item.path}`,
+                                type: 'directory',
+                                children: convertData(item.children)
+                            };
+                        } else {
+                            return {
+                                name: item.name,
+                                path: `files/${item.path}`,
+                                type: 'file',
+                                extension: item.ext.substring(1) // 移除点号
+                            };
+                        }
+                    });
+                };
                 
-                for (const link of links) {
-                    const href = link.getAttribute('href');
-                    if (!href || href.startsWith('?') || href === '../') continue;
-                    
-                    const name = link.textContent.trim();
-                    if (!name) continue;
-                    
-                    const itemPath = `${path}/${href}`.replace('//', '/');
-                    
-                    if (href.endsWith('/')) {
-                        // 是目录
-                        const directory = {
-                            name: name.replace('/', ''),
-                            path: itemPath,
-                            type: 'directory',
-                            children: await scanDirectory(itemPath)
-                        };
-                        items.push(directory);
-                    } else {
-                        // 是文件
-                        const file = {
-                            name: name,
-                            path: itemPath,
-                            type: 'file',
-                            extension: getFileExtension(name)
-                        };
-                        items.push(file);
-                    }
-                }
+                const convertedData = convertData(data);
                 
                 // 按名称排序，目录在前
-                items.sort((a, b) => {
+                convertedData.sort((a, b) => {
                     if (a.type === 'directory' && b.type === 'file') return -1;
                     if (a.type === 'file' && b.type === 'directory') return 1;
                     return a.name.localeCompare(b.name);
                 });
                 
-                return items;
+                return convertedData;
             } catch (error) {
-                console.error(`扫描目录 ${path} 失败:`, error);
+                console.error('读取文件列表失败:', error);
                 return [];
             }
-        }
-        
-        // 获取文件扩展名
-        function getFileExtension(filename) {
-            const parts = filename.split('.');
-            return parts.length > 1 ? parts[parts.length - 1].toLowerCase() : '';
         }
         
         // 构建目录树
