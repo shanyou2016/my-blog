@@ -556,6 +556,1908 @@
     ]
   },
   {
+    "name": "Android",
+    "type": "folder",
+    "path": "Android",
+    "children": [
+      {
+        "name": ".DS_Store",
+        "type": "file",
+        "ext": "",
+        "path": "Android/.DS_Store"
+      },
+      {
+        "name": "入门学习",
+        "type": "folder",
+        "path": "Android/入门学习",
+        "children": [
+          {
+            "name": ".DS_Store",
+            "type": "file",
+            "ext": "",
+            "path": "Android/入门学习/.DS_Store"
+          },
+          {
+            "name": "JetpackCompose",
+            "type": "folder",
+            "path": "Android/入门学习/JetpackCompose",
+            "children": [
+              {
+                "name": ".DS_Store",
+                "type": "file",
+                "ext": "",
+                "path": "Android/入门学习/JetpackCompose/.DS_Store"
+              },
+              {
+                "name": "第1天",
+                "type": "folder",
+                "path": "Android/入门学习/JetpackCompose/第1天",
+                "children": [
+                  {
+                    "name": ".DS_Store",
+                    "type": "file",
+                    "ext": "",
+                    "path": "Android/入门学习/JetpackCompose/第1天/.DS_Store"
+                  },
+                  {
+                    "name": "Android Compose核心标签详解：@Composable及必备标签.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/JetpackCompose/第1天/Android Compose核心标签详解：@Composable及必备标签.pdf"
+                  },
+                  {
+                    "name": "Android Compose详解：Modifier（组件的“万能工具集”）.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/JetpackCompose/第1天/Android Compose详解：Modifier（组件的“万能工具集”）.pdf"
+                  },
+                  {
+                    "name": "Android Compose详解：Surface组件与onSurface属性.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/JetpackCompose/第1天/Android Compose详解：Surface组件与onSurface属性.pdf"
+                  },
+                  {
+                    "name": "Android 中声明式 UI、组合与继承、重组的核心思想.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/JetpackCompose/第1天/Android 中声明式 UI、组合与继承、重组的核心思想.pdf"
+                  },
+                  {
+                    "name": "Jetpack Compose第1章-1 基础教程.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/JetpackCompose/第1天/Jetpack Compose第1章-1 基础教程.pdf"
+                  },
+                  {
+                    "name": "Jetpack Compose第一章第二节教学讲义（核心概念与动画）.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/JetpackCompose/第1天/Jetpack Compose第一章第二节教学讲义（核心概念与动画）.pdf"
+                  },
+                  {
+                    "name": "第1章-3：Jetpack Compose 入门讲义（小白专属）.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/JetpackCompose/第1天/第1章-3：Jetpack Compose 入门讲义（小白专属）.pdf"
+                  },
+                  {
+                    "name": "第1章-4：Jetpack Compose 核心UI要素（小白专属）.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/JetpackCompose/第1天/第1章-4：Jetpack Compose 核心UI要素（小白专属）.pdf"
+                  },
+                  {
+                    "name": "第1章-5：Jetpack Compose 列表与状态管理（小白专属）.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/JetpackCompose/第1天/第1章-5：Jetpack Compose 列表与状态管理（小白专属）.pdf"
+                  }
+                ]
+              },
+              {
+                "name": "第2天",
+                "type": "folder",
+                "path": "Android/入门学习/JetpackCompose/第2天",
+                "children": [
+                  {
+                    "name": ".DS_Store",
+                    "type": "file",
+                    "ext": "",
+                    "path": "Android/入门学习/JetpackCompose/第2天/.DS_Store"
+                  },
+                  {
+                    "name": "Android Compose自定义布局：真的需要吗？好用吗？.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/JetpackCompose/第2天/Android Compose自定义布局：真的需要吗？好用吗？.pdf"
+                  },
+                  {
+                    "name": "Intrinsics 与 Compose 的测量机制及作用.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/JetpackCompose/第2天/Intrinsics 与 Compose 的测量机制及作用.pdf"
+                  },
+                  {
+                    "name": "Jetpack Compose Intrinsics 代码实战与原理解析.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/JetpackCompose/第2天/Jetpack Compose Intrinsics 代码实战与原理解析.pdf"
+                  },
+                  {
+                    "name": "Jetpack Compose 中 ConstraintLayout 的解耦 API 及典型场景实战.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/JetpackCompose/第2天/Jetpack Compose 中 ConstraintLayout 的解耦 API 及典型场景实战.pdf"
+                  },
+                  {
+                    "name": "Jetpack Compose 中 ConstraintLayout 的解耦 API 解析.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/JetpackCompose/第2天/Jetpack Compose 中 ConstraintLayout 的解耦 API 解析.pdf"
+                  },
+                  {
+                    "name": "Jetpack Compose 中 Intrinsics 的应用场景.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/JetpackCompose/第2天/Jetpack Compose 中 Intrinsics 的应用场景.pdf"
+                  },
+                  {
+                    "name": "Jetpack Compose 约束布局解析.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/JetpackCompose/第2天/Jetpack Compose 约束布局解析.pdf"
+                  },
+                  {
+                    "name": "Jetpack Compose第二章第一节教学讲义（布局与列表核心）.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/JetpackCompose/第2天/Jetpack Compose第二章第一节教学讲义（布局与列表核心）.pdf"
+                  },
+                  {
+                    "name": "Jetpack Compose第二章第二节教学讲义（布局进阶与解耦）.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/JetpackCompose/第2天/Jetpack Compose第二章第二节教学讲义（布局进阶与解耦）.pdf"
+                  }
+                ]
+              },
+              {
+                "name": "第3天",
+                "type": "folder",
+                "path": "Android/入门学习/JetpackCompose/第3天",
+                "children": [
+                  {
+                    "name": ".DS_Store",
+                    "type": "file",
+                    "ext": "",
+                    "path": "Android/入门学习/JetpackCompose/第3天/.DS_Store"
+                  },
+                  {
+                    "name": "Android 中 Flow 与 LiveData 的比较及应用.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/JetpackCompose/第3天/Android 中 Flow 与 LiveData 的比较及应用.pdf"
+                  },
+                  {
+                    "name": "Compose 中状态与数据流的选择与使用.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/JetpackCompose/第3天/Compose 中状态与数据流的选择与使用.pdf"
+                  },
+                  {
+                    "name": "Jetpack Compose 中 observeAsState 的使用与解析.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/JetpackCompose/第3天/Jetpack Compose 中 observeAsState 的使用与解析.pdf"
+                  },
+                  {
+                    "name": "Jetpack Compose 中核心概念及状态管理与恢复.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/JetpackCompose/第3天/Jetpack Compose 中核心概念及状态管理与恢复.pdf"
+                  },
+                  {
+                    "name": "Jetpack Compose 中的状态管理与 UI 驱动.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/JetpackCompose/第3天/Jetpack Compose 中的状态管理与 UI 驱动.pdf"
+                  },
+                  {
+                    "name": "Jetpack Compose 核心状态API详解（小白版）.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/JetpackCompose/第3天/Jetpack Compose 核心状态API详解（小白版）.pdf"
+                  },
+                  {
+                    "name": "Jetpack Compose第三章第一节教学讲义（状态管理核心）.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/JetpackCompose/第3天/Jetpack Compose第三章第一节教学讲义（状态管理核心）.pdf"
+                  },
+                  {
+                    "name": "Jetpack Compose第三章第三节教学讲义（组件传参进阶：CompositionLocal）.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/JetpackCompose/第3天/Jetpack Compose第三章第三节教学讲义（组件传参进阶：CompositionLocal）.pdf"
+                  },
+                  {
+                    "name": "Jetpack Compose第三章第二节教学讲义（输入框实战全解析）.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/JetpackCompose/第3天/Jetpack Compose第三章第二节教学讲义（输入框实战全解析）.pdf"
+                  },
+                  {
+                    "name": "Jetpack Compose第三章第四节教学讲义（Material Design主题与UI规范）.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/JetpackCompose/第3天/Jetpack Compose第三章第四节教学讲义（Material Design主题与UI规范）.pdf"
+                  }
+                ]
+              },
+              {
+                "name": "第4天",
+                "type": "folder",
+                "path": "Android/入门学习/JetpackCompose/第4天",
+                "children": [
+                  {
+                    "name": ".DS_Store",
+                    "type": "file",
+                    "ext": "",
+                    "path": "Android/入门学习/JetpackCompose/第4天/.DS_Store"
+                  },
+                  {
+                    "name": "Jetpack Compose第五章第一节教学讲义（Compose与View协同及导航）.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/JetpackCompose/第4天/Jetpack Compose第五章第一节教学讲义（Compose与View协同及导航）.pdf"
+                  },
+                  {
+                    "name": "Jetpack Compose第五章第二节教学讲义（Compose附带效应全解析）.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/JetpackCompose/第4天/Jetpack Compose第五章第二节教学讲义（Compose附带效应全解析）.pdf"
+                  },
+                  {
+                    "name": "Jetpack Compose第四章第一节教学讲义（Compose动画核心用法）.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/JetpackCompose/第4天/Jetpack Compose第四章第一节教学讲义（Compose动画核心用法）.pdf"
+                  },
+                  {
+                    "name": "Jetpack Compose第四章第二节教学讲义（手势与滚动交互）.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/JetpackCompose/第4天/Jetpack Compose第四章第二节教学讲义（手势与滚动交互）.pdf"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Kotlin",
+            "type": "folder",
+            "path": "Android/入门学习/Kotlin",
+            "children": [
+              {
+                "name": ".DS_Store",
+                "type": "file",
+                "ext": "",
+                "path": "Android/入门学习/Kotlin/.DS_Store"
+              },
+              {
+                "name": "第1天",
+                "type": "folder",
+                "path": "Android/入门学习/Kotlin/第1天",
+                "children": [
+                  {
+                    "name": ".DS_Store",
+                    "type": "file",
+                    "ext": "",
+                    "path": "Android/入门学习/Kotlin/第1天/.DS_Store"
+                  },
+                  {
+                    "name": "Kotlin -4中覆盖、接口与枚举类教学.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/Kotlin/第1天/Kotlin -4中覆盖、接口与枚举类教学.pdf"
+                  },
+                  {
+                    "name": "Kotlin 中 Get 与 Set 方法教学及应用.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/Kotlin/第1天/Kotlin 中 Get 与 Set 方法教学及应用.pdf"
+                  },
+                  {
+                    "name": "Kotlin 中类的修饰符和访问权限修饰符.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/Kotlin/第1天/Kotlin 中类的修饰符和访问权限修饰符.pdf"
+                  },
+                  {
+                    "name": "Kotlin 密封类教学.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/Kotlin/第1天/Kotlin 密封类教学.pdf"
+                  },
+                  {
+                    "name": "Kotlin 数组教学.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/Kotlin/第1天/Kotlin 数组教学.pdf"
+                  },
+                  {
+                    "name": "Kotlin-1基础教学.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/Kotlin/第1天/Kotlin-1基础教学.pdf"
+                  },
+                  {
+                    "name": "Kotlin-2教学讲义（类与流程控制进阶）.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/Kotlin/第1天/Kotlin-2教学讲义（类与流程控制进阶）.pdf"
+                  },
+                  {
+                    "name": "Kotlin-3教学讲义（接口与特色类语法）.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/Kotlin/第1天/Kotlin-3教学讲义（接口与特色类语法）.pdf"
+                  },
+                  {
+                    "name": "Kotlin循环嵌套与标签跳出教学讲义（零基础入门）.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/Kotlin/第1天/Kotlin循环嵌套与标签跳出教学讲义（零基础入门）.pdf"
+                  },
+                  {
+                    "name": "Kotlin抽象类教学讲义（零基础入门）.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/Kotlin/第1天/Kotlin抽象类教学讲义（零基础入门）.pdf"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "android入门",
+            "type": "folder",
+            "path": "Android/入门学习/android入门",
+            "children": [
+              {
+                "name": ".DS_Store",
+                "type": "file",
+                "ext": "",
+                "path": "Android/入门学习/android入门/.DS_Store"
+              },
+              {
+                "name": "第1天",
+                "type": "folder",
+                "path": "Android/入门学习/android入门/第1天",
+                "children": [
+                  {
+                    "name": ".DS_Store",
+                    "type": "file",
+                    "ext": "",
+                    "path": "Android/入门学习/android入门/第1天/.DS_Store"
+                  },
+                  {
+                    "name": "Android MainActivity 代码详解.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第1天/Android MainActivity 代码详解.pdf"
+                  },
+                  {
+                    "name": "Android Studio 中 Empty Activity 与 Empty Views Activity 的对比与选择.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第1天/Android Studio 中 Empty Activity 与 Empty Views Activity 的对比与选择.pdf"
+                  },
+                  {
+                    "name": "Android Studio 模拟器硬件配置.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第1天/Android Studio 模拟器硬件配置.pdf"
+                  },
+                  {
+                    "name": "Android 构建配置语言.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第1天/Android 构建配置语言.pdf"
+                  },
+                  {
+                    "name": "Android第一章：环境搭建与首个Hello World项目.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第1天/Android第一章：环境搭建与首个Hello World项目.pdf"
+                  },
+                  {
+                    "name": "Android（第2章）：工程结构与页面开发.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第1天/Android（第2章）：工程结构与页面开发.pdf"
+                  },
+                  {
+                    "name": "MainActivity 中 Log 的正确使用.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第1天/MainActivity 中 Log 的正确使用.pdf"
+                  },
+                  {
+                    "name": "R 在 Android 中的作用及使用.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第1天/R 在 Android 中的作用及使用.pdf"
+                  }
+                ]
+              },
+              {
+                "name": "第2天",
+                "type": "folder",
+                "path": "Android/入门学习/android入门/第2天",
+                "children": [
+                  {
+                    "name": ".DS_Store",
+                    "type": "file",
+                    "ext": "",
+                    "path": "Android/入门学习/android入门/第2天/.DS_Store"
+                  },
+                  {
+                    "name": "Android Studio 中 SVG 到 Vector Drawable 的转换.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第2天/Android Studio 中 SVG 到 Vector Drawable 的转换.pdf"
+                  },
+                  {
+                    "name": "Android 中两个 themes.xml 文件与深色模式.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第2天/Android 中两个 themes.xml 文件与深色模式.pdf"
+                  },
+                  {
+                    "name": "Android 中使用 dimens 资源文件管理字体大小.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第2天/Android 中使用 dimens 资源文件管理字体大小.pdf"
+                  },
+                  {
+                    "name": "Android 布局中 tools_context 的使用及注意事项.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第2天/Android 布局中 tools_context 的使用及注意事项.pdf"
+                  },
+                  {
+                    "name": "Android 开发中的主题与样式.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第2天/Android 开发中的主题与样式.pdf"
+                  },
+                  {
+                    "name": "AndroidX ConstraintLayout 的好处与坏处.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第2天/AndroidX ConstraintLayout 的好处与坏处.pdf"
+                  },
+                  {
+                    "name": "Android第3章——1 简单控件教学讲义.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第2天/Android第3章——1 简单控件教学讲义.pdf"
+                  },
+                  {
+                    "name": "Android第3章——2 常用布局教学讲义.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第2天/Android第3章——2 常用布局教学讲义.pdf"
+                  },
+                  {
+                    "name": "Android第3章——3 Button、ImageView及计算器案例教学讲义.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第2天/Android第3章——3 Button、ImageView及计算器案例教学讲义.pdf"
+                  },
+                  {
+                    "name": "activity_view_gravit.xml 报错分析与修复.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第2天/activity_view_gravit.xml 报错分析与修复.pdf"
+                  },
+                  {
+                    "name": "计算器功能实现2.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第2天/计算器功能实现2.pdf"
+                  },
+                  {
+                    "name": "项目中复杂ScrollView的功能实现（以电商商品详情页为例）.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第2天/项目中复杂ScrollView的功能实现（以电商商品详情页为例）.pdf"
+                  }
+                ]
+              },
+              {
+                "name": "第3天",
+                "type": "folder",
+                "path": "Android/入门学习/android入门/第3天",
+                "children": [
+                  {
+                    "name": ".DS_Store",
+                    "type": "file",
+                    "ext": "",
+                    "path": "Android/入门学习/android入门/第3天/.DS_Store"
+                  },
+                  {
+                    "name": "Activity Result API 实现页面间数据回传.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第3天/Activity Result API 实现页面间数据回传.pdf"
+                  },
+                  {
+                    "name": "Android Activity 进阶知识讲解.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第3天/Android Activity 进阶知识讲解.pdf"
+                  },
+                  {
+                    "name": "Android Intent 的组成部分及使用示例.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第3天/Android Intent 的组成部分及使用示例.pdf"
+                  },
+                  {
+                    "name": "Android 中三种启动 Activity 方式的比较与应用.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第3天/Android 中三种启动 Activity 方式的比较与应用.pdf"
+                  },
+                  {
+                    "name": "Android 中对象的序列化与Parcelable 介绍.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第3天/Android 中对象的序列化与Parcelable 介绍.pdf"
+                  },
+                  {
+                    "name": "Android 启动标志（Intent Flag）详解.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第3天/Android 启动标志（Intent Flag）详解.pdf"
+                  },
+                  {
+                    "name": "Android 应用快捷方式配置.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第3天/Android 应用快捷方式配置.pdf"
+                  },
+                  {
+                    "name": "Android 应用的启动入口配置.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第3天/Android 应用的启动入口配置.pdf"
+                  },
+                  {
+                    "name": "Android 第四章第三节：配置与快捷操作教学.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第3天/Android 第四章第三节：配置与快捷操作教学.pdf"
+                  },
+                  {
+                    "name": "Android第四章第一节教学讲义（小白入门版）.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第3天/Android第四章第一节教学讲义（小白入门版）.pdf"
+                  },
+                  {
+                    "name": "Intent 的 Action 与常见系统自带 Action 及自定义 Action 介绍.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第3天/Intent 的 Action 与常见系统自带 Action 及自定义 Action 介绍.pdf"
+                  },
+                  {
+                    "name": "onDestroy 方法在 Android 中的使用与注意事项.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第3天/onDestroy 方法在 Android 中的使用与注意事项.pdf"
+                  },
+                  {
+                    "name": "《关于 Android 中 Intent 的 Category 详解及示例》.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第3天/《关于 Android 中 Intent 的 Category 详解及示例》.pdf"
+                  },
+                  {
+                    "name": "为啥不能用startActivity.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第3天/为啥不能用startActivity.pdf"
+                  },
+                  {
+                    "name": "从 AndroidManifest.xml 中读取 Activity 的元数据.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第3天/从 AndroidManifest.xml 中读取 Activity 的元数据.pdf"
+                  },
+                  {
+                    "name": "在代码中添加 App 桌面长按快捷方式.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第3天/在代码中添加 App 桌面长按快捷方式.pdf"
+                  },
+                  {
+                    "name": "用兼容类创建动态快捷方式.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第3天/用兼容类创建动态快捷方式.pdf"
+                  },
+                  {
+                    "name": "给 Activity 绑定自定义动作启动 Activity.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第3天/给 Activity 绑定自定义动作启动 Activity.pdf"
+                  },
+                  {
+                    "name": "隐式 Intent 详解.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第3天/隐式 Intent 详解.pdf"
+                  }
+                ]
+              },
+              {
+                "name": "第4天",
+                "type": "folder",
+                "path": "Android/入门学习/android入门/第4天",
+                "children": [
+                  {
+                    "name": ".DS_Store",
+                    "type": "file",
+                    "ext": "",
+                    "path": "Android/入门学习/android入门/第4天/.DS_Store"
+                  },
+                  {
+                    "name": "Android Application 生命周期及应用示例.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第4天/Android Application 生命周期及应用示例.pdf"
+                  },
+                  {
+                    "name": "Android XML 中 Material 组件与第三方库对比及选择.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第4天/Android XML 中 Material 组件与第三方库对比及选择.pdf"
+                  },
+                  {
+                    "name": "Android XML 中 Material 组件深度解析及替代第三方库全指南.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第4天/Android XML 中 Material 组件深度解析及替代第三方库全指南.pdf"
+                  },
+                  {
+                    "name": "Android XML 原生 Checkbox 自定义全攻略.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第4天/Android XML 原生 Checkbox 自定义全攻略.pdf"
+                  },
+                  {
+                    "name": "Android XML 原生AlertDialog详解（基础+自定义）.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第4天/Android XML 原生AlertDialog详解（基础+自定义）.pdf"
+                  },
+                  {
+                    "name": "Android XML 原生DatePicker详解（基础+自定义）.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第4天/Android XML 原生DatePicker详解（基础+自定义）.pdf"
+                  },
+                  {
+                    "name": "Android XML 原生EditText详解（基础+自定义）.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第4天/Android XML 原生EditText详解（基础+自定义）.pdf"
+                  },
+                  {
+                    "name": "Android XML 原生RadioButton详解（基础+自定义）.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第4天/Android XML 原生RadioButton详解（基础+自定义）.pdf"
+                  },
+                  {
+                    "name": "Android XML 原生TimePickerDialog详解（基础+自定义）.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第4天/Android XML 原生TimePickerDialog详解（基础+自定义）.pdf"
+                  },
+                  {
+                    "name": "Android XML 原生TimePicker详解（基础+自定义+实战补充）.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第4天/Android XML 原生TimePicker详解（基础+自定义+实战补充）.pdf"
+                  },
+                  {
+                    "name": "Android 中 XML 原生 Switch 的详细讲解，包括基础用法（3 步搞定）、进阶的自定义样式（替换滑块和滑轨）以及高级的完全自定义 Switch 布局，同时还介绍了常用 XML 属性和一.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第4天/Android 中 XML 原生 Switch 的详细讲解，包括基础用法（3 步搞定）、进阶的自定义样式（替换滑块和滑轨）以及高级的完全自定义 Switch 布局，同时还介绍了常用 XML 属性和一.pdf"
+                  },
+                  {
+                    "name": "Android 中.9 图的代码实现方案.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第4天/Android 中.9 图的代码实现方案.pdf"
+                  },
+                  {
+                    "name": "Android 中`DatePickerDialog`的原生基础用法及深度自定义样式（包括通过主题自定义颜色和字体、自定义`DatePicker`布局完全替换选择器）的详解及代码示例.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第4天/Android 中`DatePickerDialog`的原生基础用法及深度自定义样式（包括通过主题自定义颜色和字体、自定义`DatePicker`布局完全替换选择器）的详解及代码示例.pdf"
+                  },
+                  {
+                    "name": "Android 中使用 CircleImageView 实现圆形图片.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第4天/Android 中使用 CircleImageView 实现圆形图片.pdf"
+                  },
+                  {
+                    "name": "Android 中使用 Material Design 规范实现包含输入验证等特性的登录_找回密码切换界面，包括布局文件、依赖配置、资源文件配置及 Java 逻辑实现.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第4天/Android 中使用 Material Design 规范实现包含输入验证等特性的登录_找回密码切换界面，包括布局文件、依赖配置、资源文件配置及 Java 逻辑实现.pdf"
+                  },
+                  {
+                    "name": "Android 依赖管理：implementation(libs.appcompat) 与传统写法的对比及使用建议.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第4天/Android 依赖管理：implementation(libs.appcompat) 与传统写法的对比及使用建议.pdf"
+                  },
+                  {
+                    "name": "Android 列表实现及第三方库推荐.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第4天/Android 列表实现及第三方库推荐.pdf"
+                  },
+                  {
+                    "name": "Android 按钮状态切换.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第4天/Android 按钮状态切换.pdf"
+                  },
+                  {
+                    "name": "Android 按钮状态背景切换方案对比与选择.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第4天/Android 按钮状态背景切换方案对比与选择.pdf"
+                  },
+                  {
+                    "name": "Android 核心配置文件（proguard-rules.pro、gradle.properties、gradle-wrapper.properties、libs.versions.toml）的作用拆解、配置详解、实际项目场景及注意事项讲解.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第4天/Android 核心配置文件（proguard-rules.pro、gradle.properties、gradle-wrapper.properties、libs.versions.toml）的作用拆解、配置详解、实际项目场景及注意事项讲解.pdf"
+                  },
+                  {
+                    "name": "Android 瀑布流实现.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第4天/Android 瀑布流实现.pdf"
+                  },
+                  {
+                    "name": "Android 第五章第三节教学讲义（中级控件实战版），包括日期选择对话框、时间选择对话框、登录界面、找回密码界面的实现及相关逻辑处理.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第4天/Android 第五章第三节教学讲义（中级控件实战版），包括日期选择对话框、时间选择对话框、登录界面、找回密码界面的实现及相关逻辑处理.pdf"
+                  },
+                  {
+                    "name": "Android 网络请求与数据解析.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第4天/Android 网络请求与数据解析.pdf"
+                  },
+                  {
+                    "name": "Gradle简单明了解释.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第4天/Gradle简单明了解释.pdf"
+                  },
+                  {
+                    "name": "Retrofit + Gson 超详解：小白也能轻松上手.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第4天/Retrofit + Gson 超详解：小白也能轻松上手.pdf"
+                  },
+                  {
+                    "name": "ViewFlipper 简单使用教程.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第4天/ViewFlipper 简单使用教程.pdf"
+                  },
+                  {
+                    "name": "com.google.android.material 简单明了解释.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第4天/com.google.android.material 简单明了解释.pdf"
+                  },
+                  {
+                    "name": "按钮样式.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第4天/按钮样式.pdf"
+                  },
+                  {
+                    "name": "第5章-1Android 中级控件入门.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第4天/第5章-1Android 中级控件入门.pdf"
+                  },
+                  {
+                    "name": "第5章-2Android 中级控件进阶教学.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第4天/第5章-2Android 中级控件进阶教学.pdf"
+                  }
+                ]
+              },
+              {
+                "name": "第5天",
+                "type": "folder",
+                "path": "Android/入门学习/android入门/第5天",
+                "children": [
+                  {
+                    "name": ".DS_Store",
+                    "type": "file",
+                    "ext": "",
+                    "path": "Android/入门学习/android入门/第5天/.DS_Store"
+                  },
+                  {
+                    "name": "Android Application 生命周期及应用示例.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第5天/Android Application 生命周期及应用示例.pdf"
+                  },
+                  {
+                    "name": "Android 外部存储与第三方替代库选择.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第5天/Android 外部存储与第三方替代库选择.pdf"
+                  },
+                  {
+                    "name": "Android 数据存储：SQLite 与第三方替代库对比及选择.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第5天/Android 数据存储：SQLite 与第三方替代库对比及选择.pdf"
+                  },
+                  {
+                    "name": "SharedPreferences全解析（Java）及第三方替代库详解.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第5天/SharedPreferences全解析（Java）及第三方替代库详解.pdf"
+                  },
+                  {
+                    "name": "SharedPreferences小白入门（Java）+ 替代库速查.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第5天/SharedPreferences小白入门（Java）+ 替代库速查.pdf"
+                  },
+                  {
+                    "name": "第6章-1Android 数据存储之 SharedPreferences 及实战.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第5天/第6章-1Android 数据存储之 SharedPreferences 及实战.pdf"
+                  },
+                  {
+                    "name": "第6章-2SQLite 数据库在 Android 中的应用.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第5天/第6章-2SQLite 数据库在 Android 中的应用.pdf"
+                  },
+                  {
+                    "name": "第6章-3Android 数据存储进阶.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第5天/第6章-3Android 数据存储进阶.pdf"
+                  },
+                  {
+                    "name": "第6章-4Jetpack Room 实战：从 0 到 1 实现购物车功能.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第5天/第6章-4Jetpack Room 实战：从 0 到 1 实现购物车功能.pdf"
+                  }
+                ]
+              },
+              {
+                "name": "第6天",
+                "type": "folder",
+                "path": "Android/入门学习/android入门/第6天",
+                "children": [
+                  {
+                    "name": ".DS_Store",
+                    "type": "file",
+                    "ext": "",
+                    "path": "Android/入门学习/android入门/第6天/.DS_Store"
+                  },
+                  {
+                    "name": "Android Cursor 全面详解：从概念到实战.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第6天/Android Cursor 全面详解：从概念到实战.pdf"
+                  },
+                  {
+                    "name": "Android Studio 签名配置流程.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第6天/Android Studio 签名配置流程.pdf"
+                  },
+                  {
+                    "name": "Android 下拉列表控件及第三方库选择.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第6天/Android 下拉列表控件及第三方库选择.pdf"
+                  },
+                  {
+                    "name": "Android 列表优化：ViewHolder 模式与第三方方案.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第6天/Android 列表优化：ViewHolder 模式与第三方方案.pdf"
+                  },
+                  {
+                    "name": "Android 列表组件：ListView 与替代方案.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第6天/Android 列表组件：ListView 与替代方案.pdf"
+                  },
+                  {
+                    "name": "Android 动态权限（Lazy 模式）实现.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第6天/Android 动态权限（Lazy 模式）实现.pdf"
+                  },
+                  {
+                    "name": "Android 多权限申请及设置引导.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第6天/Android 多权限申请及设置引导.pdf"
+                  },
+                  {
+                    "name": "Android 应用发布全流程指南（打包签名+多市场上架）.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第6天/Android 应用发布全流程指南（打包签名+多市场上架）.pdf"
+                  },
+                  {
+                    "name": "Android 应用安装与发布市场的核心区别.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第6天/Android 应用安装与发布市场的核心区别.pdf"
+                  },
+                  {
+                    "name": "Android 第八章第三节教学讲义——高级控件核心实战（购物车终极升级），包括 Spinner 的基础用法、RecyclerView 的核心三要素及在购物车中的实战应用，以及在 Activity 中初始化 R.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第6天/Android 第八章第三节教学讲义——高级控件核心实战（购物车终极升级），包括 Spinner 的基础用法、RecyclerView 的核心三要素及在购物车中的实战应用，以及在 Activity 中初始化 R.pdf"
+                  },
+                  {
+                    "name": "Android 第八章第二节教学讲义，主要内容包括 ListView（经典列表控件）、GridView（网格布局列表控件）、ViewPager（滑动页面控件）的实战用法及对购物车的升级，还涉及它们.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第6天/Android 第八章第二节教学讲义，主要内容包括 ListView（经典列表控件）、GridView（网格布局列表控件）、ViewPager（滑动页面控件）的实战用法及对购物车的升级，还涉及它们.pdf"
+                  },
+                  {
+                    "name": "Android 第八章第四节教学讲义，包括 Fragment 的静态注册、动态注册、生命周期，以及利用 Fragment 改进启动引导页和实现记账本 APP，如添加账单和展示账单列表等功能.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第6天/Android 第八章第四节教学讲义，包括 Fragment 的静态注册、动态注册、生命周期，以及利用 Fragment 改进启动引导页和实现记账本 APP，如添加账单和展示账单列表等功能.pdf"
+                  },
+                  {
+                    "name": "Android 系统中联系人、短信、彩信、相册图片的获取与操作（包括 Java + XML 实现，权限申请及核心逻辑）.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第6天/Android 系统中联系人、短信、彩信、相册图片的获取与操作（包括 Java + XML 实现，权限申请及核心逻辑）.pdf"
+                  },
+                  {
+                    "name": "Android 系统中联系人、短信、彩信、相册图片的获取与操作（包括 Java + XML 实现，详细讲解各功能的权限申请、核心 API 调用及关键细节，还涉及不同 Android 版本下的适配）.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第6天/Android 系统中联系人、短信、彩信、相册图片的获取与操作（包括 Java + XML 实现，详细讲解各功能的权限申请、核心 API 调用及关键细节，还涉及不同 Android 版本下的适配）.pdf"
+                  },
+                  {
+                    "name": "Android 适配器：原生与第三方对比及选型.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第6天/Android 适配器：原生与第三方对比及选型.pdf"
+                  },
+                  {
+                    "name": "Android中用Fragment实现启动页及第三方替代方案详解.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第6天/Android中用Fragment实现启动页及第三方替代方案详解.pdf"
+                  },
+                  {
+                    "name": "Fragment 开发与第三方替代方案.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第6天/Fragment 开发与第三方替代方案.pdf"
+                  },
+                  {
+                    "name": "Hungry 模式下 Android 动态权限申请实战及优化.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第6天/Hungry 模式下 Android 动态权限申请实战及优化.pdf"
+                  },
+                  {
+                    "name": "PagerTabStrip 与 Tab 组件介绍及替代方案.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第6天/PagerTabStrip 与 Tab 组件介绍及替代方案.pdf"
+                  },
+                  {
+                    "name": "RecyclerView 第三方增强框架选型与使用.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第6天/RecyclerView 第三方增强框架选型与使用.pdf"
+                  },
+                  {
+                    "name": "ViewPager 及替代方案介绍.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第6天/ViewPager 及替代方案介绍.pdf"
+                  },
+                  {
+                    "name": "主题：Android FileProvider 的全面详解，包括核心概念、配置步骤、使用流程、实战案例及常见问题与解决方案，还介绍了高级用法如手动授予权限、共享多个文件、自定义 FileProvider 等.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第6天/主题：Android FileProvider 的全面详解，包括核心概念、配置步骤、使用流程、实战案例及常见问题与解决方案，还介绍了高级用法如手动授予权限、共享多个文件、自定义 FileProvider 等.pdf"
+                  },
+                  {
+                    "name": "主题：Android RecyclerView 全面详解（包括 Java + XML），涵盖核心优势、核心组件（Adapter、LayoutManager、ViewHolder、ItemDecoration）、实战实现（基础列表展示）、核心组件详解（各布局管理.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第6天/主题：Android RecyclerView 全面详解（包括 Java + XML），涵盖核心优势、核心组件（Adapter、LayoutManager、ViewHolder、ItemDecoration）、实战实现（基础列表展示）、核心组件详解（各布局管理.pdf"
+                  },
+                  {
+                    "name": "第7章-1Android 中 ContentProvider 与运行时权限管理.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第6天/第7章-1Android 中 ContentProvider 与运行时权限管理.pdf"
+                  },
+                  {
+                    "name": "第7章-2Android 系统数据交互实战.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第6天/第7章-2Android 系统数据交互实战.pdf"
+                  },
+                  {
+                    "name": "第7章-3Android 系统交互进阶实战.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第6天/第7章-3Android 系统交互进阶实战.pdf"
+                  },
+                  {
+                    "name": "第8章-1Android 高级控件与 Fragment 基础.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第6天/第8章-1Android 高级控件与 Fragment 基础.pdf"
+                  },
+                  {
+                    "name": "解惑：有APK就能装，为何还要开发Android应用安装逻辑？.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第6天/解惑：有APK就能装，为何还要开发Android应用安装逻辑？.pdf"
+                  }
+                ]
+              },
+              {
+                "name": "第7天",
+                "type": "folder",
+                "path": "Android/入门学习/android入门/第7天",
+                "children": [
+                  {
+                    "name": ".DS_Store",
+                    "type": "file",
+                    "ext": "",
+                    "path": "Android/入门学习/android入门/第7天/.DS_Store"
+                  },
+                  {
+                    "name": "Android AlarmManager深度解析及第三方替代方案.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第7天/Android AlarmManager深度解析及第三方替代方案.pdf"
+                  },
+                  {
+                    "name": "Android 广播及替代方案对比.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第7天/Android 广播及替代方案对比.pdf"
+                  },
+                  {
+                    "name": "Android回到桌面、任务列表与画中画功能全解析（含第三方方案）.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第7天/Android回到桌面、任务列表与画中画功能全解析（含第三方方案）.pdf"
+                  },
+                  {
+                    "name": "Android有序广播深度解析及第三方替代方案 (1).pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第7天/Android有序广播深度解析及第三方替代方案 (1).pdf"
+                  },
+                  {
+                    "name": "Android有序广播深度解析及第三方替代方案.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第7天/Android有序广播深度解析及第三方替代方案.pdf"
+                  },
+                  {
+                    "name": "Android横竖屏切换全解析及第三方适配方案.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第7天/Android横竖屏切换全解析及第三方适配方案.pdf"
+                  },
+                  {
+                    "name": "Android系统广播全面解析及第三方替代方案.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第7天/Android系统广播全面解析及第三方替代方案.pdf"
+                  },
+                  {
+                    "name": "第9课-1Android 广播机制全解析.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第7天/第9课-1Android 广播机制全解析.pdf"
+                  },
+                  {
+                    "name": "第9课-2Android 广播与系统事件实战.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第7天/第9课-2Android 广播与系统事件实战.pdf"
+                  }
+                ]
+              },
+              {
+                "name": "第8天",
+                "type": "folder",
+                "path": "Android/入门学习/android入门/第8天",
+                "children": [
+                  {
+                    "name": ".DS_Store",
+                    "type": "file",
+                    "ext": "",
+                    "path": "Android/入门学习/android入门/第8天/.DS_Store"
+                  },
+                  {
+                    "name": "Android-ZBLibrary 深度解析及替代库选型.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第8天/Android-ZBLibrary 深度解析及替代库选型.pdf"
+                  },
+                  {
+                    "name": "MobileIMSDK 与第三方 IM 库对比及使用建议.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第8天/MobileIMSDK 与第三方 IM 库对比及使用建议.pdf"
+                  },
+                  {
+                    "name": "MobileIMSDK 选型与最佳实践.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第8天/MobileIMSDK 选型与最佳实践.pdf"
+                  },
+                  {
+                    "name": "QMUI-Android 使用指南及替代方案.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第8天/QMUI-Android 使用指南及替代方案.pdf"
+                  },
+                  {
+                    "name": "QMUI-Android 集成与使用教程.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第8天/QMUI-Android 集成与使用教程.pdf"
+                  },
+                  {
+                    "name": "ZBLibrary 与主流第三方库的使用建议.pdf",
+                    "type": "file",
+                    "ext": ".pdf",
+                    "path": "Android/入门学习/android入门/第8天/ZBLibrary 与主流第三方库的使用建议.pdf"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "android学习.docx",
+            "type": "file",
+            "ext": ".docx",
+            "path": "Android/入门学习/android学习.docx"
+          },
+          {
+            "name": "android项目1",
+            "type": "folder",
+            "path": "Android/入门学习/android项目1",
+            "children": [
+              {
+                "name": ".DS_Store",
+                "type": "file",
+                "ext": "",
+                "path": "Android/入门学习/android项目1/.DS_Store"
+              },
+              {
+                "name": "Android Tab 栏使用详解（原生 + 第三方）.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "Android/入门学习/android项目1/Android Tab 栏使用详解（原生 + 第三方）.pdf"
+              },
+              {
+                "name": "Android Tab栏实现常用方法及第三方库对比.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "Android/入门学习/android项目1/Android Tab栏实现常用方法及第三方库对比.pdf"
+              },
+              {
+                "name": "Android 侧边栏（DrawerLayout）使用详解.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "Android/入门学习/android项目1/Android 侧边栏（DrawerLayout）使用详解.pdf"
+              },
+              {
+                "name": "Android 导航栏（Navigation Bar）使用详解.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "Android/入门学习/android项目1/Android 导航栏（Navigation Bar）使用详解.pdf"
+              },
+              {
+                "name": "Android中ZXing库的使⽤讲解.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "Android/入门学习/android项目1/Android中ZXing库的使⽤讲解.pdf"
+              },
+              {
+                "name": "Android侧边栏实现全解析：原生、自定义与第三方库的选型之道.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "Android/入门学习/android项目1/Android侧边栏实现全解析：原生、自定义与第三方库的选型之道.pdf"
+              },
+              {
+                "name": "Android列表上拉下拉功能实现：原生与第三方方案全解析.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "Android/入门学习/android项目1/Android列表上拉下拉功能实现：原生与第三方方案全解析.pdf"
+              },
+              {
+                "name": "Android导航栏实现：原生、自定义与第三方库全解析.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "Android/入门学习/android项目1/Android导航栏实现：原生、自定义与第三方库全解析.pdf"
+              },
+              {
+                "name": "Android开发中JSON的主流解析方式与选型建议.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "Android/入门学习/android项目1/Android开发中JSON的主流解析方式与选型建议.pdf"
+              },
+              {
+                "name": "Anko 库 核心讲解（Android）.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "Android/入门学习/android项目1/Anko 库 核心讲解（Android）.pdf"
+              },
+              {
+                "name": "EventBus：Android事件发布_订阅框架的使用指南.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "Android/入门学习/android项目1/EventBus：Android事件发布_订阅框架的使用指南.pdf"
+              },
+              {
+                "name": "Glide 图片加载库：核心特性、基础使用、关键功能及核心原理讲解.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "Android/入门学习/android项目1/Glide 图片加载库：核心特性、基础使用、关键功能及核心原理讲解.pdf"
+              },
+              {
+                "name": "MMKV 库简介及使用指南.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "Android/入门学习/android项目1/MMKV 库简介及使用指南.pdf"
+              },
+              {
+                "name": "OkGo Android网络请求库使用指南.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "Android/入门学习/android项目1/OkGo Android网络请求库使用指南.pdf"
+              },
+              {
+                "name": "PermissionX 库简介.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "Android/入门学习/android项目1/PermissionX 库简介.pdf"
+              },
+              {
+                "name": "PictureSelector Android 图片_视频选择器库使用指南.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "Android/入门学习/android项目1/PictureSelector Android 图片_视频选择器库使用指南.pdf"
+              },
+              {
+                "name": "友盟推送（U-Push）Android平台.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "Android/入门学习/android项目1/友盟推送（U-Push）Android平台.pdf"
+              },
+              {
+                "name": "该项目可学习的地方分析.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "Android/入门学习/android项目1/该项目可学习的地方分析.pdf"
+              },
+              {
+                "name": "项目中导航栏的实现与第三方库使用.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "Android/入门学习/android项目1/项目中导航栏的实现与第三方库使用.pdf"
+              },
+              {
+                "name": "项目可学习的工具类总结.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "Android/入门学习/android项目1/项目可学习的工具类总结.pdf"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "IOS",
+    "type": "folder",
+    "path": "IOS",
+    "children": [
+      {
+        "name": ".DS_Store",
+        "type": "file",
+        "ext": "",
+        "path": "IOS/.DS_Store"
+      },
+      {
+        "name": "Cocodots",
+        "type": "folder",
+        "path": "IOS/Cocodots",
+        "children": [
+          {
+            "name": ".DS_Store",
+            "type": "file",
+            "ext": "",
+            "path": "IOS/Cocodots/.DS_Store"
+          },
+          {
+            "name": "第1天",
+            "type": "folder",
+            "path": "IOS/Cocodots/第1天",
+            "children": [
+              {
+                "name": ".DS_Store",
+                "type": "file",
+                "ext": "",
+                "path": "IOS/Cocodots/第1天/.DS_Store"
+              },
+              {
+                "name": "CocoDots 项目 JSON 解析方案与 SwiftyJSON 对比.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "IOS/Cocodots/第1天/CocoDots 项目 JSON 解析方案与 SwiftyJSON 对比.pdf"
+              },
+              {
+                "name": "CocoDots 项目网络请求实现详解.docx",
+                "type": "file",
+                "ext": ".docx",
+                "path": "IOS/Cocodots/第1天/CocoDots 项目网络请求实现详解.docx"
+              }
+            ]
+          },
+          {
+            "name": "第2天",
+            "type": "folder",
+            "path": "IOS/Cocodots/第2天",
+            "children": [
+              {
+                "name": ".DS_Store",
+                "type": "file",
+                "ext": "",
+                "path": "IOS/Cocodots/第2天/.DS_Store"
+              },
+              {
+                "name": "CalendarView 周视图日历实现.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "IOS/Cocodots/第2天/CalendarView 周视图日历实现.pdf"
+              },
+              {
+                "name": "ChatInputView 实现详解.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "IOS/Cocodots/第2天/ChatInputView 实现详解.pdf"
+              },
+              {
+                "name": "CustomedViews.swift 实现详解.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "IOS/Cocodots/第2天/CustomedViews.swift 实现详解.pdf"
+              },
+              {
+                "name": "SwiftUI 任务管理 App 设计与实现.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "IOS/Cocodots/第2天/SwiftUI 任务管理 App 设计与实现.pdf"
+              },
+              {
+                "name": "VerificationCodeView 的实现与优化.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "IOS/Cocodots/第2天/VerificationCodeView 的实现与优化.pdf"
+              }
+            ]
+          },
+          {
+            "name": "第3天",
+            "type": "folder",
+            "path": "IOS/Cocodots/第3天",
+            "children": [
+              {
+                "name": ".DS_Store",
+                "type": "file",
+                "ext": "",
+                "path": "IOS/Cocodots/第3天/.DS_Store"
+              },
+              {
+                "name": "AI 聊天功能实现详解.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "IOS/Cocodots/第3天/AI 聊天功能实现详解.pdf"
+              },
+              {
+                "name": "Google 日历集成实现关键点详解.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "IOS/Cocodots/第3天/Google 日历集成实现关键点详解.pdf"
+              },
+              {
+                "name": "Google 登录第三方实现关键点解析.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "IOS/Cocodots/第3天/Google 登录第三方实现关键点解析.pdf"
+              }
+            ]
+          },
+          {
+            "name": "第4天",
+            "type": "folder",
+            "path": "IOS/Cocodots/第4天",
+            "children": [
+              {
+                "name": ".DS_Store",
+                "type": "file",
+                "ext": "",
+                "path": "IOS/Cocodots/第4天/.DS_Store"
+              },
+              {
+                "name": "项目三层架构与数据流转.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "IOS/Cocodots/第4天/项目三层架构与数据流转.pdf"
+              },
+              {
+                "name": "项目中的 Utils 工具详解.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "IOS/Cocodots/第4天/项目中的 Utils 工具详解.pdf"
+              }
+            ]
+          },
+          {
+            "name": "第5天页面跳转",
+            "type": "folder",
+            "path": "IOS/Cocodots/第5天页面跳转",
+            "children": [
+              {
+                "name": ".DS_Store",
+                "type": "file",
+                "ext": "",
+                "path": "IOS/Cocodots/第5天页面跳转/.DS_Store"
+              },
+              {
+                "name": "SwiftUI 项目页面跳转详解.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "IOS/Cocodots/第5天页面跳转/SwiftUI 项目页面跳转详解.pdf"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Unie",
+        "type": "folder",
+        "path": "IOS/Unie",
+        "children": [
+          {
+            "name": ".DS_Store",
+            "type": "file",
+            "ext": "",
+            "path": "IOS/Unie/.DS_Store"
+          },
+          {
+            "name": "第1天",
+            "type": "folder",
+            "path": "IOS/Unie/第1天",
+            "children": [
+              {
+                "name": ".DS_Store",
+                "type": "file",
+                "ext": "",
+                "path": "IOS/Unie/第1天/.DS_Store"
+              },
+              {
+                "name": "第1天iOS项目开发关键技术笔录（超小白友好版）.docx",
+                "type": "file",
+                "ext": ".docx",
+                "path": "IOS/Unie/第1天/第1天iOS项目开发关键技术笔录（超小白友好版）.docx"
+              }
+            ]
+          },
+          {
+            "name": "第2天",
+            "type": "folder",
+            "path": "IOS/Unie/第2天",
+            "children": [
+              {
+                "name": ".DS_Store",
+                "type": "file",
+                "ext": "",
+                "path": "IOS/Unie/第2天/.DS_Store"
+              },
+              {
+                "name": "第2天iOS项目笔录：Starscream+WebSocket与Google登录（超小白版）.docx",
+                "type": "file",
+                "ext": ".docx",
+                "path": "IOS/Unie/第2天/第2天iOS项目笔录：Starscream+WebSocket与Google登录（超小白版）.docx"
+              }
+            ]
+          },
+          {
+            "name": "第3天",
+            "type": "folder",
+            "path": "IOS/Unie/第3天",
+            "children": [
+              {
+                "name": ".DS_Store",
+                "type": "file",
+                "ext": "",
+                "path": "IOS/Unie/第3天/.DS_Store"
+              },
+              {
+                "name": "JsonUtil.swift 工具类详解.docx",
+                "type": "file",
+                "ext": ".docx",
+                "path": "IOS/Unie/第3天/JsonUtil.swift 工具类详解.docx"
+              },
+              {
+                "name": "SwiftUI 流式布局（瀑布流）实现及 WrappingCollectionView 调用.docx",
+                "type": "file",
+                "ext": ".docx",
+                "path": "IOS/Unie/第3天/SwiftUI 流式布局（瀑布流）实现及 WrappingCollectionView 调用.docx"
+              },
+              {
+                "name": "View+Extension.swift 与 RoundedCorner.swift 详解.docx",
+                "type": "file",
+                "ext": ".docx",
+                "path": "IOS/Unie/第3天/View+Extension.swift 与 RoundedCorner.swift 详解.docx"
+              },
+              {
+                "name": "下拉刷新与上拉加载更多全流程解析.docx",
+                "type": "file",
+                "ext": ".docx",
+                "path": "IOS/Unie/第3天/下拉刷新与上拉加载更多全流程解析.docx"
+              },
+              {
+                "name": "列表与滚动处理全流程解析（大白话版）.docx",
+                "type": "file",
+                "ext": ".docx",
+                "path": "IOS/Unie/第3天/列表与滚动处理全流程解析（大白话版）.docx"
+              },
+              {
+                "name": "项目常用 UI 适配工具：屏幕宽度与间距封装.docx",
+                "type": "file",
+                "ext": ".docx",
+                "path": "IOS/Unie/第3天/项目常用 UI 适配工具：屏幕宽度与间距封装.docx"
+              }
+            ]
+          },
+          {
+            "name": "第4天",
+            "type": "folder",
+            "path": "IOS/Unie/第4天",
+            "children": [
+              {
+                "name": ".DS_Store",
+                "type": "file",
+                "ext": "",
+                "path": "IOS/Unie/第4天/.DS_Store"
+              },
+              {
+                "name": "Realm 数据库 CRUD 操作详解.docx",
+                "type": "file",
+                "ext": ".docx",
+                "path": "IOS/Unie/第4天/Realm 数据库 CRUD 操作详解.docx"
+              },
+              {
+                "name": "Realm 数据库在项目中的应用.docx",
+                "type": "file",
+                "ext": ".docx",
+                "path": "IOS/Unie/第4天/Realm 数据库在项目中的应用.docx"
+              }
+            ]
+          },
+          {
+            "name": "第5天",
+            "type": "folder",
+            "path": "IOS/Unie/第5天",
+            "children": [
+              {
+                "name": ".DS_Store",
+                "type": "file",
+                "ext": "",
+                "path": "IOS/Unie/第5天/.DS_Store"
+              },
+              {
+                "name": "Unie 项目首页布局与数据流向详解.docx",
+                "type": "file",
+                "ext": ".docx",
+                "path": "IOS/Unie/第5天/Unie 项目首页布局与数据流向详解.docx"
+              }
+            ]
+          },
+          {
+            "name": "第6天",
+            "type": "folder",
+            "path": "IOS/Unie/第6天",
+            "children": [
+              {
+                "name": ".DS_Store",
+                "type": "file",
+                "ext": "",
+                "path": "IOS/Unie/第6天/.DS_Store"
+              },
+              {
+                "name": "EventBus 与 NotificationUtil 的区别.docx",
+                "type": "file",
+                "ext": ".docx",
+                "path": "IOS/Unie/第6天/EventBus 与 NotificationUtil 的区别.docx"
+              },
+              {
+                "name": "SplashView 详解.docx",
+                "type": "file",
+                "ext": ".docx",
+                "path": "IOS/Unie/第6天/SplashView 详解.docx"
+              },
+              {
+                "name": "Unie 主题系统升级方案.docx",
+                "type": "file",
+                "ext": ".docx",
+                "path": "IOS/Unie/第6天/Unie 主题系统升级方案.docx"
+              },
+              {
+                "name": "Unie 项目路由系统详解.docx",
+                "type": "file",
+                "ext": ".docx",
+                "path": "IOS/Unie/第6天/Unie 项目路由系统详解.docx"
+              },
+              {
+                "name": "Utils 工具类集合详解.docx",
+                "type": "file",
+                "ext": ".docx",
+                "path": "IOS/Unie/第6天/Utils 工具类集合详解.docx"
+              },
+              {
+                "name": "项目 Extensions 目录：UI 组件扩展详解.docx",
+                "type": "file",
+                "ext": ".docx",
+                "path": "IOS/Unie/第6天/项目 Extensions 目录：UI 组件扩展详解.docx"
+              },
+              {
+                "name": "项目自定义 UI 组件详解.docx",
+                "type": "file",
+                "ext": ".docx",
+                "path": "IOS/Unie/第6天/项目自定义 UI 组件详解.docx"
+              }
+            ]
+          },
+          {
+            "name": "第7天页面跳转",
+            "type": "folder",
+            "path": "IOS/Unie/第7天页面跳转",
+            "children": [
+              {
+                "name": ".DS_Store",
+                "type": "file",
+                "ext": "",
+                "path": "IOS/Unie/第7天页面跳转/.DS_Store"
+              },
+              {
+                "name": "项目页面跳转机制详解.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "IOS/Unie/第7天页面跳转/项目页面跳转机制详解.pdf"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "ZYSwiftUI",
+        "type": "folder",
+        "path": "IOS/ZYSwiftUI",
+        "children": [
+          {
+            "name": ".DS_Store",
+            "type": "file",
+            "ext": "",
+            "path": "IOS/ZYSwiftUI/.DS_Store"
+          },
+          {
+            "name": "第1天",
+            "type": "folder",
+            "path": "IOS/ZYSwiftUI/第1天",
+            "children": [
+              {
+                "name": ".DS_Store",
+                "type": "file",
+                "ext": "",
+                "path": "IOS/ZYSwiftUI/第1天/.DS_Store"
+              },
+              {
+                "name": "项目网络请求架构分析.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "IOS/ZYSwiftUI/第1天/项目网络请求架构分析.pdf"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "bell",
+        "type": "folder",
+        "path": "IOS/bell",
+        "children": [
+          {
+            "name": ".DS_Store",
+            "type": "file",
+            "ext": "",
+            "path": "IOS/bell/.DS_Store"
+          },
+          {
+            "name": "第1天",
+            "type": "folder",
+            "path": "IOS/bell/第1天",
+            "children": [
+              {
+                "name": ".DS_Store",
+                "type": "file",
+                "ext": "",
+                "path": "IOS/bell/第1天/.DS_Store"
+              },
+              {
+                "name": "iOS 中表格视图和集合视图的实现详解.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "IOS/bell/第1天/iOS 中表格视图和集合视图的实现详解.pdf"
+              },
+              {
+                "name": "iOS 项目 JSON 解析及改进建议.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "IOS/bell/第1天/iOS 项目 JSON 解析及改进建议.pdf"
+              },
+              {
+                "name": "iOS 项目中 JSON 的解析与转换.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "IOS/bell/第1天/iOS 项目中 JSON 的解析与转换.pdf"
+              },
+              {
+                "name": "iOS 项目工具类与第三方库.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "IOS/bell/第1天/iOS 项目工具类与第三方库.pdf"
+              },
+              {
+                "name": "iOS 项目广告系统的实现与优化.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "IOS/bell/第1天/iOS 项目广告系统的实现与优化.pdf"
+              },
+              {
+                "name": "iOS 项目网络请求优化.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "IOS/bell/第1天/iOS 项目网络请求优化.pdf"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "swiftUI",
+        "type": "folder",
+        "path": "IOS/swiftUI",
+        "children": [
+          {
+            "name": ".DS_Store",
+            "type": "file",
+            "ext": "",
+            "path": "IOS/swiftUI/.DS_Store"
+          },
+          {
+            "name": "第1天页面跳转",
+            "type": "folder",
+            "path": "IOS/swiftUI/第1天页面跳转",
+            "children": [
+              {
+                "name": ".DS_Store",
+                "type": "file",
+                "ext": "",
+                "path": "IOS/swiftUI/第1天页面跳转/.DS_Store"
+              },
+              {
+                "name": "CreatingAwatchOSApp 项目结构分析.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "IOS/swiftUI/第1天页面跳转/CreatingAwatchOSApp 项目结构分析.pdf"
+              },
+              {
+                "name": "SwiftUI 项目页面导航详解.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "IOS/swiftUI/第1天页面跳转/SwiftUI 项目页面导航详解.pdf"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "便利100",
+        "type": "folder",
+        "path": "IOS/便利100",
+        "children": [
+          {
+            "name": ".DS_Store",
+            "type": "file",
+            "ext": "",
+            "path": "IOS/便利100/.DS_Store"
+          },
+          {
+            "name": "第1天",
+            "type": "folder",
+            "path": "IOS/便利100/第1天",
+            "children": [
+              {
+                "name": "便利100可复用的优点.docx",
+                "type": "file",
+                "ext": ".docx",
+                "path": "IOS/便利100/第1天/便利100可复用的优点.docx"
+              },
+              {
+                "name": "便利100项目结构分析.docx",
+                "type": "file",
+                "ext": ".docx",
+                "path": "IOS/便利100/第1天/便利100项目结构分析.docx"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
     "name": "UniApp",
     "type": "folder",
     "path": "UniApp",
