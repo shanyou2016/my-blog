@@ -59,104 +59,80 @@
             border-bottom: 2px solid #f0f0f0;
         }
         
-        .file-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
+        /* 目录结构样式 */
+        .directory-tree {
+            list-style: none;
         }
         
-        .file-item {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 2px solid transparent;
+        .tree-item {
+            margin: 5px 0;
         }
         
-        .file-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-            border-color: #667eea;
+        .tree-item.folder {
+            cursor: pointer;
+            user-select: none;
         }
         
-        .file-icon {
-            font-size: 3em;
-            margin-bottom: 15px;
-        }
-        
-        .file-name {
-            font-weight: bold;
-            margin-bottom: 8px;
-            color: #333;
-        }
-        
-        .file-size {
-            font-size: 0.9em;
-            color: #666;
-            margin-bottom: 15px;
-        }
-        
-        .download-btn {
-            display: inline-block;
-            background: #667eea;
-            color: white;
-            padding: 8px 20px;
-            border-radius: 20px;
-            text-decoration: none;
-            font-size: 0.9em;
-            transition: background 0.3s ease;
-        }
-        
-        .download-btn:hover {
-            background: #5a6fd8;
-        }
-        
-        .upload-section {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            text-align: center;
-        }
-        
-        .upload-section h2 {
+        .tree-item.folder:hover {
             color: #667eea;
-            margin-bottom: 20px;
         }
         
-        .upload-info {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            text-align: left;
-        }
-        
-        .upload-info h3 {
-            color: #333;
-            margin-bottom: 10px;
-        }
-        
-        .upload-info code {
-            background: #e9ecef;
-            padding: 2px 6px;
+        .tree-item .item-content {
+            display: flex;
+            align-items: center;
+            padding: 5px 10px;
             border-radius: 4px;
-            font-family: 'Courier New', monospace;
+            transition: background 0.2s ease;
         }
         
-        footer {
-            text-align: center;
-            padding: 30px 0;
-            color: #666;
-            font-size: 0.9em;
+        .tree-item .item-content:hover {
+            background: #f0f0f0;
         }
         
+        .tree-item .toggle {
+            margin-right: 8px;
+            font-size: 12px;
+            transition: transform 0.2s ease;
+        }
+        
+        .tree-item .toggle.open {
+            transform: rotate(90deg);
+        }
+        
+        .tree-item .icon {
+            margin-right: 8px;
+            font-size: 14px;
+        }
+        
+        .tree-item .file-link {
+            color: #333;
+            text-decoration: none;
+            flex: 1;
+        }
+        
+        .tree-item .file-link:hover {
+            color: #667eea;
+            text-decoration: underline;
+        }
+        
+        .tree-item .file-size {
+            font-size: 12px;
+            color: #999;
+            margin-left: 10px;
+        }
+        
+        .tree-children {
+            list-style: none;
+            margin-left: 20px;
+            display: none;
+        }
+        
+        .tree-children.open {
+            display: block;
+        }
+        
+        /* 响应式设计 */
         @media (max-width: 768px) {
-            .file-list {
-                grid-template-columns: 1fr;
-            }
-            
             h1 {
                 font-size: 2em;
             }
@@ -164,6 +140,48 @@
             header {
                 padding: 40px 0;
             }
+            
+            .file-section {
+                padding: 20px;
+            }
+            
+            .tree-children {
+                margin-left: 15px;
+            }
+        }
+        
+        /* 加载状态 */
+        .loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            color: #666;
+        }
+        
+        .loading::after {
+            content: '';
+            width: 20px;
+            height: 20px;
+            margin-left: 10px;
+            border: 2px solid #f3f3f3;
+            border-top: 2px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* 错误状态 */
+        .error {
+            padding: 20px;
+            background: #ffebee;
+            color: #c62828;
+            border-radius: 4px;
+            margin: 20px 0;
         }
     </style>
 </head>
@@ -176,28 +194,8 @@
         
         <section class="file-section">
             <h2>📁 我的文档</h2>
-            <div class="file-list" id="fileList">
-                <!-- 文件列表将在这里动态生成 -->
-                <div class="file-item">
-                    <div class="file-icon">📄</div>
-                    <div class="file-name">示例文档.docx</div>
-                    <div class="file-size">2.5 MB</div>
-                    <a href="#" class="download-btn">下载文件</a>
-                </div>
-                
-                <div class="file-item">
-                    <div class="file-icon">📊</div>
-                    <div class="file-name">项目报告.pdf</div>
-                    <div class="file-size">1.8 MB</div>
-                    <a href="#" class="download-btn">下载文件</a>
-                </div>
-                
-                <div class="file-item">
-                    <div class="file-icon">📝</div>
-                    <div class="file-name">学习笔记.md</div>
-                    <div class="file-size">0.3 MB</div>
-                    <a href="#" class="download-btn">下载文件</a>
-                </div>
+            <div id="fileList">
+                <div class="loading">正在扫描文件目录</div>
             </div>
         </section>
         
@@ -218,11 +216,232 @@
     </div>
     
     <script>
-        // 简单的文件管理功能
+        // 目录扫描和展示功能
         document.addEventListener('DOMContentLoaded', function() {
-            // 这里可以添加JavaScript来动态加载文件列表
-            console.log('博客页面加载完成');
+            const fileListElement = document.getElementById('fileList');
+            
+            // 检查是否在本地文件系统中打开
+            if (window.location.protocol === 'file:') {
+                fileListElement.innerHTML = `
+                    <div class="error">
+                        <h3>无法直接预览</h3>
+                        <p>由于浏览器安全限制，本地直接打开HTML文件时无法扫描目录。</p>
+                        <p>请使用以下方法之一：</p>
+                        <ol>
+                            <li>使用本地HTTP服务器运行：<code>python3 -m http.server 8000</code></li>
+                            <li>部署到Netlify或GitHub Pages等静态网站托管服务</li>
+                        </ol>
+                    </div>
+                `;
+                return;
+            }
+            
+            // 初始化扫描
+            scanDirectory('files')
+                .then(directoryTree => {
+                    if (directoryTree.length === 0) {
+                        fileListElement.innerHTML = `
+                            <div class="error">
+                                <h3>未找到文件</h3>
+                                <p>files目录为空或无法访问。</p>
+                            </div>
+                        `;
+                        return;
+                    }
+                    
+                    fileListElement.innerHTML = '';
+                    const treeElement = buildDirectoryTree(directoryTree, 'files');
+                    fileListElement.appendChild(treeElement);
+                })
+                .catch(error => {
+                    fileListElement.innerHTML = `
+                        <div class="error">
+                            <h3>错误：${error.message}</h3>
+                            <p>请确保files目录存在且可访问。</p>
+                            <p>如果是本地运行，请启动HTTP服务器：<code>python3 -m http.server 8000</code></p>
+                        </div>
+                    `;
+                    console.error('扫描目录失败:', error);
+                });
         });
+        
+        // 扫描目录
+        async function scanDirectory(path) {
+            try {
+                const response = await fetch(path);
+                
+                if (!response.ok) {
+                    throw new Error(`无法访问目录: ${path}`);
+                }
+                
+                const html = await response.text();
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                
+                const items = [];
+                const links = doc.querySelectorAll('a');
+                
+                for (const link of links) {
+                    const href = link.getAttribute('href');
+                    if (!href || href.startsWith('?') || href === '../') continue;
+                    
+                    const name = link.textContent.trim();
+                    if (!name) continue;
+                    
+                    const itemPath = `${path}/${href}`.replace('//', '/');
+                    
+                    if (href.endsWith('/')) {
+                        // 是目录
+                        const directory = {
+                            name: name.replace('/', ''),
+                            path: itemPath,
+                            type: 'directory',
+                            children: await scanDirectory(itemPath)
+                        };
+                        items.push(directory);
+                    } else {
+                        // 是文件
+                        const file = {
+                            name: name,
+                            path: itemPath,
+                            type: 'file',
+                            extension: getFileExtension(name)
+                        };
+                        items.push(file);
+                    }
+                }
+                
+                // 按名称排序，目录在前
+                items.sort((a, b) => {
+                    if (a.type === 'directory' && b.type === 'file') return -1;
+                    if (a.type === 'file' && b.type === 'directory') return 1;
+                    return a.name.localeCompare(b.name);
+                });
+                
+                return items;
+            } catch (error) {
+                console.error(`扫描目录 ${path} 失败:`, error);
+                return [];
+            }
+        }
+        
+        // 获取文件扩展名
+        function getFileExtension(filename) {
+            const parts = filename.split('.');
+            return parts.length > 1 ? parts[parts.length - 1].toLowerCase() : '';
+        }
+        
+        // 构建目录树
+        function buildDirectoryTree(items, basePath) {
+            const ul = document.createElement('ul');
+            ul.className = 'directory-tree';
+            
+            items.forEach(item => {
+                const li = document.createElement('li');
+                li.className = `tree-item ${item.type}`;
+                
+                const itemContent = document.createElement('div');
+                itemContent.className = 'item-content';
+                
+                if (item.type === 'directory') {
+                    // 目录项
+                    const toggle = document.createElement('span');
+                    toggle.className = 'toggle';
+                    toggle.textContent = '▶';
+                    itemContent.appendChild(toggle);
+                    
+                    const icon = document.createElement('span');
+                    icon.className = 'icon';
+                    icon.textContent = '📁';
+                    itemContent.appendChild(icon);
+                    
+                    const name = document.createElement('span');
+                    name.textContent = item.name;
+                    itemContent.appendChild(name);
+                    
+                    li.appendChild(itemContent);
+                    
+                    // 子目录
+                    const childrenUl = buildDirectoryTree(item.children, item.path);
+                    childrenUl.className = 'tree-children';
+                    li.appendChild(childrenUl);
+                    
+                    // 为目录添加点击事件
+                    if (childrenUl.children.length > 0) {
+                        itemContent.addEventListener('click', (e) => {
+                            e.stopPropagation();
+                            toggle.classList.toggle('open');
+                            childrenUl.classList.toggle('open');
+                        });
+                    } else {
+                        // 如果没有子目录，隐藏展开图标
+                        toggle.style.display = 'none';
+                    }
+                } else {
+                    // 文件项
+                    const icon = document.createElement('span');
+                    icon.className = 'icon';
+                    icon.textContent = getFileIcon(item.extension);
+                    itemContent.appendChild(icon);
+                    
+                    const link = document.createElement('a');
+                    link.className = 'file-link';
+                    link.href = item.path;
+                    link.target = '_blank';
+                    link.textContent = item.name;
+                    itemContent.appendChild(link);
+                    
+                    li.appendChild(itemContent);
+                }
+                
+                ul.appendChild(li);
+            });
+            
+            return ul;
+        }
+        
+        // 获取文件图标
+        function getFileIcon(extension) {
+            const icons = {
+                'pdf': '📄',
+                'docx': '📃',
+                'doc': '📃',
+                'xlsx': '📊',
+                'xls': '📊',
+                'mp4': '🎬',
+                'jpg': '🖼️',
+                'jpeg': '🖼️',
+                'png': '🖼️',
+                'gif': '🖼️',
+                'zip': '📦'
+            };
+            return icons[extension] || '📄';
+        }
+        
+        // 添加目录展开/折叠功能
+        function addToggleFunctionality() {
+            const folderItems = document.querySelectorAll('.tree-item.folder');
+            
+            folderItems.forEach(folder => {
+                const itemContent = folder.querySelector('.item-content');
+                const toggle = folder.querySelector('.toggle');
+                const children = folder.querySelector('.tree-children');
+                
+                if (itemContent && toggle && children) {
+                    // 确保子目录存在时才添加点击事件
+                    if (children.children.length > 0) {
+                        itemContent.addEventListener('click', (e) => {
+                            e.stopPropagation();
+                            toggle.classList.toggle('open');
+                            children.classList.toggle('open');
+                        });
+                    } else {
+                        // 如果没有子目录，隐藏展开图标
+                        toggle.style.display = 'none';
+                    }
+                }
+            });
+        }
     </script>
 </body>
 </html>
