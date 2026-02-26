@@ -9414,10 +9414,28 @@
         "path": "gitHub+Netlify 个人静态博客/.DS_Store"
       },
       {
+        "name": "fix_ssh.sh",
+        "type": "file",
+        "ext": ".sh",
+        "path": "gitHub+Netlify 个人静态博客/fix_ssh.sh"
+      },
+      {
+        "name": "个人博客搜索功能实现总结.pdf",
+        "type": "file",
+        "ext": ".pdf",
+        "path": "gitHub+Netlify 个人静态博客/个人博客搜索功能实现总结.pdf"
+      },
+      {
         "name": "小白版：GitHub + Netlify 搭建个人博客（极简版）.pdf",
         "type": "file",
         "ext": ".pdf",
         "path": "gitHub+Netlify 个人静态博客/小白版：GitHub + Netlify 搭建个人博客（极简版）.pdf"
+      },
+      {
+        "name": "小白版：个人博客搜索功能实现总结（极简版）.pdf",
+        "type": "file",
+        "ext": ".pdf",
+        "path": "gitHub+Netlify 个人静态博客/小白版：个人博客搜索功能实现总结（极简版）.pdf"
       },
       {
         "name": "零基础搭建 GitHub + Netlify 个人静态博客完整教程.pdf",
