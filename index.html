@@ -59,6 +59,52 @@
             border-bottom: 2px solid #f0f0f0;
         }
         
+        /* 搜索框样式 */
+        .search-container {
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #f0f0f0;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        /* 高亮样式 */
+        .highlight {
+            background-color: #fff3cd;
+            color: #856404;
+            padding: 0 2px;
+            border-radius: 2px;
+            font-weight: 500;
+        }
+        
+        /* 无结果提示 */
+        .no-results {
+            padding: 40px;
+            text-align: center;
+            color: #666;
+            background: #f9f9f9;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .no-results-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+            color: #ccc;
+        }
+        
         /* 目录结构样式 */
         .directory-tree {
             list-style: none;
@@ -244,6 +290,9 @@
         
         <section class="file-section">
             <h2>📁 我的文档</h2>
+            <div class="search-container">
+                <input type="text" class="search-input" id="searchInput" placeholder="搜索文件或文件夹...">
+            </div>
             <div id="fileList">
                 <div class="loading">正在扫描文件目录</div>
             </div>
@@ -267,8 +316,11 @@
     
     <script>
         // 目录扫描和展示功能
+        let originalDirectoryTree = [];
+        
         document.addEventListener('DOMContentLoaded', function() {
             const fileListElement = document.getElementById('fileList');
+            const searchInput = document.getElementById('searchInput');
             
             // 检查是否在本地文件系统中打开
             if (window.location.protocol === 'file:') {
@@ -299,9 +351,22 @@
                         return;
                     }
                     
-                    fileListElement.innerHTML = '';
-                    const treeElement = buildDirectoryTree(directoryTree, 'files');
-                    fileListElement.appendChild(treeElement);
+                    // 保存原始数据
+                    originalDirectoryTree = directoryTree;
+                    
+                    // 构建初始目录树
+                    renderDirectoryTree(directoryTree);
+                    
+                    // 添加搜索事件监听
+                    searchInput.addEventListener('input', function(e) {
+                        const searchTerm = e.target.value.trim().toLowerCase();
+                        if (searchTerm === '') {
+                            renderDirectoryTree(originalDirectoryTree);
+                        } else {
+                            const searchResults = searchInDirectory(originalDirectoryTree, searchTerm);
+                            renderDirectoryTree(searchResults);
+                        }
+                    });
                 })
                 .catch(error => {
                     fileListElement.innerHTML = `
@@ -314,6 +379,58 @@
                     console.error('读取文件列表失败:', error);
                 });
         });
+        
+        // 渲染目录树
+        function renderDirectoryTree(directoryTree) {
+            const fileListElement = document.getElementById('fileList');
+            const searchInput = document.getElementById('searchInput');
+            const searchTerm = searchInput ? searchInput.value.trim() : '';
+            
+            if (directoryTree.length === 0) {
+                fileListElement.innerHTML = `
+                    <div class="no-results">
+                        <div class="no-results-icon">🔍</div>
+                        <h3>未找到相关内容</h3>
+                        <p>请尝试使用其他关键词搜索</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            fileListElement.innerHTML = '';
+            const treeElement = buildDirectoryTree(directoryTree, 'files', !!searchTerm);
+            fileListElement.appendChild(treeElement);
+        }
+        
+        // 搜索目录
+        function searchInDirectory(items, searchTerm) {
+            const results = [];
+            
+            items.forEach(item => {
+                if (item.type === 'directory') {
+                    // 检查目录名是否匹配
+                    if (item.name.toLowerCase().includes(searchTerm)) {
+                        // 如果目录名匹配，包含整个目录
+                        results.push(item);
+                    } else {
+                        // 否则搜索子目录
+                        const matchingChildren = searchInDirectory(item.children, searchTerm);
+                        if (matchingChildren.length > 0) {
+                            // 如果子目录有匹配项，保留该目录
+                            const directoryWithMatches = {...item, children: matchingChildren};
+                            results.push(directoryWithMatches);
+                        }
+                    }
+                } else if (item.type === 'file') {
+                    // 检查文件名是否匹配
+                    if (item.name.toLowerCase().includes(searchTerm)) {
+                        results.push(item);
+                    }
+                }
+            });
+            
+            return results;
+        }
         
         // 从files.json读取目录结构
         async function scanDirectory() {
@@ -385,7 +502,7 @@
         }
         
         // 构建目录树
-        function buildDirectoryTree(items, basePath) {
+        function buildDirectoryTree(items, basePath, autoExpand = false) {
             const ul = document.createElement('ul');
             ul.className = 'directory-tree';
             
@@ -409,18 +526,24 @@
                     itemContent.appendChild(icon);
                     
                     const name = document.createElement('span');
-                    name.textContent = item.name;
+                    name.innerHTML = highlightText(item.name);
                     itemContent.appendChild(name);
                     
                     li.appendChild(itemContent);
                     
                     // 子目录
-                    const childrenUl = buildDirectoryTree(item.children, item.path);
+                    const childrenUl = buildDirectoryTree(item.children, item.path, autoExpand);
                     childrenUl.className = 'tree-children';
                     li.appendChild(childrenUl);
                     
-                    // 为目录添加点击事件
+                    // 自动展开目录（仅在搜索时）
                     if (childrenUl.children.length > 0) {
+                        if (autoExpand) {
+                            toggle.classList.add('open');
+                            childrenUl.classList.add('open');
+                        }
+                        
+                        // 为目录添加点击事件
                         itemContent.addEventListener('click', (e) => {
                             e.stopPropagation();
                             toggle.classList.toggle('open');
@@ -441,7 +564,7 @@
                     link.className = 'file-link';
                     link.href = item.path;
                     link.target = '_blank';
-                    link.textContent = item.name;
+                    link.innerHTML = highlightText(item.name);
                     itemContent.appendChild(link);
                     
                     // 添加文件类型数据属性，用于样式应用
@@ -454,6 +577,19 @@
             });
             
             return ul;
+        }
+        
+        // 高亮文本
+        function highlightText(text) {
+            const searchInput = document.getElementById('searchInput');
+            const searchTerm = searchInput ? searchInput.value.trim() : '';
+            
+            if (!searchTerm) {
+                return text;
+            }
+            
+            const regex = new RegExp(`(${searchTerm})`, 'gi');
+            return text.replace(regex, '<span class="highlight">$1</span>');
         }
         
         // 获取文件图标
