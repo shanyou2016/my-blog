@@ -567,6 +567,139 @@
         "path": "Android/.DS_Store"
       },
       {
+        "name": "android项目1",
+        "type": "folder",
+        "path": "Android/android项目1",
+        "children": [
+          {
+            "name": ".DS_Store",
+            "type": "file",
+            "ext": "",
+            "path": "Android/android项目1/.DS_Store"
+          },
+          {
+            "name": "Android Tab 栏使用详解（原生 + 第三方）.pdf",
+            "type": "file",
+            "ext": ".pdf",
+            "path": "Android/android项目1/Android Tab 栏使用详解（原生 + 第三方）.pdf"
+          },
+          {
+            "name": "Android Tab栏实现常用方法及第三方库对比.pdf",
+            "type": "file",
+            "ext": ".pdf",
+            "path": "Android/android项目1/Android Tab栏实现常用方法及第三方库对比.pdf"
+          },
+          {
+            "name": "Android 侧边栏（DrawerLayout）使用详解.pdf",
+            "type": "file",
+            "ext": ".pdf",
+            "path": "Android/android项目1/Android 侧边栏（DrawerLayout）使用详解.pdf"
+          },
+          {
+            "name": "Android 导航栏（Navigation Bar）使用详解.pdf",
+            "type": "file",
+            "ext": ".pdf",
+            "path": "Android/android项目1/Android 导航栏（Navigation Bar）使用详解.pdf"
+          },
+          {
+            "name": "Android中ZXing库的使⽤讲解.pdf",
+            "type": "file",
+            "ext": ".pdf",
+            "path": "Android/android项目1/Android中ZXing库的使⽤讲解.pdf"
+          },
+          {
+            "name": "Android侧边栏实现全解析：原生、自定义与第三方库的选型之道.pdf",
+            "type": "file",
+            "ext": ".pdf",
+            "path": "Android/android项目1/Android侧边栏实现全解析：原生、自定义与第三方库的选型之道.pdf"
+          },
+          {
+            "name": "Android列表上拉下拉功能实现：原生与第三方方案全解析.pdf",
+            "type": "file",
+            "ext": ".pdf",
+            "path": "Android/android项目1/Android列表上拉下拉功能实现：原生与第三方方案全解析.pdf"
+          },
+          {
+            "name": "Android导航栏实现：原生、自定义与第三方库全解析.pdf",
+            "type": "file",
+            "ext": ".pdf",
+            "path": "Android/android项目1/Android导航栏实现：原生、自定义与第三方库全解析.pdf"
+          },
+          {
+            "name": "Android开发中JSON的主流解析方式与选型建议.pdf",
+            "type": "file",
+            "ext": ".pdf",
+            "path": "Android/android项目1/Android开发中JSON的主流解析方式与选型建议.pdf"
+          },
+          {
+            "name": "Anko 库 核心讲解（Android）.pdf",
+            "type": "file",
+            "ext": ".pdf",
+            "path": "Android/android项目1/Anko 库 核心讲解（Android）.pdf"
+          },
+          {
+            "name": "EventBus：Android事件发布_订阅框架的使用指南.pdf",
+            "type": "file",
+            "ext": ".pdf",
+            "path": "Android/android项目1/EventBus：Android事件发布_订阅框架的使用指南.pdf"
+          },
+          {
+            "name": "Glide 图片加载库：核心特性、基础使用、关键功能及核心原理讲解.pdf",
+            "type": "file",
+            "ext": ".pdf",
+            "path": "Android/android项目1/Glide 图片加载库：核心特性、基础使用、关键功能及核心原理讲解.pdf"
+          },
+          {
+            "name": "MMKV 库简介及使用指南.pdf",
+            "type": "file",
+            "ext": ".pdf",
+            "path": "Android/android项目1/MMKV 库简介及使用指南.pdf"
+          },
+          {
+            "name": "OkGo Android网络请求库使用指南.pdf",
+            "type": "file",
+            "ext": ".pdf",
+            "path": "Android/android项目1/OkGo Android网络请求库使用指南.pdf"
+          },
+          {
+            "name": "PermissionX 库简介.pdf",
+            "type": "file",
+            "ext": ".pdf",
+            "path": "Android/android项目1/PermissionX 库简介.pdf"
+          },
+          {
+            "name": "PictureSelector Android 图片_视频选择器库使用指南.pdf",
+            "type": "file",
+            "ext": ".pdf",
+            "path": "Android/android项目1/PictureSelector Android 图片_视频选择器库使用指南.pdf"
+          },
+          {
+            "name": "友盟推送（U-Push）Android平台.pdf",
+            "type": "file",
+            "ext": ".pdf",
+            "path": "Android/android项目1/友盟推送（U-Push）Android平台.pdf"
+          },
+          {
+            "name": "该项目可学习的地方分析.pdf",
+            "type": "file",
+            "ext": ".pdf",
+            "path": "Android/android项目1/该项目可学习的地方分析.pdf"
+          },
+          {
+            "name": "项目中导航栏的实现与第三方库使用.pdf",
+            "type": "file",
+            "ext": ".pdf",
+            "path": "Android/android项目1/项目中导航栏的实现与第三方库使用.pdf"
+          },
+          {
+            "name": "项目可学习的工具类总结.pdf",
+            "type": "file",
+            "ext": ".pdf",
+            "path": "Android/android项目1/项目可学习的工具类总结.pdf"
+          }
+        ]
+      },
+      {
         "name": "入门学习",
         "type": "folder",
         "path": "Android/入门学习",
@@ -1768,139 +1901,6 @@
             "type": "file",
             "ext": ".docx",
             "path": "Android/入门学习/android学习.docx"
-          },
-          {
-            "name": "android项目1",
-            "type": "folder",
-            "path": "Android/入门学习/android项目1",
-            "children": [
-              {
-                "name": ".DS_Store",
-                "type": "file",
-                "ext": "",
-                "path": "Android/入门学习/android项目1/.DS_Store"
-              },
-              {
-                "name": "Android Tab 栏使用详解（原生 + 第三方）.pdf",
-                "type": "file",
-                "ext": ".pdf",
-                "path": "Android/入门学习/android项目1/Android Tab 栏使用详解（原生 + 第三方）.pdf"
-              },
-              {
-                "name": "Android Tab栏实现常用方法及第三方库对比.pdf",
-                "type": "file",
-                "ext": ".pdf",
-                "path": "Android/入门学习/android项目1/Android Tab栏实现常用方法及第三方库对比.pdf"
-              },
-              {
-                "name": "Android 侧边栏（DrawerLayout）使用详解.pdf",
-                "type": "file",
-                "ext": ".pdf",
-                "path": "Android/入门学习/android项目1/Android 侧边栏（DrawerLayout）使用详解.pdf"
-              },
-              {
-                "name": "Android 导航栏（Navigation Bar）使用详解.pdf",
-                "type": "file",
-                "ext": ".pdf",
-                "path": "Android/入门学习/android项目1/Android 导航栏（Navigation Bar）使用详解.pdf"
-              },
-              {
-                "name": "Android中ZXing库的使⽤讲解.pdf",
-                "type": "file",
-                "ext": ".pdf",
-                "path": "Android/入门学习/android项目1/Android中ZXing库的使⽤讲解.pdf"
-              },
-              {
-                "name": "Android侧边栏实现全解析：原生、自定义与第三方库的选型之道.pdf",
-                "type": "file",
-                "ext": ".pdf",
-                "path": "Android/入门学习/android项目1/Android侧边栏实现全解析：原生、自定义与第三方库的选型之道.pdf"
-              },
-              {
-                "name": "Android列表上拉下拉功能实现：原生与第三方方案全解析.pdf",
-                "type": "file",
-                "ext": ".pdf",
-                "path": "Android/入门学习/android项目1/Android列表上拉下拉功能实现：原生与第三方方案全解析.pdf"
-              },
-              {
-                "name": "Android导航栏实现：原生、自定义与第三方库全解析.pdf",
-                "type": "file",
-                "ext": ".pdf",
-                "path": "Android/入门学习/android项目1/Android导航栏实现：原生、自定义与第三方库全解析.pdf"
-              },
-              {
-                "name": "Android开发中JSON的主流解析方式与选型建议.pdf",
-                "type": "file",
-                "ext": ".pdf",
-                "path": "Android/入门学习/android项目1/Android开发中JSON的主流解析方式与选型建议.pdf"
-              },
-              {
-                "name": "Anko 库 核心讲解（Android）.pdf",
-                "type": "file",
-                "ext": ".pdf",
-                "path": "Android/入门学习/android项目1/Anko 库 核心讲解（Android）.pdf"
-              },
-              {
-                "name": "EventBus：Android事件发布_订阅框架的使用指南.pdf",
-                "type": "file",
-                "ext": ".pdf",
-                "path": "Android/入门学习/android项目1/EventBus：Android事件发布_订阅框架的使用指南.pdf"
-              },
-              {
-                "name": "Glide 图片加载库：核心特性、基础使用、关键功能及核心原理讲解.pdf",
-                "type": "file",
-                "ext": ".pdf",
-                "path": "Android/入门学习/android项目1/Glide 图片加载库：核心特性、基础使用、关键功能及核心原理讲解.pdf"
-              },
-              {
-                "name": "MMKV 库简介及使用指南.pdf",
-                "type": "file",
-                "ext": ".pdf",
-                "path": "Android/入门学习/android项目1/MMKV 库简介及使用指南.pdf"
-              },
-              {
-                "name": "OkGo Android网络请求库使用指南.pdf",
-                "type": "file",
-                "ext": ".pdf",
-                "path": "Android/入门学习/android项目1/OkGo Android网络请求库使用指南.pdf"
-              },
-              {
-                "name": "PermissionX 库简介.pdf",
-                "type": "file",
-                "ext": ".pdf",
-                "path": "Android/入门学习/android项目1/PermissionX 库简介.pdf"
-              },
-              {
-                "name": "PictureSelector Android 图片_视频选择器库使用指南.pdf",
-                "type": "file",
-                "ext": ".pdf",
-                "path": "Android/入门学习/android项目1/PictureSelector Android 图片_视频选择器库使用指南.pdf"
-              },
-              {
-                "name": "友盟推送（U-Push）Android平台.pdf",
-                "type": "file",
-                "ext": ".pdf",
-                "path": "Android/入门学习/android项目1/友盟推送（U-Push）Android平台.pdf"
-              },
-              {
-                "name": "该项目可学习的地方分析.pdf",
-                "type": "file",
-                "ext": ".pdf",
-                "path": "Android/入门学习/android项目1/该项目可学习的地方分析.pdf"
-              },
-              {
-                "name": "项目中导航栏的实现与第三方库使用.pdf",
-                "type": "file",
-                "ext": ".pdf",
-                "path": "Android/入门学习/android项目1/项目中导航栏的实现与第三方库使用.pdf"
-              },
-              {
-                "name": "项目可学习的工具类总结.pdf",
-                "type": "file",
-                "ext": ".pdf",
-                "path": "Android/入门学习/android项目1/项目可学习的工具类总结.pdf"
-              }
-            ]
           }
         ]
       }
