@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的个人博客</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .file-section {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+        }
+        
+        .file-section h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .file-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .file-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .file-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+            border-color: #667eea;
+        }
+        
+        .file-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+        
+        .file-name {
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #333;
+        }
+        
+        .file-size {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: background 0.3s ease;
+        }
+        
+        .download-btn:hover {
+            background: #5a6fd8;
+        }
+        
+        .upload-section {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+        
+        .upload-section h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+        
+        .upload-info {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        
+        .upload-info h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .upload-info code {
+            background: #e9ecef;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 768px) {
+            .file-list {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            header {
+                padding: 40px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>我的个人博客</h1>
+            <p class="subtitle">分享我的文档和学习笔记</p>
+        </header>
+        
+        <section class="file-section">
+            <h2>📁 我的文档</h2>
+            <div class="file-list" id="fileList">
+                <!-- 文件列表将在这里动态生成 -->
+                <div class="file-item">
+                    <div class="file-icon">📄</div>
+                    <div class="file-name">示例文档.docx</div>
+                    <div class="file-size">2.5 MB</div>
+                    <a href="#" class="download-btn">下载文件</a>
+                </div>
+                
+                <div class="file-item">
+                    <div class="file-icon">📊</div>
+                    <div class="file-name">项目报告.pdf</div>
+                    <div class="file-size">1.8 MB</div>
+                    <a href="#" class="download-btn">下载文件</a>
+                </div>
+                
+                <div class="file-item">
+                    <div class="file-icon">📝</div>
+                    <div class="file-name">学习笔记.md</div>
+                    <div class="file-size">0.3 MB</div>
+                    <a href="#" class="download-btn">下载文件</a>
+                </div>
+            </div>
+        </section>
+        
+        <section class="upload-section">
+            <h2>📤 上传新文件</h2>
+            <div class="upload-info">
+                <h3>上传方法：</h3>
+                <p>1. 将文件复制到 <code>files</code> 文件夹中</p>
+                <p>2. 使用Git命令提交更改：</p>
+                <code>git add .<br>git commit -m "添加新文件"<br>git push origin master</code>
+                <p>3. 刷新Gitee Pages服务</p>
+            </div>
+        </section>
+        
+        <footer>
+            <p>&copy; 2026 我的个人博客 | 基于Gitee Pages构建</p>
+        </footer>
+    </div>
+    
+    <script>
+        // 简单的文件管理功能
+        document.addEventListener('DOMContentLoaded', function() {
+            // 这里可以添加JavaScript来动态加载文件列表
+            console.log('博客页面加载完成');
+        });
+    </script>
+</body>
+</html>
