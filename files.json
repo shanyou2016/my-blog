@@ -16134,6 +16134,24 @@
                 "path": "UniApp/咸虾米壁纸/第7天/.DS_Store"
               },
               {
+                "name": "CSS Grid 布局拆解与效果展示.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "UniApp/咸虾米壁纸/第7天/CSS Grid 布局拆解与效果展示.pdf"
+              },
+              {
+                "name": "SCSS_SASS 嵌套在 UniApp_Vue 项目中的应用.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "UniApp/咸虾米壁纸/第7天/SCSS_SASS 嵌套在 UniApp_Vue 项目中的应用.pdf"
+              },
+              {
+                "name": "Scroll-View 与 Swiper 的核心区别及快速判断技巧.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "UniApp/咸虾米壁纸/第7天/Scroll-View 与 Swiper 的核心区别及快速判断技巧.pdf"
+              },
+              {
                 "name": "Uni-App banner海报Swiper轮播器开发指南.pdf",
                 "type": "file",
                 "ext": ".pdf",
@@ -16260,10 +16278,88 @@
                 "path": "UniApp/咸虾米壁纸/第7天/Uni-App项目初始化：公共目录构建与设计稿尺寸测量工具指南.pdf"
               },
               {
+                "name": "Uni-icons 样式修改总结.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "UniApp/咸虾米壁纸/第7天/Uni-icons 样式修改总结.pdf"
+              },
+              {
+                "name": "UniApp 常用标签占位符_不完整写法总结（极简版）.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "UniApp/咸虾米壁纸/第7天/UniApp 常用标签占位符_不完整写法总结（极简版）.pdf"
+              },
+              {
+                "name": "UniApp 最常用样式总结（极简版）.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "UniApp/咸虾米壁纸/第7天/UniApp 最常用样式总结（极简版）.pdf"
+              },
+              {
+                "name": "UniApp 最常用绝对定位样式总结（极简版）.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "UniApp/咸虾米壁纸/第7天/UniApp 最常用绝对定位样式总结（极简版）.pdf"
+              },
+              {
+                "name": "UniApp 最常用自定义 tabbar 使用总结（极简版）.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "UniApp/咸虾米壁纸/第7天/UniApp 最常用自定义 tabbar 使用总结（极简版）.pdf"
+              },
+              {
+                "name": "UniApp 最常用自定义导航栏使用总结（极简版）.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "UniApp/咸虾米壁纸/第7天/UniApp 最常用自定义导航栏使用总结（极简版）.pdf"
+              },
+              {
+                "name": "UniApp 点击类事件极简版总结.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "UniApp/咸虾米壁纸/第7天/UniApp 点击类事件极简版总结.pdf"
+              },
+              {
+                "name": "UniApp 系统与自定义 Tabbar 对比及适用场景.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "UniApp/咸虾米壁纸/第7天/UniApp 系统与自定义 Tabbar 对比及适用场景.pdf"
+              },
+              {
+                "name": "uniApp swiper 讲解（小白极简版）.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "UniApp/咸虾米壁纸/第7天/uniApp swiper 讲解（小白极简版）.pdf"
+              },
+              {
+                "name": "uniApp 中 10VH 的含义及实战用法（小白必懂）.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "UniApp/咸虾米壁纸/第7天/uniApp 中 10VH 的含义及实战用法（小白必懂）.pdf"
+              },
+              {
+                "name": "uniApp 绝对定位 vs 相对定位（实战版，简单清晰）.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "UniApp/咸虾米壁纸/第7天/uniApp 绝对定位 vs 相对定位（实战版，简单清晰）.pdf"
+              },
+              {
+                "name": "揭秘 uni-popup：核心信息与用法.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "UniApp/咸虾米壁纸/第7天/揭秘 uni-popup：核心信息与用法.pdf"
+              },
+              {
                 "name": "细节拉满：Uni-App磨砂背景专题组件（定位布局实现）.pdf",
                 "type": "file",
                 "ext": ".pdf",
                 "path": "UniApp/咸虾米壁纸/第7天/细节拉满：Uni-App磨砂背景专题组件（定位布局实现）.pdf"
+              },
+              {
+                "name": "解析 CSS 样式代码：功能与效果.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "UniApp/咸虾米壁纸/第7天/解析 CSS 样式代码：功能与效果.pdf"
               }
             ]
           },
