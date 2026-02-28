@@ -16140,6 +16140,12 @@
                 "path": "UniApp/咸虾米壁纸/第7天/CSS Grid 布局拆解与效果展示.pdf"
               },
               {
+                "name": "CSS 中两层渐变叠加效果解析.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "UniApp/咸虾米壁纸/第7天/CSS 中两层渐变叠加效果解析.pdf"
+              },
+              {
                 "name": "SCSS_SASS 嵌套在 UniApp_Vue 项目中的应用.pdf",
                 "type": "file",
                 "ext": ".pdf",
@@ -16278,6 +16284,12 @@
                 "path": "UniApp/咸虾米壁纸/第7天/Uni-App项目初始化：公共目录构建与设计稿尺寸测量工具指南.pdf"
               },
               {
+                "name": "Uni-app 中微信小程序客服功能配置与使用要点.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "UniApp/咸虾米壁纸/第7天/Uni-app 中微信小程序客服功能配置与使用要点.pdf"
+              },
+              {
                 "name": "Uni-icons 样式修改总结.pdf",
                 "type": "file",
                 "ext": ".pdf",
@@ -16320,10 +16332,28 @@
                 "path": "UniApp/咸虾米壁纸/第7天/UniApp 点击类事件极简版总结.pdf"
               },
               {
+                "name": "UniApp 第三方常用导航栏、Tabbar 总结（极简版）.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "UniApp/咸虾米壁纸/第7天/UniApp 第三方常用导航栏、Tabbar 总结（极简版）.pdf"
+              },
+              {
                 "name": "UniApp 系统与自定义 Tabbar 对比及适用场景.pdf",
                 "type": "file",
                 "ext": ".pdf",
                 "path": "UniApp/咸虾米壁纸/第7天/UniApp 系统与自定义 Tabbar 对比及适用场景.pdf"
+              },
+              {
+                "name": "UniApp：getSystemInfoSync 与 View Class='parent' 的视口适配.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "UniApp/咸虾米壁纸/第7天/UniApp：getSystemInfoSync 与 View Class='parent' 的视口适配.pdf"
+              },
+              {
+                "name": "uni-app 多端客服_电话按钮代码解释、总结及优化.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "UniApp/咸虾米壁纸/第7天/uni-app 多端客服_电话按钮代码解释、总结及优化.pdf"
               },
               {
                 "name": "uniApp swiper 讲解（小白极简版）.pdf",
@@ -16348,6 +16378,12 @@
                 "type": "file",
                 "ext": ".pdf",
                 "path": "UniApp/咸虾米壁纸/第7天/揭秘 uni-popup：核心信息与用法.pdf"
+              },
+              {
+                "name": "核心解释（小程序端生效版 `_deep()` 写法）.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "UniApp/咸虾米壁纸/第7天/核心解释（小程序端生效版 `_deep()` 写法）.pdf"
               },
               {
                 "name": "细节拉满：Uni-App磨砂背景专题组件（定位布局实现）.pdf",
