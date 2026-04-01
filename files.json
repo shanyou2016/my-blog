@@ -16146,6 +16146,12 @@
                 "path": "UniApp/咸虾米壁纸/第7天/CSS 中两层渐变叠加效果解析.pdf"
               },
               {
+                "name": "Flex 布局中的完整解释文档.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "UniApp/咸虾米壁纸/第7天/Flex 布局中的完整解释文档.pdf"
+              },
+              {
                 "name": "Flex布局一页精简笔记（PDF适配版）.pdf",
                 "type": "file",
                 "ext": ".pdf",
@@ -16314,6 +16320,12 @@
                 "path": "UniApp/咸虾米壁纸/第7天/Uni-popup：底部弹出选择器详解.pdf"
               },
               {
+                "name": "UniApp Vue3 完整开发流程（最新版）.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "UniApp/咸虾米壁纸/第7天/UniApp Vue3 完整开发流程（最新版）.pdf"
+              },
+              {
                 "name": "UniApp 常用标签占位符_不完整写法总结（极简版）.pdf",
                 "type": "file",
                 "ext": ".pdf",
@@ -16374,6 +16386,12 @@
                 "path": "UniApp/咸虾米壁纸/第7天/uni-app 多端客服_电话按钮代码解释、总结及优化.pdf"
               },
               {
+                "name": "uniApp Vue3 + Vite 完整模板（含路由+Pinia+请求拦截+tabBar）.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "UniApp/咸虾米壁纸/第7天/uniApp Vue3 + Vite 完整模板（含路由+Pinia+请求拦截+tabBar）.pdf"
+              },
+              {
                 "name": "uniApp swiper 讲解（小白极简版）.pdf",
                 "type": "file",
                 "ext": ".pdf",
@@ -16386,10 +16404,28 @@
                 "path": "UniApp/咸虾米壁纸/第7天/uniApp 中 10VH 的含义及实战用法（小白必懂）.pdf"
               },
               {
+                "name": "uniApp 官方控件基本使用方法（Vue3 setup版）.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "UniApp/咸虾米壁纸/第7天/uniApp 官方控件基本使用方法（Vue3 setup版）.pdf"
+              },
+              {
+                "name": "uniApp 扩展组件 uni-ui 基本使用方法（Vue3 setup版）.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "UniApp/咸虾米壁纸/第7天/uniApp 扩展组件 uni-ui 基本使用方法（Vue3 setup版）.pdf"
+              },
+              {
                 "name": "uniApp 绝对定位 vs 相对定位（实战版，简单清晰）.pdf",
                 "type": "file",
                 "ext": ".pdf",
                 "path": "UniApp/咸虾米壁纸/第7天/uniApp 绝对定位 vs 相对定位（实战版，简单清晰）.pdf"
+              },
+              {
+                "name": "uniApp 评分控件（uni-rate）V3 极简讲解.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "UniApp/咸虾米壁纸/第7天/uniApp 评分控件（uni-rate）V3 极简讲解.pdf"
               },
               {
                 "name": "揭秘 uni-popup：核心信息与用法.pdf",
