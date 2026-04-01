@@ -2103,6 +2103,12 @@
             "path": "IOS/IOS高级/iOS 应用崩溃防护工具 AppCrashProtector（完善版）.pdf"
           },
           {
+            "name": "iOS 离屏渲染：识别、解决与实践.pdf",
+            "type": "file",
+            "ext": ".pdf",
+            "path": "IOS/IOS高级/iOS 离屏渲染：识别、解决与实践.pdf"
+          },
+          {
             "name": "iOS 网络优化完整文档.docx",
             "type": "file",
             "ext": ".docx",
