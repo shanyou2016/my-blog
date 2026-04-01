@@ -16146,6 +16146,12 @@
                 "path": "UniApp/咸虾米壁纸/第7天/CSS 中两层渐变叠加效果解析.pdf"
               },
               {
+                "name": "Flex布局一页精简笔记（PDF适配版）.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "UniApp/咸虾米壁纸/第7天/Flex布局一页精简笔记（PDF适配版）.pdf"
+              },
+              {
                 "name": "SCSS_SASS 嵌套在 UniApp_Vue 项目中的应用.pdf",
                 "type": "file",
                 "ext": ".pdf",
@@ -16294,6 +16300,18 @@
                 "type": "file",
                 "ext": ".pdf",
                 "path": "UniApp/咸虾米壁纸/第7天/Uni-icons 样式修改总结.pdf"
+              },
+              {
+                "name": "Uni-popup：底部弹出选择器详解 (V3).pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "UniApp/咸虾米壁纸/第7天/Uni-popup：底部弹出选择器详解 (V3).pdf"
+              },
+              {
+                "name": "Uni-popup：底部弹出选择器详解.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "UniApp/咸虾米壁纸/第7天/Uni-popup：底部弹出选择器详解.pdf"
               },
               {
                 "name": "UniApp 常用标签占位符_不完整写法总结（极简版）.pdf",
