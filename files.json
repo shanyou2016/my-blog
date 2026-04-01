@@ -2074,6 +2074,31 @@
         ]
       },
       {
+        "name": "IOS高级",
+        "type": "folder",
+        "path": "IOS/IOS高级",
+        "children": [
+          {
+            "name": "Qwen3-Coder iOS 界面性能优化：从代码实现看经典案例.pdf",
+            "type": "file",
+            "ext": ".pdf",
+            "path": "IOS/IOS高级/Qwen3-Coder iOS 界面性能优化：从代码实现看经典案例.pdf"
+          },
+          {
+            "name": "iOS App 启动优化：代码实现详解.pdf",
+            "type": "file",
+            "ext": ".pdf",
+            "path": "IOS/IOS高级/iOS App 启动优化：代码实现详解.pdf"
+          },
+          {
+            "name": "iOS 应用崩溃防护工具 AppCrashProtector（完善版）.pdf",
+            "type": "file",
+            "ext": ".pdf",
+            "path": "IOS/IOS高级/iOS 应用崩溃防护工具 AppCrashProtector（完善版）.pdf"
+          }
+        ]
+      },
+      {
         "name": "Unie",
         "type": "folder",
         "path": "IOS/Unie",
