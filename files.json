@@ -1929,10 +1929,16 @@
         "path": "Android/面试",
         "children": [
           {
-            "name": "Android机器人APP 全套面试终极小抄（100%全覆盖）.pdf",
+            "name": ".DS_Store",
+            "type": "file",
+            "ext": "",
+            "path": "Android/面试/.DS_Store"
+          },
+          {
+            "name": "Android机器人APP 全套面试.pdf",
             "type": "file",
             "ext": ".pdf",
-            "path": "Android/面试/Android机器人APP 全套面试终极小抄（100%全覆盖）.pdf"
+            "path": "Android/面试/Android机器人APP 全套面试.pdf"
           }
         ]
       }
