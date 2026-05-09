@@ -2003,6 +2003,12 @@
             "path": "Android/机器人/image1.png"
           },
           {
+            "name": "mermaid1.png",
+            "type": "file",
+            "ext": ".png",
+            "path": "Android/机器人/mermaid1.png"
+          },
+          {
             "name": "一、 系统级权限与底层优化 (自家平板的核心红利).pdf",
             "type": "file",
             "ext": ".pdf",
@@ -16925,6 +16931,25 @@
         "type": "file",
         "ext": ".pdf",
         "path": "gitHub+Netlify 个人静态博客/零基础搭建 GitHub + Netlify 个人静态博客完整教程.pdf"
+      }
+    ]
+  },
+  {
+    "name": "小技巧",
+    "type": "folder",
+    "path": "小技巧",
+    "children": [
+      {
+        "name": ".DS_Store",
+        "type": "file",
+        "ext": "",
+        "path": "小技巧/.DS_Store"
+      },
+      {
+        "name": "Mermaid流程图导出并转Word文档完整步骤.pdf",
+        "type": "file",
+        "ext": ".pdf",
+        "path": "小技巧/Mermaid流程图导出并转Word文档完整步骤.pdf"
       }
     ]
   }
