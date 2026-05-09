@@ -2019,6 +2019,12 @@
             "type": "file",
             "ext": ".pdf",
             "path": "Android/机器人/机器人控制指令传输与执行流程：全方案解析与优化.pdf"
+          },
+          {
+            "name": "阿里云企业账号认证全流程及常见坑.pdf",
+            "type": "file",
+            "ext": ".pdf",
+            "path": "Android/机器人/阿里云企业账号认证全流程及常见坑.pdf"
           }
         ]
       },
