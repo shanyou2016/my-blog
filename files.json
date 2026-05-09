@@ -1997,10 +1997,22 @@
             "path": "Android/机器人/image1.png"
           },
           {
+            "name": "一、 系统级权限与底层优化 (自家平板的核心红利).pdf",
+            "type": "file",
+            "ext": ".pdf",
+            "path": "Android/机器人/一、 系统级权限与底层优化 (自家平板的核心红利).pdf"
+          },
+          {
             "name": "推荐Trae.pdf",
             "type": "file",
             "ext": ".pdf",
             "path": "Android/机器人/推荐Trae.pdf"
+          },
+          {
+            "name": "机器人控制指令传输与执行流程：全方案解析与优化.pdf",
+            "type": "file",
+            "ext": ".pdf",
+            "path": "Android/机器人/机器人控制指令传输与执行流程：全方案解析与优化.pdf"
           }
         ]
       },
