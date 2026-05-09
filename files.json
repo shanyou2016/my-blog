@@ -16950,6 +16950,12 @@
         "type": "file",
         "ext": ".pdf",
         "path": "小技巧/Mermaid流程图导出并转Word文档完整步骤.pdf"
+      },
+      {
+        "name": "阿里云企业账号认证全流程及常见坑.pdf",
+        "type": "file",
+        "ext": ".pdf",
+        "path": "小技巧/阿里云企业账号认证全流程及常见坑.pdf"
       }
     ]
   }
