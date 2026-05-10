@@ -1979,58 +1979,16 @@
             "path": "Android/机器人/.DS_Store"
           },
           {
-            "name": "Android 无线调试：11+与 10 及以下版本.pdf",
-            "type": "file",
-            "ext": ".pdf",
-            "path": "Android/机器人/Android 无线调试：11+与 10 及以下版本.pdf"
-          },
-          {
-            "name": "Mac 通义灵码 IDE：双账号切换完整流程.pdf",
-            "type": "file",
-            "ext": ".pdf",
-            "path": "Android/机器人/Mac 通义灵码 IDE：双账号切换完整流程.pdf"
-          },
-          {
-            "name": "TRAE企业版选型+缴费+99元团队版优势 正式文档（可直接复制保存为Word_TXT下载）.pdf",
-            "type": "file",
-            "ext": ".pdf",
-            "path": "Android/机器人/TRAE企业版选型+缴费+99元团队版优势 正式文档（可直接复制保存为Word_TXT下载）.pdf"
-          },
-          {
-            "name": "image1.png",
+            "name": "mermaid-diagram-2026-05-09-171606.png",
             "type": "file",
             "ext": ".png",
-            "path": "Android/机器人/image1.png"
+            "path": "Android/机器人/mermaid-diagram-2026-05-09-171606.png"
           },
           {
-            "name": "mermaid1.png",
-            "type": "file",
-            "ext": ".png",
-            "path": "Android/机器人/mermaid1.png"
-          },
-          {
-            "name": "一、 系统级权限与底层优化 (自家平板的核心红利).pdf",
+            "name": "统一通信协议 终极量产版（V4.0）完整文档.pdf",
             "type": "file",
             "ext": ".pdf",
-            "path": "Android/机器人/一、 系统级权限与底层优化 (自家平板的核心红利).pdf"
-          },
-          {
-            "name": "推荐Trae.pdf",
-            "type": "file",
-            "ext": ".pdf",
-            "path": "Android/机器人/推荐Trae.pdf"
-          },
-          {
-            "name": "机器人控制指令传输与执行流程：全方案解析与优化.pdf",
-            "type": "file",
-            "ext": ".pdf",
-            "path": "Android/机器人/机器人控制指令传输与执行流程：全方案解析与优化.pdf"
-          },
-          {
-            "name": "阿里云企业账号认证全流程及常见坑.pdf",
-            "type": "file",
-            "ext": ".pdf",
-            "path": "Android/机器人/阿里云企业账号认证全流程及常见坑.pdf"
+            "path": "Android/机器人/统一通信协议 终极量产版（V4.0）完整文档.pdf"
           }
         ]
       },
@@ -16946,10 +16904,28 @@
         "path": "小技巧/.DS_Store"
       },
       {
+        "name": "Android 无线调试：11+与 10 及以下版本.pdf",
+        "type": "file",
+        "ext": ".pdf",
+        "path": "小技巧/Android 无线调试：11+与 10 及以下版本.pdf"
+      },
+      {
+        "name": "Mac 通义灵码 IDE：双账号切换完整流程.pdf",
+        "type": "file",
+        "ext": ".pdf",
+        "path": "小技巧/Mac 通义灵码 IDE：双账号切换完整流程.pdf"
+      },
+      {
         "name": "Mermaid流程图导出并转Word文档完整步骤.pdf",
         "type": "file",
         "ext": ".pdf",
         "path": "小技巧/Mermaid流程图导出并转Word文档完整步骤.pdf"
+      },
+      {
+        "name": "PE 系统：拯救老电脑的利器.pdf",
+        "type": "file",
+        "ext": ".pdf",
+        "path": "小技巧/PE 系统：拯救老电脑的利器.pdf"
       },
       {
         "name": "阿里云企业账号认证全流程及常见坑.pdf",
