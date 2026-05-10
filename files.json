@@ -16910,6 +16910,12 @@
         "path": "小技巧/Android 无线调试：11+与 10 及以下版本.pdf"
       },
       {
+        "name": "Android入门指南.md",
+        "type": "file",
+        "ext": ".md",
+        "path": "小技巧/Android入门指南.md"
+      },
+      {
         "name": "Mac 通义灵码 IDE：双账号切换完整流程.pdf",
         "type": "file",
         "ext": ".pdf",
