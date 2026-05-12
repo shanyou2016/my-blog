@@ -1979,16 +1979,34 @@
             "path": "Android/机器人/.DS_Store"
           },
           {
+            "name": "Android机器人控制项目架构设计文档.docx",
+            "type": "file",
+            "ext": ".docx",
+            "path": "Android/机器人/Android机器人控制项目架构设计文档.docx"
+          },
+          {
             "name": "mermaid-diagram-2026-05-09-171606.png",
             "type": "file",
             "ext": ".png",
             "path": "Android/机器人/mermaid-diagram-2026-05-09-171606.png"
           },
           {
+            "name": "机器人控制流程.docx",
+            "type": "file",
+            "ext": ".docx",
+            "path": "Android/机器人/机器人控制流程.docx"
+          },
+          {
             "name": "统一通信协议 终极量产版（V4.0）完整文档.pdf",
             "type": "file",
             "ext": ".pdf",
             "path": "Android/机器人/统一通信协议 终极量产版（V4.0）完整文档.pdf"
+          },
+          {
+            "name": "罗技gamepad F710 十字键 的在D状态监控驱动代码，协议解析，主要在android 开发环境下.pdf",
+            "type": "file",
+            "ext": ".pdf",
+            "path": "Android/机器人/罗技gamepad F710 十字键 的在D状态监控驱动代码，协议解析，主要在android 开发环境下.pdf"
           }
         ]
       },
@@ -16904,10 +16922,10 @@
         "path": "小技巧/.DS_Store"
       },
       {
-        "name": "Android 无线调试：11+与 10 及以下版本.pdf",
+        "name": "Android 无线调试：11+ 与 10 及以下版本详解 .pdf",
         "type": "file",
         "ext": ".pdf",
-        "path": "小技巧/Android 无线调试：11+与 10 及以下版本.pdf"
+        "path": "小技巧/Android 无线调试：11+ 与 10 及以下版本详解 .pdf"
       },
       {
         "name": "Android入门指南.md",
