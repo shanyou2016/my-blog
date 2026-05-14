@@ -1905,6 +1905,37 @@
         ]
       },
       {
+        "name": "小技巧",
+        "type": "folder",
+        "path": "Android/小技巧",
+        "children": [
+          {
+            "name": ".DS_Store",
+            "type": "file",
+            "ext": "",
+            "path": "Android/小技巧/.DS_Store"
+          },
+          {
+            "name": "Android Studio 修改项目名 一步一步核对清单（照着做不翻车）.docx",
+            "type": "file",
+            "ext": ".docx",
+            "path": "Android/小技巧/Android Studio 修改项目名 一步一步核对清单（照着做不翻车）.docx"
+          },
+          {
+            "name": "Android 无线调试：11+ 与 10 及以下版本详解 .pdf",
+            "type": "file",
+            "ext": ".pdf",
+            "path": "Android/小技巧/Android 无线调试：11+ 与 10 及以下版本详解 .pdf"
+          },
+          {
+            "name": "Android入门指南.md",
+            "type": "file",
+            "ext": ".md",
+            "path": "Android/小技巧/Android入门指南.md"
+          }
+        ]
+      },
+      {
         "name": "小练习",
         "type": "folder",
         "path": "Android/小练习",
@@ -1960,6 +1991,12 @@
             "path": "Android/新建项目/.DS_Store"
           },
           {
+            "name": "Android Studio 新建 Java 项目配置速查清单.docx",
+            "type": "file",
+            "ext": ".docx",
+            "path": "Android/新建项目/Android Studio 新建 Java 项目配置速查清单.docx"
+          },
+          {
             "name": "Android Studio 新建项目标准流程文档（个人专属规范）.pdf",
             "type": "file",
             "ext": ".pdf",
@@ -1985,10 +2022,34 @@
             "path": "Android/机器人/Android机器人控制项目架构设计文档.docx"
           },
           {
+            "name": "PlantUML 类图.docx",
+            "type": "file",
+            "ext": ".docx",
+            "path": "Android/机器人/PlantUML 类图.docx"
+          },
+          {
+            "name": "ULM图.png",
+            "type": "file",
+            "ext": ".png",
+            "path": "Android/机器人/ULM图.png"
+          },
+          {
+            "name": "WiFi通信与心跳监控.png",
+            "type": "file",
+            "ext": ".png",
+            "path": "Android/机器人/WiFi通信与心跳监控.png"
+          },
+          {
             "name": "mermaid-diagram-2026-05-09-171606.png",
             "type": "file",
             "ext": ".png",
             "path": "Android/机器人/mermaid-diagram-2026-05-09-171606.png"
+          },
+          {
+            "name": "协议解析与核心调度.png",
+            "type": "file",
+            "ext": ".png",
+            "path": "Android/机器人/协议解析与核心调度.png"
           },
           {
             "name": "机器人控制流程.docx",
@@ -1997,16 +2058,241 @@
             "path": "Android/机器人/机器人控制流程.docx"
           },
           {
-            "name": "统一通信协议 终极量产版（V4.0）完整文档.pdf",
+            "name": "机器人软件需求.docx",
+            "type": "file",
+            "ext": ".docx",
+            "path": "Android/机器人/机器人软件需求.docx"
+          },
+          {
+            "name": "类名方法名.docx",
+            "type": "file",
+            "ext": ".docx",
+            "path": "Android/机器人/类名方法名.docx"
+          },
+          {
+            "name": "系统保障模块（异常与内存）.png",
+            "type": "file",
+            "ext": ".png",
+            "path": "Android/机器人/系统保障模块（异常与内存）.png"
+          },
+          {
+            "name": "统一通信协议 （学习）.pdf",
             "type": "file",
             "ext": ".pdf",
-            "path": "Android/机器人/统一通信协议 终极量产版（V4.0）完整文档.pdf"
+            "path": "Android/机器人/统一通信协议 （学习）.pdf"
           },
           {
             "name": "罗技gamepad F710 十字键 的在D状态监控驱动代码，协议解析，主要在android 开发环境下.pdf",
             "type": "file",
             "ext": ".pdf",
             "path": "Android/机器人/罗技gamepad F710 十字键 的在D状态监控驱动代码，协议解析，主要在android 开发环境下.pdf"
+          },
+          {
+            "name": "蓝牙手柄管理.png",
+            "type": "file",
+            "ext": ".png",
+            "path": "Android/机器人/蓝牙手柄管理.png"
+          },
+          {
+            "name": "视频流管理.png",
+            "type": "file",
+            "ext": ".png",
+            "path": "Android/机器人/视频流管理.png"
+          },
+          {
+            "name": "重构前逻辑",
+            "type": "folder",
+            "path": "Android/机器人/重构前逻辑",
+            "children": [
+              {
+                "name": ".DS_Store",
+                "type": "file",
+                "ext": "",
+                "path": "Android/机器人/重构前逻辑/.DS_Store"
+              },
+              {
+                "name": "Android dispatchGenericMotionEvent 完整说明.docx",
+                "type": "file",
+                "ext": ".docx",
+                "path": "Android/机器人/重构前逻辑/Android dispatchGenericMotionEvent 完整说明.docx"
+              },
+              {
+                "name": "Android 游戏手柄左摇杆监控流程详解.docx",
+                "type": "file",
+                "ext": ".docx",
+                "path": "Android/机器人/重构前逻辑/Android 游戏手柄左摇杆监控流程详解.docx"
+              },
+              {
+                "name": "F710 DirectInput 在 MainActivity 中的调用详解.docx",
+                "type": "file",
+                "ext": ".docx",
+                "path": "Android/机器人/重构前逻辑/F710 DirectInput 在 MainActivity 中的调用详解.docx"
+              },
+              {
+                "name": "TvStatus 系统状态显示监控流程分析.docx",
+                "type": "file",
+                "ext": ".docx",
+                "path": "Android/机器人/重构前逻辑/TvStatus 系统状态显示监控流程分析.docx"
+              },
+              {
+                "name": "控件数据变化时高亮显示流程分析.docx",
+                "type": "file",
+                "ext": ".docx",
+                "path": "Android/机器人/重构前逻辑/控件数据变化时高亮显示流程分析.docx"
+              },
+              {
+                "name": "方向键监控流程分析.docx",
+                "type": "file",
+                "ext": ".docx",
+                "path": "Android/机器人/重构前逻辑/方向键监控流程分析.docx"
+              },
+              {
+                "name": "游戏手柄右摇杆监控流程分析文档.docx",
+                "type": "file",
+                "ext": ".docx",
+                "path": "Android/机器人/重构前逻辑/游戏手柄右摇杆监控流程分析文档.docx"
+              },
+              {
+                "name": "罗技 F710 手柄 D 模式 _ X 模式 及 三种处理方式说明.docx",
+                "type": "file",
+                "ext": ".docx",
+                "path": "Android/机器人/重构前逻辑/罗技 F710 手柄 D 模式 _ X 模式 及 三种处理方式说明.docx"
+              },
+              {
+                "name": "罗技 F710 游戏手柄按钮监控流程完整分析.docx",
+                "type": "file",
+                "ext": ".docx",
+                "path": "Android/机器人/重构前逻辑/罗技 F710 游戏手柄按钮监控流程完整分析.docx"
+              },
+              {
+                "name": "罗技F710手柄完整使用与开发说明文档.docx",
+                "type": "file",
+                "ext": ".docx",
+                "path": "Android/机器人/重构前逻辑/罗技F710手柄完整使用与开发说明文档.docx"
+              }
+            ]
+          },
+          {
+            "name": "重构后逻辑",
+            "type": "folder",
+            "path": "Android/机器人/重构后逻辑",
+            "children": [
+              {
+                "name": ".DS_Store",
+                "type": "file",
+                "ext": "",
+                "path": "Android/机器人/重构后逻辑/.DS_Store"
+              },
+              {
+                "name": "Android Service 核心生命周期与 modules 诞生全解.docx",
+                "type": "file",
+                "ext": ".docx",
+                "path": "Android/机器人/重构后逻辑/Android Service 核心生命周期与 modules 诞生全解.docx"
+              },
+              {
+                "name": "BluetoothGamepadManager 手柄管理器讲解.docx",
+                "type": "file",
+                "ext": ".docx",
+                "path": "Android/机器人/重构后逻辑/BluetoothGamepadManager 手柄管理器讲解.docx"
+              },
+              {
+                "name": "BootstrapActivity 是谁创建的？什么时候销毁？.docx",
+                "type": "file",
+                "ext": ".docx",
+                "path": "Android/机器人/重构后逻辑/BootstrapActivity 是谁创建的？什么时候销毁？.docx"
+              },
+              {
+                "name": "StateCenter 状态中心讲解.docx",
+                "type": "file",
+                "ext": ".docx",
+                "path": "Android/机器人/重构后逻辑/StateCenter 状态中心讲解.docx"
+              },
+              {
+                "name": "VideoStreamManager 接收端版本详解.docx",
+                "type": "file",
+                "ext": ".docx",
+                "path": "Android/机器人/重构后逻辑/VideoStreamManager 接收端版本详解.docx"
+              },
+              {
+                "name": "WiFi Communication Manager 全面解析.docx",
+                "type": "file",
+                "ext": ".docx",
+                "path": "Android/机器人/重构后逻辑/WiFi Communication Manager 全面解析.docx"
+              },
+              {
+                "name": "代码解读：Volatile 与 CopyOnWriteArrayList.docx",
+                "type": "file",
+                "ext": ".docx",
+                "path": "Android/机器人/重构后逻辑/代码解读：Volatile 与 CopyOnWriteArrayList.docx"
+              },
+              {
+                "name": "手柄",
+                "type": "folder",
+                "path": "Android/机器人/重构后逻辑/手柄",
+                "children": [
+                  {
+                    "name": ".DS_Store",
+                    "type": "file",
+                    "ext": "",
+                    "path": "Android/机器人/重构后逻辑/手柄/.DS_Store"
+                  },
+                  {
+                    "name": "Android 十字键监控流程完整讲解.docx",
+                    "type": "file",
+                    "ext": ".docx",
+                    "path": "Android/机器人/重构后逻辑/手柄/Android 十字键监控流程完整讲解.docx"
+                  },
+                  {
+                    "name": "F710DirectInput 原理与实现详解.docx",
+                    "type": "file",
+                    "ext": ".docx",
+                    "path": "Android/机器人/重构后逻辑/手柄/F710DirectInput 原理与实现详解.docx"
+                  },
+                  {
+                    "name": "TvStatus 系统状态显示监控讲解：从原理到实践.docx",
+                    "type": "file",
+                    "ext": ".docx",
+                    "path": "Android/机器人/重构后逻辑/手柄/TvStatus 系统状态显示监控讲解：从原理到实践.docx"
+                  },
+                  {
+                    "name": "左-右摇杆监控流程详解.docx",
+                    "type": "file",
+                    "ext": ".docx",
+                    "path": "Android/机器人/重构后逻辑/手柄/左-右摇杆监控流程详解.docx"
+                  },
+                  {
+                    "name": "按键监控（A_B_X_Y_LB_RB_LT_RT）流程讲解.docx",
+                    "type": "file",
+                    "ext": ".docx",
+                    "path": "Android/机器人/重构后逻辑/手柄/按键监控（A_B_X_Y_LB_RB_LT_RT）流程讲解.docx"
+                  }
+                ]
+              },
+              {
+                "name": "整个项目总体设计讲解.docx",
+                "type": "file",
+                "ext": ".docx",
+                "path": "Android/机器人/重构后逻辑/整个项目总体设计讲解.docx"
+              },
+              {
+                "name": "日志管理系统流程图.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "Android/机器人/重构后逻辑/日志管理系统流程图.pdf"
+              },
+              {
+                "name": "服务流程图.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "Android/机器人/重构后逻辑/服务流程图.pdf"
+              },
+              {
+                "name": "状态中心流程图.pdf",
+                "type": "file",
+                "ext": ".pdf",
+                "path": "Android/机器人/重构后逻辑/状态中心流程图.pdf"
+              }
+            ]
           }
         ]
       },
@@ -16920,18 +17206,6 @@
         "type": "file",
         "ext": "",
         "path": "小技巧/.DS_Store"
-      },
-      {
-        "name": "Android 无线调试：11+ 与 10 及以下版本详解 .pdf",
-        "type": "file",
-        "ext": ".pdf",
-        "path": "小技巧/Android 无线调试：11+ 与 10 及以下版本详解 .pdf"
-      },
-      {
-        "name": "Android入门指南.md",
-        "type": "file",
-        "ext": ".md",
-        "path": "小技巧/Android入门指南.md"
       },
       {
         "name": "Mac 通义灵码 IDE：双账号切换完整流程.pdf",
