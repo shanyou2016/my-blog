@@ -2208,6 +2208,12 @@
                 "path": "Android/机器人/重构后逻辑/StateCenter 状态中心讲解.docx"
               },
               {
+                "name": "UDP 通信测试指南.docx",
+                "type": "file",
+                "ext": ".docx",
+                "path": "Android/机器人/重构后逻辑/UDP 通信测试指南.docx"
+              },
+              {
                 "name": "VideoStreamManager 接收端版本详解.docx",
                 "type": "file",
                 "ext": ".docx",
@@ -17208,6 +17214,12 @@
         "path": "小技巧/.DS_Store"
       },
       {
+        "name": "MAVLink 自定义协议生成 Java 代码（极简步骤）.docx",
+        "type": "file",
+        "ext": ".docx",
+        "path": "小技巧/MAVLink 自定义协议生成 Java 代码（极简步骤）.docx"
+      },
+      {
         "name": "Mac 通义灵码 IDE：双账号切换完整流程.pdf",
         "type": "file",
         "ext": ".pdf",
@@ -17220,10 +17232,28 @@
         "path": "小技巧/Mermaid流程图导出并转Word文档完整步骤.pdf"
       },
       {
+        "name": "NoMachine极简部署.md",
+        "type": "file",
+        "ext": ".md",
+        "path": "小技巧/NoMachine极简部署.md"
+      },
+      {
         "name": "PE 系统：拯救老电脑的利器.pdf",
         "type": "file",
         "ext": ".pdf",
         "path": "小技巧/PE 系统：拯救老电脑的利器.pdf"
+      },
+      {
+        "name": "UDP Packet Sender操作指南 .docx",
+        "type": "file",
+        "ext": ".docx",
+        "path": "小技巧/UDP Packet Sender操作指南 .docx"
+      },
+      {
+        "name": "大白话讲透：同WiFi不行、同手机热点就行 核心原理.docx",
+        "type": "file",
+        "ext": ".docx",
+        "path": "小技巧/大白话讲透：同WiFi不行、同手机热点就行 核心原理.docx"
       },
       {
         "name": "阿里云企业账号认证全流程及常见坑.pdf",
