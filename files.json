@@ -17214,10 +17214,10 @@
         "path": "小技巧/.DS_Store"
       },
       {
-        "name": "MAVLink 自定义协议生成 Java 代码（极简步骤）.docx",
+        "name": "Mac 上 MAVLink Java 代码生成及使用指南.docx",
         "type": "file",
         "ext": ".docx",
-        "path": "小技巧/MAVLink 自定义协议生成 Java 代码（极简步骤）.docx"
+        "path": "小技巧/Mac 上 MAVLink Java 代码生成及使用指南.docx"
       },
       {
         "name": "Mac 通义灵码 IDE：双账号切换完整流程.pdf",
@@ -17248,6 +17248,12 @@
         "type": "file",
         "ext": ".docx",
         "path": "小技巧/UDP Packet Sender操作指南 .docx"
+      },
+      {
+        "name": "Wireshark 常用过滤规则速查.docx",
+        "type": "file",
+        "ext": ".docx",
+        "path": "小技巧/Wireshark 常用过滤规则速查.docx"
       },
       {
         "name": "大白话讲透：同WiFi不行、同手机热点就行 核心原理.docx",
