@@ -76,7 +76,7 @@ python3 -m http.server 8080
    ```bash
    git add .
    git commit -m "添加新文件"
-   git push origin master
+   git push origin main
    ```
 4. **等待 Netlify 自动部署**
 
