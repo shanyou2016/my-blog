@@ -1972,6 +1972,12 @@
             "path": "Android/打包/APK打包流程+密钥报错终极解决记录（专属存档）.pdf"
           },
           {
+            "name": "APK打包流程+密钥报错解决方案.md",
+            "type": "file",
+            "ext": ".md",
+            "path": "Android/打包/APK打包流程+密钥报错解决方案.md"
+          },
+          {
             "name": "🔍 方法一：在 Android Studio 中直接定位.pdf",
             "type": "file",
             "ext": ".pdf",
@@ -2116,6 +2122,12 @@
             "type": "file",
             "ext": ".png",
             "path": "Android/机器人/视频流管理.png"
+          },
+          {
+            "name": "设备固定IP安装须知.docx",
+            "type": "file",
+            "ext": ".docx",
+            "path": "Android/机器人/设备固定IP安装须知.docx"
           },
           {
             "name": "重构前逻辑",
