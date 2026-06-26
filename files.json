@@ -2360,6 +2360,68 @@
     ]
   },
   {
+    "name": "Harness",
+    "type": "folder",
+    "path": "Harness",
+    "children": [
+      {
+        "name": ".DS_Store",
+        "type": "file",
+        "ext": "",
+        "path": "Harness/.DS_Store"
+      },
+      {
+        "name": "机器人",
+        "type": "folder",
+        "path": "Harness/机器人",
+        "children": [
+          {
+            "name": ".DS_Store",
+            "type": "file",
+            "ext": "",
+            "path": "Harness/机器人/.DS_Store"
+          },
+          {
+            "name": "Harness_Engineering论文_RobotController实践.docx",
+            "type": "file",
+            "ext": ".docx",
+            "path": "Harness/机器人/Harness_Engineering论文_RobotController实践.docx"
+          },
+          {
+            "name": "Harness_Engineering论文_RobotController实践.html",
+            "type": "file",
+            "ext": ".html",
+            "path": "Harness/机器人/Harness_Engineering论文_RobotController实践.html"
+          },
+          {
+            "name": "Harness_Engineering论文_RobotController实践.md",
+            "type": "file",
+            "ext": ".md",
+            "path": "Harness/机器人/Harness_Engineering论文_RobotController实践.md"
+          },
+          {
+            "name": "给AI戴上“紧箍咒”——机器人控制系统的AI安全驾驶指南.pptx",
+            "type": "file",
+            "ext": ".pptx",
+            "path": "Harness/机器人/给AI戴上“紧箍咒”——机器人控制系统的AI安全驾驶指南.pptx"
+          },
+          {
+            "name": "🎤 演讲稿：给 AI 戴上“紧箍咒”——机器人控制系统的 AI 安全驾驶指南.docx",
+            "type": "file",
+            "ext": ".docx",
+            "path": "Harness/机器人/🎤 演讲稿：给 AI 戴上“紧箍咒”——机器人控制系统的 AI 安全驾驶指南.docx"
+          },
+          {
+            "name": "🎤 演讲稿：给 AI 戴上“紧箍咒”——机器人控制系统的 AI 安全驾驶指南.pdf",
+            "type": "file",
+            "ext": ".pdf",
+            "path": "Harness/机器人/🎤 演讲稿：给 AI 戴上“紧箍咒”——机器人控制系统的 AI 安全驾驶指南.pdf"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "name": "IOS",
     "type": "folder",
     "path": "IOS",

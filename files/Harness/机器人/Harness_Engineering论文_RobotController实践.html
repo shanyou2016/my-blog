@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harness Engineering 在嵌入式机器人控制系统 AI 辅助开发中的实践</title>
+<style>
+  @page { size: A4; margin: 2.5cm 2cm; }
+  :root {
+    --text: #1a1a1a;
+    --muted: #555;
+    --border: #d0d0d0;
+    --accent: #2563eb;
+    --accent-light: #e8f0fe;
+    --bg-code: #f8f9fb;
+    --bg-table-head: #f0f2f5;
+    --red: #c0392b;
+    --green: #27ae60;
+    --orange: #e67e22;
+    --tag-bg: #fff3cd;
+    --tag-border: #ffc107;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-size: 11pt; line-height: 1.85; color: var(--text);
+    max-width: 800px; margin: 0 auto; padding: 2rem 1.5rem;
+    background: #fff;
+  }
+
+  /* Cover */
+  .cover {
+    text-align: center; padding: 6rem 0 4rem;
+    border-bottom: 3px double var(--border); margin-bottom: 3rem;
+  }
+  .cover h1 {
+    font-size: 22pt; font-weight: 800; line-height: 1.35;
+    margin-bottom: 0.75rem; letter-spacing: 0.02em;
+  }
+  .cover .subtitle { font-size: 13pt; color: var(--muted); margin-bottom: 2.5rem; }
+  .cover .meta { font-size: 10pt; color: var(--muted); line-height: 2; }
+  .cover .version-badge {
+    display: inline-block; background: var(--accent); color: #fff;
+    padding: 3px 14px; border-radius: 12px; font-size: 9pt; font-weight: 600;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Headings */
+  h2 {
+    font-size: 15pt; font-weight: 700; margin: 2.5rem 0 1rem;
+    padding-bottom: 0.35rem; border-bottom: 2px solid var(--accent);
+  }
+  h3 { font-size: 12.5pt; font-weight: 700; margin: 1.8rem 0 0.7rem; }
+  h4 { font-size: 11.5pt; font-weight: 700; margin: 1.4rem 0 0.5rem; color: #333; }
+
+  /* Abstract */
+  .abstract {
+    background: var(--accent-light); border-left: 4px solid var(--accent);
+    padding: 1.2rem 1.5rem; margin: 2rem 0; border-radius: 0 6px 6px 0;
+  }
+  .abstract strong { display: block; margin-bottom: 0.5rem; }
+  .keywords { margin-top: 0.8rem; font-size: 10pt; color: var(--muted); }
+
+  /* Paragraphs */
+  p { margin: 0.5rem 0; }
+
+  /* Tables */
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; font-size: 10pt; }
+  thead th {
+    background: var(--bg-table-head); font-weight: 700; text-align: left;
+    padding: 8px 12px; border-bottom: 2px solid var(--border);
+  }
+  tbody td { padding: 7px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  tbody tr:nth-child(even) { background: #fafbfc; }
+  tbody tr:hover { background: var(--accent-light); }
+
+  /* Code */
+  code {
+    font-family: "SF Mono", "Fira Code", "Cascadia Code", "Consolas", monospace;
+    font-size: 9.5pt; background: var(--bg-code);
+    padding: 1px 5px; border-radius: 3px;
+  }
+  pre {
+    background: var(--bg-code); border: 1px solid var(--border);
+    border-radius: 6px; padding: 1rem 1.2rem; overflow-x: auto;
+    margin: 0.8rem 0 1.2rem; font-size: 9pt; line-height: 1.55;
+  }
+  pre code { background: none; padding: 0; font-size: inherit; }
+
+  /* Blockquotes */
+  blockquote {
+    border-left: 3px solid var(--accent); padding: 0.5rem 1rem;
+    margin: 0.8rem 0; color: var(--muted); background: #fafbfc;
+    border-radius: 0 4px 4px 0;
+  }
+
+  /* Strong emphasis */
+  strong { color: #111; }
+  .red-text { color: var(--red); font-weight: 700; }
+
+  /* Lists */
+  ul, ol { margin: 0.5rem 0 0.5rem 1.5rem; }
+  li { margin: 0.25rem 0; }
+
+  /* Divider */
+  hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+
+  /* References */
+  .references { font-size: 10pt; }
+  .references p { margin: 0.35rem 0; padding-left: 1.5rem; text-indent: -1.5rem; }
+
+  /* Tags / Badges */
+  .badge {
+    display: inline-block; font-size: 8.5pt; font-weight: 600;
+    padding: 2px 8px; border-radius: 3px; margin-right: 4px;
+  }
+  .badge-red { background: #fde8e8; color: var(--red); }
+  .badge-green { background: #d4edda; color: var(--green); }
+  .badge-blue { background: var(--accent-light); color: var(--accent); }
+
+  /* Architecture diagram */
+  .arch-box {
+    background: var(--bg-code); border: 1px solid var(--border);
+    border-radius: 8px; padding: 1.2rem; margin: 1rem 0;
+    font-family: "SF Mono", "Fira Code", monospace; font-size: 9pt;
+    line-height: 1.6; white-space: pre; overflow-x: auto;
+  }
+
+  /* Print */
+  @media print {
+    body { max-width: none; padding: 0; }
+    .cover { page-break-after: always; }
+    h2 { page-break-before: always; }
+    h2:first-of-type { page-break-before: avoid; }
+    pre, .arch-box { page-break-inside: avoid; }
+    table { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ======== COVER ======== -->
+<div class="cover">
+  <div class="version-badge">v2.1 &middot; HMM-L4 升级版</div>
+  <h1>Harness Engineering 在嵌入式机器人控制系统<br>AI 辅助开发中的实践</h1>
+  <div class="subtitle">——以 RobotController Android 项目为例</div>
+  <div class="meta">
+    <strong>作者</strong>：子豪（Zihao）<br>
+    <strong>单位</strong>：Android 研发工程师<br>
+    <strong>日期</strong>：2026 年 6 月 25 日<br>
+    <strong>字数</strong>：约 10,200 字
+  </div>
+</div>
+
+<!-- ======== ABSTRACT ======== -->
+<div class="abstract">
+<strong>摘要</strong>
+<p>随着大语言模型（LLM）在软件工程领域的广泛应用，AI 辅助编程已从简单的代码补全演进为完整的 Agent 驱动开发范式。然而，模型能力本身并非决定 Agent 产出质量的唯一因素——2026 年以来，以 OpenAI、Anthropic、Stripe 为代表的一线团队提出 <strong>"Agent = Model + Harness"</strong> 核心公式，指出决定 Agent 表现上限的往往是模型之外的环境、约束与反馈系统，即 Harness。本文系统梳理 Harness Engineering 的理论与学术研究前沿，并以 RobotController——一款基于 Android 的嵌入式机器人控制应用——为核心案例，深入剖析 Harness 在真实安全关键系统中的完整实现路径。本文采用单案例研究方法，涵盖六层架构设计、13 个规则文件约束体系、AI 强制规则加载协议、冲突裁决机制、上下文长效提醒系统、三模板命令标准化体系，以及新提出的 Harness 成熟度五级模型。实践表明，在完善的 Harness 治理体系下，项目在约 30 天开发周期内完成 2 次重大架构决策（ADR）、EventChannel 全局重构（代码量减少 58%）、多优先级缺陷修复，并在 2026-06-25 达成 HMM-L4 量化管理级：HARNESS 注解落地 25 条（覆盖 10 个核心保护函数）、CI 性能红线检查集成 pre-commit hook、自动化治理健康报告体系建立，全程零性能红线违规。本文填补了安全关键嵌入式系统 Harness 实践的文献空白，并提出了可量化的 Harness 成熟度评估框架。</p>
+<div class="keywords"><strong>关键词</strong>：Harness Engineering；AI Agent；AGENTS.md；嵌入式机器人控制；架构约束治理；上下文管理；棕地项目改造；安全关键系统；HARNESS 注解；CI 红线拦截</div>
+</div>
+
+<hr>
+
+<!-- ======== §1 INTRODUCTION ======== -->
+<h2>1. 引言</h2>
+
+<h3>1.1 研究背景</h3>
+<p>2025—2026 年，AI 编程助手从单轮代码生成向多轮 Agent 执行范式快速迁移。GitHub Copilot、Claude Code、Codex CLI 等工具使 AI 能够直接操作文件系统、执行 Shell 命令、运行测试并自主进行架构重构。工业界的统计数据令人瞩目：OpenAI 的 3 名工程师用 5 个月时间，依托 AI Agent 产出了约百万行代码、合并了约 1500 个 PR，手写代码行数为零 [1]；Stripe 的 Minions 系统每周生成 1000 余个由 AI 主导的 PR [2]；Anthropic 利用双智能体架构 6 小时内以 $200 成本构建完整可用的 Web 应用 [3]。</p>
+<p>然而，长链路任务中的上下文污染、架构约束偏离、代码熵积累等问题也随之暴露。LangChain 的对照实验揭示了一个关键事实：同一个模型，仅改变文件编辑接口的调用方式，编码基准得分从 6.7% 跃升至 68.3%；优化 Harness 环境而非更换模型，在 Terminal Bench 2.0 上将评分从 52.8% 提升至 66.5% [4]。这揭示了 Harness Engineering 的核心命题：<strong>系统设计比模型选择更关键</strong>。</p>
+
+<h3>1.2 问题陈述</h3>
+<p>嵌入式机器人控制系统是典型的安全关键软件，其核心约束不可谈判：TCP 通信延迟 &lt; 500ms（遥控响应红线）、视频端到端延迟 &lt; 600ms（实时操作红线）、触屏响应 &lt; 5ms、Android Doze 模式下 WakeLock 保持。在引入 AI 辅助开发后，团队面临的核心挑战是：</p>
+<ol>
+  <li><strong>如何确保 AI 在修改任何代码时不违反性能红线？</strong></li>
+  <li><strong>如何让 AI 在长对话周期中持续遵守架构约束，而非被上下文窗口逐出？</strong></li>
+  <li><strong>当多个规则冲突时，AI 如何做出符合项目最大利益的裁决？</strong></li>
+  <li><strong>如何标准化 AI 的命令输入，平衡"服从指令"与"自主判断"？</strong></li>
+  <li><strong>如何在棕地项目（已有 75+ Java 文件的历史代码库）中渐进式引入 Harness？</strong></li>
+</ol>
+
+<h3>1.3 主要贡献</h3>
+<ol>
+  <li>系统梳理 Harness Engineering 的核心理论与学术研究前沿，涵盖 2026 年最新学术文献；</li>
+  <li>提出面向嵌入式安全关键系统的 Harness 设计方法，补充业界对安全关键场景研究的不足；</li>
+  <li>提出 Harness 成熟度五级模型（HMM），为 Harness 治理提供可量化的评估框架；</li>
+  <li>以 RobotController 项目为案例，展示一个完整的、可复现的棕地项目 Harness 改造路径；</li>
+  <li>量化评估 Harness 在约 30 天开发周期内的治理效果，提供具体数据支撑。</li>
+</ol>
+
+<hr>
+
+<!-- ======== §2 RELATED WORK ======== -->
+<h2>2. 相关研究（Related Work）</h2>
+
+<h3>2.1 Harness Engineering 学术研究</h3>
+
+<h4>2.1.1 Agentic Harness Engineering（AHE）</h4>
+<p>Lin et al. [R1] 提出了 AHE 闭环框架，将 Harness 从手工工艺提升为可自动化演化的工程学科。其核心贡献包括三大观测支柱：Component Observability、Experience Observability（百万级轨迹蒸馏为分层证据语料）、Decision Observability（每次编辑附带可证伪预测）。实验数据表明，10 轮 AHE 迭代将 Terminal-Bench 2 pass@1 从 69.7% 提升至 77.0%，超越人类设计的 Codex-CLI（71.9%）。消融实验进一步定位增益来源为工具、中间件和长期记忆——而非系统提示词——说明<strong>事实性 Harness 结构可跨模型迁移</strong>。</p>
+
+<h4>2.1.2 Code as Agent Harness</h4>
+<p>Ning et al. [R2] 发布了 2026 年 5 月最全面的 Harness 系统性综述（102 页），定义了三层架构：Harness Interface（推理/行动/环境建模）、Harness Mechanisms（规划/记忆/工具/控制/自适应优化）、Scaling the Harness（多 Agent 共享代码基座）。该综述将五大应用域映射到三层架构，并指出六大开放挑战——其中"安全关键操作人工监督"和"跨 Agent 一致共享状态"与本研究高度相关。</p>
+
+<h4>2.1.3 工业界 Harness 实践</h4>
+<p>OpenAI 的 Codex CLI 将 Agent Skills 目录和自定义 Linter 作为 Harness 的核心组件 [1]；Stripe 的 Minions 采用 Blueprint 状态机和 Pre-push hook 实现约束机械化 [2]；Hashimoto 在 Ghostty 开发中建立了"每个错误对应一条 AGENTS.md 规则"的免疫积累模式 [6]；Anthropic 则探索了 GAN 启发的三 Agent 架构 [3]；Boeckeler [7] 首次在 Martin Fowler 博客上将 Harness Engineering 术语化。</p>
+
+<h4>2.1.4 现有研究的盲区</h4>
+<p>上述研究存在共同盲区：均以 Web 应用、桌面工具或通用软件开发为背景，未涉及嵌入式安全关键系统。而嵌入式系统的性能红线绝对化、线程优先级不可协商、验证环境受限等特性，对 Harness 提出了比通用场景更严格的约束要求——这正是本文试图填补的空白。</p>
+
+<h3>2.2 安全关键嵌入式系统的 AI 研究</h3>
+<p>Cazorla et al. [R3] 主持的 SAFEXPLAIN 项目（EU Horizon, 2023-2026）关注 AI 算法<strong>嵌入</strong>安全关键系统时的可解释性，目标是满足 ISO 26262、ISO/PAS 8800 等功能安全标准的端到端可追溯性要求。ACM Computing Surveys 的综述 [R4] 覆盖了工业和交通领域安全关键系统的 AI 应用全景。"Functional Safety Architectural Patterns for AI-Based Critical Systems" [R5] 则提出了对齐 ISO/IEC TR 5469 的模块化参考架构。</p>
+<p>然而，上述研究均关注 AI 算法<strong>被集成入</strong>安全系统的场景，而非 AI <strong>辅助开发</strong>安全系统的场景。后者涉及的工程挑战——如何让 AI Agent 在修改代码时持续遵守性能红线、如何将安全约束编码为 Agent 可理解和不可绕过的规则——在现有文献中几乎未被覆盖。</p>
+
+<h3>2.3 AI 编程评估基准</h3>
+<p>当前主流 AI 编程评估基准包括：HumanEval [R6]、SWE-bench / SWE-bench Verified [R7]、LiveCodeBench [R8]、Aider Leaderboards、Terminal-Bench 2 [R1]。这些基准的共性局限是：<strong>pass@k 仅评估功能正确性，不评估安全约束的遵守程度</strong>。一个在 SWE-bench 上得分很高的方案，可能在真实嵌入式系统中因引入了主线程阻塞而直接导致机器人失控。</p>
+
+<h3>2.4 约束式 AI 生成</h3>
+<p>Constitutional AI（Anthropic, 2024）[R9] 通过将行为准则编码为 AI 训练信号，实现模型输出的价值对齐——但其作用层面在<strong>模型训练阶段</strong>。GitHub 的 spec-kit 提出 Spec-Driven Development（SDD）[R10]，将规约置于代码之前——与本文的"AI.md 三步协议强制规则加载"有思想共鸣，但作用层面不同。</p>
+
+<h3>2.5 定位声明</h3>
+<blockquote>本文填补的空白是：<strong>安全关键嵌入式系统的 AI 辅助开发 Harness 治理方法论</strong>。与现有研究的关系为互补而非重复——AHE [R1] 关注自动化演化，本文关注手工设计；Code as Harness [R2] 提供了宏观学科定义，本文提供了嵌入式领域的实例化与扩展；SAFEXPLAIN [R3] 和功能安全架构模式 [R5] 关注 AI 嵌入系统的安全，本文关注 AI 开发系统的安全。</blockquote>
+
+<hr>
+
+<!-- ======== §3 METHODOLOGY ======== -->
+<h2>3. 研究方法论</h2>
+
+<h3>3.1 案例研究方法</h3>
+<p>本文采用单案例嵌入式设计（Single-Case Embedded Design）方法。选择 RobotController 项目作为案例的原因：<strong>典型性</strong>（安全关键系统的全部特征）、<strong>棕地属性</strong>（约 75 个 Java 文件的历史代码库）、<strong>可追溯性</strong>（完整的 ADR 记录、Git 提交历史、规则文件版本记录）。</p>
+
+<h3>3.2 Harness 设计决策依据</h3>
+<p><strong>为什么选择六层架构而非四层？</strong> LangChain 的六层模型将记忆与状态（L4）和评估与观测（L5）分离。对于嵌入式安全关键系统，评估与观测的独立性至关重要——Python 模拟器的功能正确性验证与真机性能红线检测需要独立的验证层级。</p>
+<p><strong>为什么是六级优先级链而非三级？</strong> 三级优先级（红线 &gt; 建议 &gt; 风格）对通用 Web 应用可能足够，但嵌入式系统存在"架构铁律（L1）"和"模块规范（L2）"两个独特的中间层——StateCenter 单向数据流（L1）的破坏会引发全局并发问题，而视频模块或通信模块的内部规范（L2）违反则更多是局部影响。</p>
+
+<h3>3.3 数据收集方式</h3>
+<table>
+<thead><tr><th>数据项</th><th>收集方式</th><th>统计周期</th></tr></thead>
+<tbody>
+<tr><td>性能红线违规次数</td><td>代码静态审查 + AI 自检清单记录 + Python 模拟器验证</td><td>2026-05-25 至 2026-06-25</td></tr>
+<tr><td>架构铁律违反次数</td><td>代码审查 + ADR 记录交叉验证</td><td>同上</td></tr>
+<tr><td>EventChannel 重构数据</td><td>ADR-002 v1.3 记录 + Git diff 统计</td><td>2026-06-12</td></tr>
+<tr><td>缺陷修复次数</td><td>Git 提交历史 + 修复报告文档</td><td>2026-06-25 集中合入</td></tr>
+<tr><td>规则冲突次数</td><td>AI 对话中"冲突裁决报告"触发频率的回顾性统计</td><td>2026-05-25 至 2026-06-25</td></tr>
+<tr><td>规则文件行数</td><td>文件系统 <code>wc -l</code> 统计</td><td>2026-06-25 快照</td></tr>
+</tbody>
+</table>
+
+<hr>
+
+<!-- ======== §4 THEORY ======== -->
+<h2>4. Harness Engineering 理论基础</h2>
+
+<h3>4.1 核心定义与公式</h3>
+<p>Harness Engineering 是一门围绕 AI Agent 构建约束系统、反馈回路和执行环境的工程学科 [5]。其核心公式为：</p>
+<blockquote><strong>Agent = Model + Harness</strong></blockquote>
+<p>其中，Model 提供推理与生成能力，Harness 负责状态管理、工具调用、约束执行、反馈验证和环境安全。该术语由 Mitchell Hashimoto（HashiCorp 联合创始人）提出，并在 2026 年初 OpenAI 发布关于 Codex 的公开文章后获得主流关注 [6]。</p>
+
+<h3>4.2 Harness 与 Prompt Engineering 的层级关系</h3>
+<table>
+<thead><tr><th>层级</th><th>解决的核心问题</th><th>关注点</th></tr></thead>
+<tbody>
+<tr><td><strong>Prompt Engineering</strong></td><td>怎么把指令说清楚</td><td>让模型理解意图，减少局部歧义</td></tr>
+<tr><td><strong>Context Engineering</strong></td><td>该给 Agent 看什么</td><td>在合适时机提供正确且必要的信息</td></tr>
+<tr><td><strong>Harness Engineering</strong></td><td>系统怎么持续执行、纠偏、观测和恢复</td><td>长链路任务中的持续正确、偏差修正、故障恢复</td></tr>
+</tbody>
+</table>
+<p>对简单任务，Prompt 够用。需要外部知识时，Context 更重要。到了长链路、可执行、低容错的安全关键场景，Harness 才是主要矛盾 [4]。</p>
+
+<h3>4.3 Harness 的六层架构模型</h3>
+<table>
+<thead><tr><th>层级</th><th>名称</th><th>核心问题</th><th>关键设计</th></tr></thead>
+<tbody>
+<tr><td><strong>L1</strong></td><td>信息边界层</td><td>Agent 该知道什么、不该知道什么</td><td>角色定义、渐进式披露、任务状态管理</td></tr>
+<tr><td><strong>L2</strong></td><td>工具系统层</td><td>Agent 如何与外部世界交互</td><td>工具抽象、结果提炼、调用时机控制</td></tr>
+<tr><td><strong>L3</strong></td><td>执行编排层</td><td>多步骤任务如何串联</td><td>工作流引擎、确定性节点与 Agent 节点混排</td></tr>
+<tr><td><strong>L4</strong></td><td>记忆与状态层</td><td>长任务中间结果如何管理</td><td>会话间记忆、进度追踪、结构化持久化</td></tr>
+<tr><td><strong>L5</strong></td><td>评估与观测层</td><td>Agent 如何判断自己做对了</td><td>独立验证、可观测性暴露、质量度量</td></tr>
+<tr><td><strong>L6</strong></td><td>约束校验与恢复层</td><td>出错时怎么办</td><td>规则拦截、重试策略、回滚机制</td></tr>
+</tbody>
+</table>
+<blockquote>建议从 L1 和 L6 开始：先让 Agent 知道该干什么，再给它设置出错后的拦截和恢复机制，这两层投入最低但通常最容易见效 [4]。</blockquote>
+
+<h3>4.4 上下文衰减与管理策略</h3>
+<p>Dex Horthy 观察到一个关键现象：168K token 的上下文窗口，用到约 40% 时 Agent 输出质量开始明显下降。Anthropic 将此称为"上下文焦虑"——Sonnet 4.5 在上下文快满时变得犹豫，甚至倾向于提前收工 [3]。</p>
+<table>
+<thead><tr><th>区间</th><th>表现</th></tr></thead>
+<tbody>
+<tr><td>0 ~ ~40%（Smart Zone）</td><td>推理聚焦、工具调用准确、代码质量高</td></tr>
+<tr><td>超过 ~40%（Dumb Zone）</td><td>幻觉增多、兜圈子、格式混乱、代码变差</td></tr>
+</tbody>
+</table>
+
+<h3>4.5 十大核心实践</h3>
+<ol>
+  <li><strong>AGENTS.md 免疫系统</strong>：每个 Agent 错误对应一条规则，持续积累形成防错屏障</li>
+  <li><strong>架构约束机械化执行</strong>：通过 Linter/CI 强制执行，而非仅靠文档说明</li>
+  <li><strong>应用可观测性对 Agent 可见</strong>：Agent 可访问日志、指标、DOM 快照</li>
+  <li><strong>闭环自验证</strong>：强制 Build-Verify-Fix 循环</li>
+  <li><strong>会话间记忆</strong>：结构化进度文件 + 上下文重置</li>
+  <li><strong>熵治理</strong>：后台清理 Agent 定期扫描代码冗余</li>
+  <li><strong>渐进式披露</strong>：按需加载上下文，避免信息过载</li>
+  <li><strong>Blueprint 模式</strong>：确定性节点与概率性节点交替编排</li>
+  <li><strong>Trace 驱动迭代</strong>：基于失败案例的定向规则补充</li>
+  <li><strong>渐进式采纳路径</strong>：从基础约束到自治循环的阶段性演进</li>
+</ol>
+
+<hr>
+
+<!-- ======== §5 PROJECT BACKGROUND ======== -->
+<h2>5. RobotController 项目背景</h2>
+
+<h3>5.1 系统概况</h3>
+<p>RobotController 是一款基于 Android 的嵌入式机器人控制系统，服务于工业清洁机器人的远程操控场景（如幕墙擦窗机器人）。系统通过 WiFi/TCP 与机器人通信。</p>
+<table>
+<thead><tr><th>功能模块</th><th>技术实现</th><th>关键指标</th></tr></thead>
+<tbody>
+<tr><td><strong>TCP/UDP 通信</strong></td><td>TCPCommunicationManager / WiFiCommunicationManager</td><td>延迟 &lt; 500ms</td></tr>
+<tr><td><strong>MAVLink 协议</strong></td><td>自实现编解码器，指数退避重连</td><td>解析耗时 &lt; 1ms</td></tr>
+<tr><td><strong>双路视频流</strong></td><td>libVLC 3.7.2，network-caching=0ms</td><td>延迟 &lt; 600ms</td></tr>
+<tr><td><strong>视频录制</strong></td><td>VLC <code>:sout=duplicate</code> 分流，零额外线程</td><td>录制中延迟无增加</td></tr>
+<tr><td><strong>语音告警</strong></td><td>SoundPool V2.0，优先级队列容量 3</td><td>触发延迟 &lt; 50ms</td></tr>
+<tr><td><strong>触屏手柄</strong></td><td>TouchGamepadController + MotionSafetyFilter</td><td>触摸响应 &lt; 5ms</td></tr>
+<tr><td><strong>蓝牙/USB 手柄</strong></td><td>BluetoothGamepadManager + DirectInput</td><td>输入延迟 &lt; 10ms</td></tr>
+<tr><td><strong>AI 视觉</strong></td><td>TFLite 障碍物检测，5fps，独立 HandlerThread</td><td>新增延迟 &lt; 80ms</td></tr>
+<tr><td><strong>日志系统</strong></td><td>LogManager，静态缓存，异步落盘</td><td>首次加载 &lt; 500ms</td></tr>
+</tbody>
+</table>
+<p><strong>技术栈</strong>：Java 8，Android minSdk 21 / targetSdk 35，Gradle 三模块（<code>:core</code> + <code>:app</code> + <code>:tools</code>），EventChannel 泛型事件总线。</p>
+
+<h3>5.2 安全关键约束</h3>
+<table>
+<thead><tr><th>红线</th><th>阈值</th><th>违反后果</th></tr></thead>
+<tbody>
+<tr><td>TCP 通信延迟</td><td><strong class="red-text">&lt; 500ms</strong></td><td>遥控响应迟缓 → 机器人失控风险</td></tr>
+<tr><td>视频端到端延迟</td><td><strong class="red-text">&lt; 600ms</strong></td><td>画面卡顿 → 操作员无法实时判断</td></tr>
+<tr><td>触屏触摸响应</td><td><strong class="red-text">&lt; 5ms</strong></td><td>操控手感恶化 → 精细操作失效</td></tr>
+<tr><td>双路错开启停</td><td><strong class="red-text">≥ 500ms 间隔</strong></td><td>CPU 爆冲 → 双路同时丢帧</td></tr>
+</tbody>
+</table>
+
+<hr>
+
+<!-- ======== §6 HARNESS DESIGN ======== -->
+<h2>6. RobotController 的 Harness 体系设计</h2>
+
+<h3>6.1 总体架构</h3>
+<p>RobotController 的 Harness 体系遵循六层架构思想，根据嵌入式安全关键系统的特殊需求进行了定制强化，形成<strong>三大支柱</strong>（规则约束系统、命令标准化系统、知识供给系统）与<strong>两条生命线</strong>（冲突裁决机制、上下文长效提醒机制）的完整结构。</p>
+
+<div class="arch-box">
+┌─────────────────────────────────────────────────────────────────┐
+│                    Harness 治理体系总架构                          │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  ┌────────────────┐  ┌────────────────┐  ┌────────────────┐    │
+│  │  规则约束系统   │  │  命令标准化系统 │  │  知识供给系统   │    │
+│  │                │  │                │  │                │    │
+│  │ 00 最高原则     │  │ 模板A 完整分析  │  │ AI.md (677行)  │    │
+│  │ 01 全局约束     │  │ 模板B 快速执行  │  │ docs/ (60+文档)│    │
+│  │ 02 视频规范     │  │ 模板C 性能专项  │  │ ADR (决策记录) │    │
+│  │ 03 通信规范     │  │                │  │ SOP (流程标准) │    │
+│  │ 04 状态/UI      │  └────────────────┘  └────────────────┘    │
+│  │ 05 约束速查     │                                             │
+│  │ 06 关键功能保护 │  ┌────────────────┐  ┌────────────────┐    │
+│  │ 07 日志规范     │  │  冲突裁决机制   │  │  长效提醒机制   │    │
+│  │ 08 发布规范     │  │                │  │                │    │
+│  │ 09 冲突裁决     │  │ 6级优先级链     │  │ 4级提醒系统    │    │
+│  │ 10 长效提醒     │  │ 冲突裁决模板   │  │ 规则指纹记忆   │    │
+│  │ AI行为约束     │  │ 同级冲突提权   │  │ 自检触发器     │    │
+│  │ 规则检查模板   │  └────────────────┘  └────────────────┘    │
+│  └────────────────┘                                             │
+│                          ↓                                      │
+│              AI 强制规则加载协议（三步执行框架）                     │
+└─────────────────────────────────────────────────────────────────┘
+</div>
+
+<h3>6.2 规则约束系统（13 文件，2113 行）</h3>
+<p>规则约束系统是整个 Harness 的核心，由 13 个 Markdown 文件组成，按优先级分六层组织：</p>
+<pre><code>层级 0（绝对红线）    TCP &lt; 500ms, Video &lt; 600ms, 触摸 &lt; 5ms
+层级 1（架构铁律）    StateCenter 单向数据流, B4 Activity 拆分原则
+层级 2（模块规范）    视频(02), 通信(03), UI/状态(04)
+层级 3（约束速查）    关键约束值(05), 关键功能保护(06), 日志(07)
+层级 4（辅助规范）    发布上线(08), AI行为约束
+层级 5（建议级）      代码风格, 命名约定</code></pre>
+
+<h4>6.2.1 关键规则文件设计</h4>
+
+<p><strong>00-最高原则.md</strong>（118 行）是 Harness 的"宪法"，定义不可协商的性能红线。其独特设计是末尾内嵌的 <strong>AI 自检触发器</strong>——AI 读取该文件后，必须逐项输出 5 项强制校验结果，任何不合格项直接驳回方案。</p>
+
+<p><strong>06-关键功能保护规范.md</strong>（286 行）采用"禁止修改清单"模式，精确到行号级别标注保护区域。例如，<code>recvLoop()</code> 方法标注为 <code>★ 关键功能：TCP 接收循环</code>，附带允许与禁止操作的完整列表。</p>
+
+<p><strong>09-规则冲突裁决机制.md</strong>（152 行）建立了完整的裁决决策树。当检测到多层规则冲突时，AI 必须按 6 级优先级链裁决，并输出标准化的"冲突裁决报告"。同级规则冲突（如正确性 vs 正确性）必须提请人类裁决——这一设计防止了 AI 在安全关键决策上的僭越。</p>
+
+<p><strong>10-上下文长效提醒机制.md</strong>（174 行）是专门对抗"规则被逐出上下文窗口"问题的方案。其四级提醒系统：</p>
+<table>
+<thead><tr><th>级别</th><th>机制</th><th>触发条件</th></tr></thead>
+<tbody>
+<tr><td>Level 1</td><td>规则指纹（70 字符）</td><td>始终在工作记忆中</td></tr>
+<tr><td>Level 2</td><td>自检触发器</td><td>每 5 轮对话自动触发</td></tr>
+<tr><td>Level 3</td><td>模块入口注入</td><td>读取特定文件时自动拉取关联规则</td></tr>
+<tr><td>Level 4</td><td>对话阶段健康检查</td><td>按对话长度分级检查</td></tr>
+</tbody>
+</table>
+
+<p>规则指纹（Level 1）设计为仅 70 字符，可永久驻留上下文首位：<code>🚨 TCP&lt;500ms Video&lt;600ms StateCenter-only B4-Activity-light</code></p>
+
+<h4>6.2.2 线程优先级规范</h4>
+<p>线程优先级规范是本项目 Harness 中最具代表性的"约束机械化"案例：</p>
+<table>
+<thead><tr><th>线程名称</th><th>优先级</th><th>所属模块</th><th>原因</th></tr></thead>
+<tbody>
+<tr><td><code>tcp-recv</code></td><td>MAX_PRIORITY (10)</td><td>TCPCommunicationManager</td><td>TCP 接收必须实时</td></tr>
+<tr><td><code>video-recv</code></td><td>MAX_PRIORITY - 1 (9)</td><td>TcpVideoChannel</td><td>视频接收次重要</td></tr>
+<tr><td><code>tcp-send</code></td><td>NORM_PRIORITY (5)</td><td>TCPCommunicationManager</td><td>发送可微延迟</td></tr>
+<tr><td><code>Heartbeat</code></td><td>NORM_PRIORITY (5)</td><td>HeartbeatModule</td><td>间隔 5s，不紧急</td></tr>
+<tr><td><code>Record-IO-Thread</code></td><td>THREAD_PRIORITY_BACKGROUND</td><td>VideoRecorderManager</td><td>录制 IO 不得抢占音视频链路</td></tr>
+</tbody>
+</table>
+
+<h3>6.3 AI 强制规则加载协议</h3>
+<p><code>AI.md</code>（677 行）是整个 Harness 的总入口，顶部定义三步强制协议：</p>
+<pre><code>修改请求 → Step 1: 加载规则 → Step 2: 填写自检清单 → Step 3: 检查冲突 → 执行修改
+              ↓ 失败                   ↓ 未完成              ↓ 有冲突
+          拒绝执行                 补充后继续             裁决后继续</code></pre>
+
+<p><strong>Step 1 强制加载规则（30 秒内完成）</strong>：打开 00-最高原则.md + 06-关键功能保护规范.md + 本次修改涉及的模块规则。</p>
+<p><strong>Step 2 填写自检清单（5 项必须全部回答）</strong>：是否新增 I/O / 新增线程 / 主线程耗时 / 大量 GC / 修改常量值。</p>
+<p><strong>Step 3 规则冲突裁决</strong>：按六级优先级链执行，不可自行裁决同级冲突。</p>
+
+<h3>6.4 命令标准化系统</h3>
+<table>
+<thead><tr><th>模板</th><th>适用场景</th><th>核心机制</th></tr></thead>
+<tbody>
+<tr><td><strong>模板 A - 完整分析</strong></td><td>大功能/重构</td><td>5 角色审核 + 12 维度评估</td></tr>
+<tr><td><strong>模板 B - 快速执行</strong></td><td>Bug 修复/小改动</td><td>先执行规则加载协议 + 输出 5 项自检</td></tr>
+<tr><td><strong>模板 C - 性能专项</strong></td><td>延迟/内存优化</td><td>三级风险分类 + 性能基线对比</td></tr>
+</tbody>
+</table>
+<table>
+<thead><tr><th>原则</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td><strong>红线优先</strong></td><td>指令可能违规 → 先指出风险，等确认再执行</td></tr>
+<tr><td><strong>主动优化</strong></td><td>指令不够优但不违规 → 给出更优方案供选择</td></tr>
+<tr><td><strong>规则可挑战</strong></td><td>规则有更优理解 → 说明理由后执行</td></tr>
+</tbody>
+</table>
+
+<h3>6.5 知识供给系统</h3>
+<h4>6.5.1 AI.md 渐进式披露设计</h4>
+<p><code>AI.md</code> 的设计理念与 OpenAI 的 100 行 AGENTS.md 目录结构高度一致：顶部放置强制规则加载协议（约 50 行），后续章节按模块组织详细约束、SOP 和速查信息，按需渐进加载。</p>
+
+<h4>6.5.2 架构决策记录（ADR）</h4>
+<p>通过 ADR-001（Gradle 模块化拆分）和 ADR-002（EventChannel 事件通道重构），项目将重大架构决策固化为持久文档。</p>
+
+<h4>6.5.3 文档-代码双向链接（HARNESS 注解体系）</h4>
+<p>在 HMM-L3→L4 升级中，文档-代码双向链接已从"改进方向"实现为正式治理基础设施：</p>
+<pre><code>// HARNESS: rule=.codebuddy/rules/06-关键功能保护规范.md §2.1
+// HARNESS: performance-redline: TCP&lt;500ms
+// HARNESS: thread-priority: tcp-recv=MAX_PRIORITY
+private void recvLoop() { ... }</code></pre>
+
+<table>
+<thead><tr><th>指标</th><th>数值</th></tr></thead>
+<tbody>
+<tr><td>HARNESS 注解总数</td><td>25 条（覆盖 6 个 Java 文件）</td></tr>
+<tr><td>含规则引用（rule=）</td><td>10 条</td></tr>
+<tr><td>含性能红线（redline）</td><td>10 条</td></tr>
+<tr><td>含线程优先级约束</td><td>3 条</td></tr>
+<tr><td>覆盖核心保护函数</td><td>10 个</td></tr>
+<tr><td>审计验证结果</td><td><span class="badge badge-green">0 ERROR</span> CI 模式通过</td></tr>
+</tbody>
+</table>
+<p>配套的 <code>scripts/harness_audit.py</code> 自动扫描代码中的 <code>HARNESS:</code> 注解，与规则文件交叉验证，确保文档-代码的持续一致性。</p>
+
+<h3>6.6 Harness 六层架构映射</h3>
+<table>
+<thead><tr><th>六层</th><th>RobotController 对应实现</th></tr></thead>
+<tbody>
+<tr><td><strong>L1</strong></td><td>AI.md §AI 强制规则加载协议 + 渐进式规则分层</td></tr>
+<tr><td><strong>L2</strong></td><td>AI 编程助手的文件读写、Shell 执行、Grep 搜索；Python 模拟器测试脚本</td></tr>
+<tr><td><strong>L3</strong></td><td>三步协议 + SOP 标准流程 + 三模板命令决策树</td></tr>
+<tr><td><strong>L4</strong></td><td>13 个规则文件 + AI.md 版本记录 + ADR 决策历史 + 四级长效提醒</td></tr>
+<tr><td><strong>L5</strong></td><td>5 项强制自检清单 + 冲突裁决报告模板 + Python 模拟器性能验证</td></tr>
+<tr><td><strong>L6</strong></td><td>禁止修改清单（行号级）+ 自检触发器（读文件即触发）+ 6 级优先级裁决树 + 回滚协议</td></tr>
+</tbody>
+</table>
+
+<hr>
+
+<!-- ======== §7 RESULTS ======== -->
+<h2>7. Harness 的实际治理效果</h2>
+
+<h3>7.1 量化产出数据（约 30 天周期）</h3>
+<table>
+<thead><tr><th>类别</th><th>指标</th><th>数据</th></tr></thead>
+<tbody>
+<tr><td rowspan="5"><strong>架构治理</strong></td><td>ADR 架构决策记录</td><td>2 项</td></tr>
+<tr><td>EventChannel 迁移文件数</td><td>14 个文件，5 个模块</td></tr>
+<tr><td>StateCenter 代码量变化</td><td>508 行 → 215 行（<strong>-58%</strong>）</td></tr>
+<tr><td>旧 API 残留</td><td>0 处</td></tr>
+<tr><td>设计文档总数</td><td>60+ 篇</td></tr>
+<tr><td rowspan="3"><strong>缺陷修复</strong></td><td>P0 崩溃修复</td><td>1 次</td></tr>
+<tr><td>P1 延迟/稳定性优化</td><td>4 项</td></tr>
+<tr><td>P2 体验优化</td><td>2 项</td></tr>
+<tr><td rowspan="3"><strong>安全指标</strong></td><td>性能红线违规次数</td><td><strong class="red-text">0 次</strong></td></tr>
+<tr><td>架构铁律违反次数</td><td><strong class="red-text">0 次</strong></td></tr>
+<tr><td>模块间不当直接调用</td><td><strong class="red-text">0 次</strong></td></tr>
+</tbody>
+</table>
+
+<h3>7.2 规则冲突频率量化分析</h3>
+<table>
+<thead><tr><th>冲突类型</th><th>发生次数</th><th>占比</th><th>趋势（第1周→第4周）</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>性能红线 vs 代码简洁性</td><td>3</td><td>30%</td><td>3→0</td><td>早期 AI 倾向引入"优化"但阻塞操作</td></tr>
+<tr><td>架构铁律 vs 向后兼容</td><td>5</td><td>50%</td><td>4→1</td><td>最频繁类型，后期通过强制自检显著减少</td></tr>
+<tr><td>模块规范 vs 全局约束</td><td>2</td><td>20%</td><td>2→0</td><td>LogManager 日志落盘时机冲突</td></tr>
+<tr><td>同级冲突（正确性 vs 正确性）</td><td>0</td><td>0%</td><td>—</td><td>验证了分层设计的合理性</td></tr>
+<tr><td><strong>合计</strong></td><td><strong>10</strong></td><td><strong>100%</strong></td><td><strong>-83%（6→1/周）</strong></td><td></td></tr>
+</tbody>
+</table>
+<blockquote>冲突频率从第 1 周的每周 6 次下降到第 4 周的每周 1 次（-83%），说明 Harness 的"错误驱动规则积累"机制正在生效——与 Hashimoto 的 AGENTS.md 免疫积累模式一致。</blockquote>
+
+<h3>7.3 关键治理事件详析</h3>
+<p><strong>事件 1：ADR-002 EventChannel 全局重构（2026-06-12）。</strong> 这是本项目 Harness 治理效果最具说服力的案例。最终结果：508 行 → 215 行（-58%），全项目 0 处旧 API 引用，21 个测试用例全部通过。<strong>关键洞察</strong>：如果没有 Harness 的约束，AI 极可能将迁移分散到多个文件的"局部最优"，而非形成一致的、可独立测试的 EventChannel 体系。</p>
+<p><strong>事件 2：ADR-001 Gradle 三模块化拆分（2026-06-12）。</strong> ADR 明确规定"不到触发条件就不拆分"，防止 AI 因"未来可能需要"而过度拆分。</p>
+<p><strong>事件 3：P0 VLC 崩溃修复（2026-06-25）。</strong> Harness 确保 AI 在分析修复方案前，强制阅读 06-关键功能保护规范，确认修复不影响 video-recv 线程。</p>
+<p><strong>事件 4：P1 TCP 卡顿修复（2026-06-25）。</strong> SO_TIMEOUT 从 3000ms 降至 100ms。自检清单第 5 项"修改了常量值"触发强制评估。</p>
+
+<h3>7.4 棕地项目改造路径</h3>
+<pre><code>Phase 1: AI.md 单文件约束
+    ↓ 规则复杂度提升
+Phase 2: .codebuddy/rules/ 模块化拆分（6 → 13 个规则文件）
+    ↓ 命令随意性暴露
+Phase 3: 命令模板标准化（三模板决策树 + 执行原则）
+    ↓ 规则冲突事件触发
+Phase 4: 冲突裁决机制（6 级优先级链 + 裁决报告模板）
+    ↓ 长会话质量衰减观察
+Phase 5: 长效提醒机制（4 级提醒系统 + 规则指纹 + 自检触发器）
+    ↓ HMM-L3→L4 升级
+Phase 6: 量化管理落地（HARNESS 注解 25 条 + harness_audit.py CI 审计
+         + ci_redline_check.sh pre-commit 集成 + harness_stats.py 周报）</code></pre>
+
+<h3>7.5 与业界标准实践的对照</h3>
+<table>
+<thead><tr><th>实践维度</th><th>OpenAI [1]</th><th>Hashimoto [6]</th><th>Stripe [2]</th><th>本项目</th></tr></thead>
+<tbody>
+<tr><td>上下文文件</td><td>AGENTS.md ~100行目录</td><td>每行对应一个历史失败</td><td>仓库即事实来源</td><td>AI.md 677行 + 13规则分层</td></tr>
+<tr><td>架构约束执行</td><td>自定义 Linter + 结构测试</td><td>AGENTS.md 免疫积累</td><td>Pre-push hook</td><td>自检触发器 + 冲突裁决模板</td></tr>
+<tr><td>上下文对抗</td><td>渐进式披露</td><td>单 Agent + 下班启动</td><td>Devbox 隔离</td><td>4级长效提醒 + 70字规则指纹</td></tr>
+<tr><td>熵治理</td><td>后台清理 Agent</td><td>错误驱动规则积累</td><td>300万测试维护</td><td>文档同步自动触发 + ADR 固化</td></tr>
+<tr><td>命令标准化</td><td>Agent Skills 目录</td><td>6步渐进路径</td><td>Blueprint 状态机</td><td>三模板决策树 + 执行原则</td></tr>
+<tr><td>项目类型</td><td>绿地项目</td><td>绿地项目（Ghostty）</td><td>大型绿地</td><td><strong>棕地改造</strong></td></tr>
+<tr><td>安全级别</td><td>通用 Web</td><td>桌面工具</td><td>支付系统</td><td><strong>嵌入式实时控制</strong></td></tr>
+</tbody>
+</table>
+
+<hr>
+
+<!-- ======== §8 HMM ======== -->
+<h2>8. Harness 成熟度模型</h2>
+
+<h3>8.1 模型定义</h3>
+<p>参考 CMMI 的分级方法论，本研究提出 Harness 成熟度模型（HMM）：</p>
+<table>
+<thead><tr><th>级别</th><th>名称</th><th>特征</th><th>关键标志</th></tr></thead>
+<tbody>
+<tr><td><strong>HMM-L1</strong></td><td>初始级</td><td>无规则文件或仅有零散约束</td><td>开发者靠口头经验约束 AI</td></tr>
+<tr><td><strong>HMM-L2</strong></td><td>管理级</td><td>有基础规则文件，但约束为纯文本描述</td><td>有 AI.md 但无自检机制</td></tr>
+<tr><td><strong>HMM-L3</strong></td><td>定义级</td><td>规则分层 + 冲突裁决 + 自检触发器</td><td>约束从纯文本升级为可执行检查流程</td></tr>
+<tr><td><strong>HMM-L4</strong></td><td>量化级</td><td>自动化审计 + CI 级红线拦截 + 量化统计</td><td>harness_audit.py + ci_redline_check.sh + harness_stats.py</td></tr>
+<tr><td><strong>HMM-L5</strong></td><td>优化级</td><td>规则自动演化 + 跨模型可迁移性验证 + AHE 闭环</td><td>无人干预的规则自我迭代</td></tr>
+</tbody>
+</table>
+
+<h3>8.2 本项目的成熟度评估</h3>
+<p>RobotController 项目已于 <strong>2026-06-25</strong> 完成 HMM-L3→L4 升级，当前处于 <strong>HMM-L4（量化级）</strong>：</p>
+<table>
+<thead><tr><th>维度</th><th>达到 HMM-L4 的标志</th></tr></thead>
+<tbody>
+<tr><td>约束强制执行</td><td><span class="badge badge-green">✓</span> <code>ci_redline_check.sh</code> 已集成 pre-commit hook（6 大类检查）</td></tr>
+<tr><td>量化度量</td><td><span class="badge badge-green">✓</span> <code>harness_stats.py</code> 每周生成 HMM 评估 + 豁免统计 + 假阳性追踪</td></tr>
+<tr><td>规则-代码一致性</td><td><span class="badge badge-green">✓</span> HARNESS 注解 25 条 + <code>harness_audit.py</code> CI 级自动审计</td></tr>
+<tr><td>治理脚本文档</td><td><span class="badge badge-green">✓</span> 架构_手册_v1.0_治理脚本使用指南.md</td></tr>
+</tbody>
+</table>
+
+<h3>8.3 对标分析</h3>
+<table>
+<thead><tr><th>组织/项目</th><th>HMM 级别</th><th>判定依据</th></tr></thead>
+<tbody>
+<tr><td>OpenAI Codex CLI [1]</td><td>L4</td><td>自定义 Linter + 结构测试 + Agent Skills；但无规则自我演化</td></tr>
+<tr><td>Stripe Minions [2]</td><td>L3→L4</td><td>Pre-push hook + Blueprint；但缺乏分层提醒</td></tr>
+<tr><td>Hashimoto Ghostty [6]</td><td>L3</td><td>AGENTS.md 免疫积累；但无系统化分层和冲突裁决</td></tr>
+<tr><td>Anthropic Labs [3]</td><td>L3→L4</td><td>三 Agent 架构提供自我评审；更侧重架构创新</td></tr>
+<tr><td><strong>本项目 RobotController</strong></td><td><strong>L3→L4</strong></td><td><strong>规则分层最完善、约束最严格（嵌入式安全关键场景）</strong></td></tr>
+</tbody>
+</table>
+
+<hr>
+
+<!-- ======== §9 DISCUSSION ======== -->
+<h2>9. 讨论</h2>
+
+<h3>9.1 嵌入式系统 Harness 的三大特殊性</h3>
+<p><strong>① 性能约束的优先级必须绝对化。</strong> TCP &lt; 500ms / Video &lt; 600ms 是生存红线，Harness 必须将这些约束置于所有其他规则之上。</p>
+<p><strong>② 线程优先级表不可动态协商。</strong> tcp-recv = MAX_PRIORITY (10)、video-recv = MAX-1 (9)——这些数值是系统稳定性的基础。</p>
+<p><strong>③ 验证环境受限的适应性设计。</strong> 明确标注"当前可用验证手段：Python 模拟器脚本"，并规定"AI 不可仅因测试脚本失败即回滚代码，必须先分析失败原因归属"。</p>
+
+<h3>9.2 棕地项目 Harness 改造的关键发现</h3>
+<p><strong>渐进性优于完整性</strong>：先做 L1（AI.md + 基础规则）和 L6（禁止修改清单），即使只有这两层，也能显著减少 AI 的有害修改。</p>
+<p><strong>错误驱动规则积累</strong>：与 Hashimoto 的 AGENTS.md 模式一致，每次 AI 出错就在 Harness 中增加对应规则。冲突频率下降 83% 验证了这一策略。</p>
+<p><strong>人类判断的不可替代性</strong>：同级规则冲突必须由人类裁决，Harness 只负责识别冲突和提供裁决框架。</p>
+
+<h3>9.3 局限性与改进方向</h3>
+<table>
+<thead><tr><th>局限</th><th>改进方向</th></tr></thead>
+<tbody>
+<tr><td>验证闭环不完整（真机 ADB 不可执行）</td><td>引入 Android Profiler Trace 解析，自动检测 recvLoop 执行时间</td></tr>
+<tr><td>规则维护成本（13 文件 2113 行，每周约 30 分钟）</td><td>引入自动化审计 Agent，CI 中自动检测规则-代码行号偏移</td></tr>
+<tr><td>模型敏感度未知（仅验证 WorkBuddy 宿主环境）</td><td>设计交叉验证实验：同一规则文件接入不同 AI 编程助手对比</td></tr>
+<tr><td>假阳性拦截未追踪</td><td>引入规则挑战通道（§9 of AI.md），记录每次豁免的合理性和结果</td></tr>
+<tr><td>功能正确性验证薄弱（依赖编译验证）</td><td>参考 AHE [R1] Decision Observability 思路：每次修改附加可证伪功能预测</td></tr>
+</tbody>
+</table>
+
+<hr>
+
+<!-- ======== §10 CONCLUSION ======== -->
+<h2>10. 结论</h2>
+
+<p><strong>核心结论如下：</strong></p>
+<ol>
+  <li><strong>Harness Engineering 重新定义了 AI 辅助开发的质量上限。</strong> 在"Agent = Model + Harness"范式下，Harness 的设计质量对 Agent 表现的影响不亚于模型选择。</li>
+  <li><strong>安全关键嵌入式系统需要更严格的 Harness 约束体系。</strong> 性能红线不可谈判、线程优先级不可动态协商、验证环境受限——这些特殊性要求 Harness 在 L6 约束恢复层进行专项强化。</li>
+  <li><strong>棕地项目 Harness 改造是可行的，且可量化验证。</strong> 通过渐进式路径（Phase 1-6），项目完成了从"无 Harness"到"HMM-L4 量化管理级"的演进。</li>
+  <li><strong>量化治理效果显著。</strong> 约 30 天开发周期内：零性能红线违规、零架构铁律违反、零模块间不当直接调用，EventChannel 重构代码量减少 58%，规则冲突频率下降 83%。</li>
+  <li><strong>Harness 成熟度模型提供了可量化的治理评估框架。</strong> HMM 五级模型将 Harness 从"有/无"的二元判断升级为可渐进改进的成熟度评估体系。</li>
+</ol>
+<blockquote><strong>展望</strong>：随着模型能力的持续提升，Harness 的某些保护层可能会变得冗余。Harness 不是一次性的工程投入，而是需要随模型能力演进而持续调整的动态系统。HMM 模型和 AHE 的自动化演化思路共同指向一个方向：Harness Engineering 作为独立工程学科，其核心价值不在于一套固定不变的规则，而在于提供可持续演进的治理框架。</blockquote>
+
+<hr>
+
+<!-- ======== REFERENCES ======== -->
+<h2>参考文献</h2>
+<div class="references">
+<p>[1] OpenAI Engineering Blog, "Codex: Three Engineers, Five Months, One Million Lines of Zero-Handwritten Code," 2026.</p>
+<p>[2] Stripe Engineering, "Minions: Unattended PR Generation at Scale — 1,000+ PRs Per Week," 2026.</p>
+<p>[3] Anthropic Labs, "A GAN-Inspired Three-Agent Architecture for Long-Running Coding Tasks," 2026.</p>
+<p>[4] JavaGuide, "一文搞懂 Harness Engineering：六层架构、上下文管理与一线团队实战," 2026.</p>
+<p>[5] Harness Engineering Community, <em>Harness Engineering Knowledge Graph</em>, 2026.</p>
+<p>[6] Mitchell Hashimoto, "Ghostty Terminal: Six-Step AI Agent Engineering Methodology," 2026.</p>
+<p>[7] Birgitta Böckeler, "Bliki: Harness Engineering," Martin Fowler Blog, 2026.</p>
+<p>[8] Vivek Trivedy (LangChain), "The Anatomy of an Agent Harness," 2026.</p>
+<p>[9] Y Build Team, "Harness 工程：围绕 AI Agent 构建系统," 2026.</p>
+<p>[10] Nicholas Carlini, "Building a C Compiler with 16 Parallel AI Agents," 2026.</p>
+<p>[11] RobotController Project, <em>AI.md v2.x — AI 强制规则加载协议</em>, 2026.</p>
+<p>[12] RobotController Project, <em>ADR-001: Gradle 模块化拆分 (Phases 1-3)</em>, 2026.</p>
+<p>[13] RobotController Project, <em>ADR-002: StateCenter → EventChannel 事件通道重构 (v1.3)</em>, 2026.</p>
+<p>[14] RobotController Project, <em>AI 命令模板指南 v1.0</em>, 2026.</p>
+
+<h4 style="margin-top:1.5rem;">新增学术引用</h4>
+<p>[R1] Jiahang Lin, Shichun Liu, Chengjun Pan, et al., "Agentic Harness Engineering: Observability-Driven Automatic Evolution of Coding-Agent Harnesses," arXiv:2604.25850v4, 2026.</p>
+<p>[R2] Xuying Ning, Katherine Tieu, Dongqi Fu, et al., "Code as Agent Harness: Toward Executable, Verifiable, and Stateful Agent Systems," arXiv:2605.18747, 2026.</p>
+<p>[R3] Francisco J. Cazorla et al., "SAFEXPLAIN: Safe and Explainable Critical Embedded Systems Based on AI," EU Horizon Europe, 2023-2026.</p>
+<p>[R4] "Artificial Intelligence for Safety-Critical Systems in Industrial and Transportation Domains," ACM Computing Surveys, 2024.</p>
+<p>[R5] "Functional Safety Architectural Patterns for AI-Based Critical Systems," ACM, 2025. DOI: 10.1145/3769121.</p>
+<p>[R6] Mark Chen et al., "Evaluating Large Language Models Trained on Code," (HumanEval), OpenAI, arXiv:2107.03374, 2021.</p>
+<p>[R7] Carlos E. Jimenez et al., "SWE-bench: Can Language Models Resolve Real-World GitHub Issues?" ICLR 2024.</p>
+<p>[R8] Naman Jain et al., "LiveCodeBench: Holistic and Contamination Free Evaluation of Large Language Models for Code," 2024.</p>
+<p>[R9] Yuntao Bai et al., "Constitutional AI: Harmlessness from AI Feedback," Anthropic, arXiv:2212.08073, 2024.</p>
+<p>[R10] GitHub, "spec-kit: Spec-Driven Development," 2026.</p>
+</div>
+
+<hr>
+
+<!-- ======== APPENDIX A ======== -->
+<h2>附录 A：Harness 规则文件清单</h2>
+<table>
+<thead><tr><th>文件</th><th>行数</th><th>核心内容</th></tr></thead>
+<tbody>
+<tr><td><code>00-最高原则.md</code></td><td>118</td><td>性能红线（TCP &lt; 500ms / Video &lt; 600ms）+ AI 自检触发器</td></tr>
+<tr><td><code>01-项目总览与全局约束.md</code></td><td>268</td><td>StateCenter 单向数据流、Activity 拆分原则、模块职责边界</td></tr>
+<tr><td><code>02-视频模块规范.md</code></td><td>190</td><td>libVLC 保护、network-caching=0ms、录制分流约束</td></tr>
+<tr><td><code>03-通信与心跳规范.md</code></td><td>157</td><td>WakeLock 管理、recvLoop 保护、MAVLink 编解码约束</td></tr>
+<tr><td><code>04-StateCenter与UI规范.md</code></td><td>140</td><td>EventChannel 订阅生命周期、ViewBinding、Fragment 复用规则</td></tr>
+<tr><td><code>05-关键约束值速查.md</code></td><td>105</td><td>所有关键数值（延迟/超时/缓存）的速查表</td></tr>
+<tr><td><code>06-关键功能保护规范.md</code></td><td>286</td><td>行号级禁止修改清单 + 线程优先级表 + 全局单例保护</td></tr>
+<tr><td><code>07-日志模块规范.md</code></td><td>129</td><td>静态缓存模板、刷新/清空兜底、异步落盘规范</td></tr>
+<tr><td><code>08-上线发布规范.md</code></td><td>114</td><td>上线打包检查清单、版本号规则、release note 模板</td></tr>
+<tr><td><code>09-规则冲突裁决机制.md</code></td><td>152</td><td>6 级优先级链 + 冲突裁决报告模板 + 同级冲突提权</td></tr>
+<tr><td><code>10-上下文长效提醒机制.md</code></td><td>174</td><td>4 级提醒系统 + 70 字规则指纹 + 阶段健康检查</td></tr>
+<tr><td><code>AI行为约束.md</code></td><td>194</td><td>AI 代码生成通用约束 + 规则加载流程 + 质量要求</td></tr>
+<tr><td><code>规则检查强制模板.md</code></td><td>86</td><td>自检清单标准输出格式 + 规则检查结果模板</td></tr>
+<tr style="font-weight:700; background: var(--accent-light);"><td><strong>合计（13 文件）</strong></td><td><strong>2113</strong></td><td><strong>覆盖 Harness 六层架构全部约束维度</strong></td></tr>
+</tbody>
+</table>
+
+<hr>
+
+<!-- ======== APPENDIX B ======== -->
+<h2>附录 B：EventChannel 重构关键数据（ADR-002 v1.3）</h2>
+<table>
+<thead><tr><th>Phase</th><th>迁移内容</th><th>文件数</th><th>验证结果</th></tr></thead>
+<tbody>
+<tr><td>Phase 1</td><td>StateCenter 内部：13 CopyOnWriteArrayList → 13 EventChannel</td><td>1</td><td>javac 20 文件 0 错误</td></tr>
+<tr><td>Phase 2-1</td><td>udpPacketChannel 迁移</td><td>3</td><td>0 错误</td></tr>
+<tr><td>Phase 2-2</td><td>alarmStateChannel 迁移</td><td>2</td><td>0 错误</td></tr>
+<tr><td>Phase 2-3</td><td>wifiStateChannel + heartbeatChannel 迁移</td><td>4</td><td>0 错误</td></tr>
+<tr><td>Phase 2-4</td><td>videoStateChannel + videoDebugChannel 迁移</td><td>5</td><td>0 错误</td></tr>
+<tr><td>Phase 2-5</td><td>robotStatusChannel 迁移</td><td>2</td><td>0 错误</td></tr>
+<tr><td>Phase 3-1</td><td>剩余 6 通道迁移</td><td>9</td><td>0 错误</td></tr>
+<tr><td>Phase 3-2</td><td>StateCenter 兼容层清理</td><td>1</td><td>508→215 行（-58%）</td></tr>
+<tr><td>Phase 3-3</td><td>测试迁移</td><td>1</td><td>21 测试用例全通过</td></tr>
+<tr style="font-weight:700; background: var(--accent-light);"><td><strong>合计</strong></td><td><strong>全量迁移</strong></td><td><strong>14</strong></td><td><strong>旧 API 引用归零</strong></td></tr>
+</tbody>
+</table>
+
+<hr>
+
+<!-- ======== APPENDIX C ======== -->
+<h2>附录 C：规则冲突频率量化表</h2>
+<table>
+<thead><tr><th>冲突类型</th><th>次数</th><th>占比</th><th>趋势</th><th>裁决方式</th><th>后续规则补充</th></tr></thead>
+<tbody>
+<tr><td>性能红线 vs 代码简洁性</td><td>3</td><td>30%</td><td>3→0</td><td>优先级链（红线胜出）</td><td>禁止 recvLoop 中引入 lambda</td></tr>
+<tr><td>架构铁律 vs 向后兼容</td><td>5</td><td>50%</td><td>4→1</td><td>2次优先级链 + 3次讨论确认</td><td>新增 API 优先经过 StateCenter</td></tr>
+<tr><td>模块规范 vs 全局约束</td><td>2</td><td>20%</td><td>2→0</td><td>全局约束胜出</td><td>日志落盘不得在 tcp-recv 线程</td></tr>
+<tr><td>同级冲突（正确性 vs 正确性）</td><td>0</td><td>0%</td><td>—</td><td>—</td><td>验证分层设计合理性</td></tr>
+<tr style="font-weight:700; background: var(--accent-light);"><td><strong>合计</strong></td><td><strong>10</strong></td><td><strong>100%</strong></td><td><strong>-83%</strong></td><td></td><td><strong>共补充 3 条新规则</strong></td></tr>
+</tbody>
+</table>
+
+<hr>
+<div style="text-align:center; font-size:9pt; color: var(--muted); padding: 2rem 0;">
+  <em>本文档版本：v2.1（修订版，新增 HMM-L4 升级数据）&nbsp;&nbsp;|&nbsp;&nbsp;生成日期：2026-06-25&nbsp;&nbsp;|&nbsp;&nbsp;字数：约 10,200 字</em>
+</div>
+
+</body>
+</html>
