@@ -1,6 +1,8 @@
 # 个人博客
 
-基于 GitHub + Netlify 构建的个人静态博客，用于展示和分享文档、学习笔记等内容。
+基于 Gitee + GitHub Actions + Netlify 构建的个人静态博客，用于展示和分享文档、学习笔记等内容。
+
+> 架构说明：Gitee 为主仓（本地日常推送），GitHub Actions 每 5 分钟自动将 Gitee 内容同步到 GitHub，Netlify 监听 GitHub 自动部署。本地无需访问 GitHub。
 
 ## 项目结构
 
@@ -76,15 +78,15 @@ python3 -m http.server 8080
    ```bash
    git add .
    git commit -m "添加新文件"
-   git push origin main
+   git push gitee main
    ```
-4. **等待 Netlify 自动部署**
+4. **等待自动部署**：GitHub Actions 每 5 分钟自动同步到 GitHub，Netlify 检测更新后自动部署
 
 ### 3. 部署流程
 
-1. **GitHub**：将代码推送到 GitHub 仓库
-2. **Netlify**：自动检测更新并部署
-3. **访问**：通过 Netlify 生成的域名访问博客
+1. **Gitee**：本地将代码推送到 Gitee 主仓（`git push gitee main`）
+2. **GitHub Actions**：每 5 分钟自动将 Gitee 内容同步到 GitHub 仓库
+3. **Netlify**：自动检测 GitHub 更新并部署，通过 Netlify 域名访问博客
 
 ## 常见问题
 
