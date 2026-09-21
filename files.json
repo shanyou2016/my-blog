@@ -17329,6 +17329,12 @@
         "path": "服务器/.DS_Store"
       },
       {
+        "name": "协议_手册_v1.0_MAVLink全链路总纲.md",
+        "type": "file",
+        "ext": ".md",
+        "path": "服务器/协议_手册_v1.0_MAVLink全链路总纲.md"
+      },
+      {
         "name": "平板代理接入式千台级机器人状态+玻璃影像一体化监控服务端技术方案.md",
         "type": "file",
         "ext": ".md",
@@ -17339,6 +17345,12 @@
         "type": "file",
         "ext": ".md",
         "path": "服务器/服务器工程初始化基线（可直接粘贴进技术方案文档）.md"
+      },
+      {
+        "name": "通信_方案_v1.0_MQTT封装重连QoS总结.md",
+        "type": "file",
+        "ext": ".md",
+        "path": "服务器/通信_方案_v1.0_MQTT封装重连QoS总结.md"
       }
     ]
   }
