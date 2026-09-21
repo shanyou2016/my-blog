@@ -8,14 +8,20 @@
 
 ```
 my-blog/
+├── .github/
+│   └── workflows/
+│       └── sync-from-gitee.yml  # GitHub Actions：自动同步 Gitee → GitHub
 ├── index.html          # 主页文件，展示文件目录结构
 ├── files/              # 文件仓库，存放各种文档和资料
 │   ├── AI/             # AI相关文档
 │   ├── Android/        # Android相关文档
 │   ├── IOS/            # iOS相关文档
-│   └── UniApp/         # UniApp相关文档
+│   ├── UniApp/         # UniApp相关文档
+│   ├── 小技巧/          # 小技巧文档
+│   └── 服务器/          # 服务端技术文档
 ├── files.json          # 文件目录结构清单（自动生成）
 ├── generate-file-list.js  # 生成files.json的脚本
+├── LICENSE             # MIT 许可证
 └── README.md           # 项目说明文档
 ```
 
@@ -29,11 +35,15 @@ my-blog/
 
 ## 容量限制
 
-### GitHub 限制
+### Gitee 限制（主仓）
 
-- **仓库容量**：推荐不超过 1GB
+- **仓库容量**：推荐不超过 1GB（免费版上限 5GB）
 - **单个文件**：最大 100MB（超过需使用 Git LFS）
 - **文件类型**：支持所有静态文件类型
+
+### GitHub 限制（同步镜像）
+
+- 与 Gitee 基本一致，仅作为 Netlify 部署源
 
 ### Netlify 限制
 
@@ -54,8 +64,8 @@ my-blog/
 ### 1. 本地开发
 
 ```bash
-# 克隆仓库
-git clone git@github.com:shanyou2016/my-blog.git
+# 克隆仓库（Gitee 主仓）
+git clone git@gitee.com:shanzihao/my-blog.git
 
 # 进入目录
 cd my-blog
@@ -92,7 +102,8 @@ python3 -m http.server 8080
 
 ### 文件不显示
 - 检查 files.json 是否已生成
-- 检查 GitHub 是否推送了所有文件
+- 检查 Gitee 是否推送了所有文件
+- 检查 GitHub Actions 同步是否成功（仓库 Actions 页查看运行记录）
 - 检查 Netlify 是否已完成部署
 
 ### 大文件处理
@@ -106,7 +117,8 @@ python3 -m http.server 8080
 ## 技术栈
 
 - **前端**：HTML、CSS、JavaScript
-- **版本控制**：Git、GitHub
+- **版本控制**：Git + Gitee（主仓）+ GitHub（镜像）
+- **自动同步**：GitHub Actions
 - **部署**：Netlify
 
 ## 许可证
