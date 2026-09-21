@@ -17298,6 +17298,12 @@
         "path": "小技巧/Wireshark 常用过滤规则速查.docx"
       },
       {
+        "name": "doubao-downloader.user.js",
+        "type": "file",
+        "ext": ".js",
+        "path": "小技巧/doubao-downloader.user.js"
+      },
+      {
         "name": "大白话讲透：同WiFi不行、同手机热点就行 核心原理.docx",
         "type": "file",
         "ext": ".docx",
@@ -17308,6 +17314,31 @@
         "type": "file",
         "ext": ".pdf",
         "path": "小技巧/阿里云企业账号认证全流程及常见坑.pdf"
+      }
+    ]
+  },
+  {
+    "name": "服务器",
+    "type": "folder",
+    "path": "服务器",
+    "children": [
+      {
+        "name": ".DS_Store",
+        "type": "file",
+        "ext": "",
+        "path": "服务器/.DS_Store"
+      },
+      {
+        "name": "平板代理接入式千台级机器人状态+玻璃影像一体化监控服务端技术方案.md",
+        "type": "file",
+        "ext": ".md",
+        "path": "服务器/平板代理接入式千台级机器人状态+玻璃影像一体化监控服务端技术方案.md"
+      },
+      {
+        "name": "服务器工程初始化基线（可直接粘贴进技术方案文档）.md",
+        "type": "file",
+        "ext": ".md",
+        "path": "服务器/服务器工程初始化基线（可直接粘贴进技术方案文档）.md"
       }
     ]
   }
