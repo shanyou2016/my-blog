@@ -4,3 +4,8 @@ Thumbs.db
 *.swo
 *~
 node_modules/
+
+# Office 文档临时锁文件（Word / Excel 打开时生成）
+.~*
+~$*
+
