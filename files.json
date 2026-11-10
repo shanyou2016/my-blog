@@ -17190,6 +17190,25 @@
     ]
   },
   {
+    "name": "currentCAD",
+    "type": "folder",
+    "path": "currentCAD",
+    "children": [
+      {
+        "name": ".DS_Store",
+        "type": "file",
+        "ext": "",
+        "path": "currentCAD/.DS_Store"
+      },
+      {
+        "name": "创模 AI 提示词模板库（标准件 _ 支座 _ 工装 _ 壳体）.docx",
+        "type": "file",
+        "ext": ".docx",
+        "path": "currentCAD/创模 AI 提示词模板库（标准件 _ 支座 _ 工装 _ 壳体）.docx"
+      }
+    ]
+  },
+  {
     "name": "gitHub+Netlify 个人静态博客",
     "type": "folder",
     "path": "gitHub+Netlify 个人静态博客",
